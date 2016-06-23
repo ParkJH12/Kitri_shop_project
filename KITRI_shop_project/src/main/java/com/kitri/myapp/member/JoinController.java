@@ -38,6 +38,16 @@ public class JoinController {
 		service.addJoin(join);
 		return "join/loginForm";
 	}
+	@RequestMapping(value="/join/main.do")
+	public String main(){
+		
+		return "join/main";
+	}
+	
+
+	
+	
+	
 	
 	@RequestMapping(value="/join/joinForm.do")
 	public String joinForm(){
@@ -95,6 +105,29 @@ public class JoinController {
 		service.delJoin(id);
 		return "join/loginForm";
 	}
+	//판매버튼/////////////////////////
+	
+	@RequestMapping(value="/join/sellreg.do")
+	public String sellreg(){
+		
+		return "sell/sellReg";
+	}
+	@RequestMapping(value="/join/sellmod")
+	public String sellmod(){
+		
+		return "sell/sellMod";
+	}
+	@RequestMapping(value="/join/sellist.do")
+	public String sellist(){
+		
+		return "sell/selList";
+	}
+	@RequestMapping(value="/join/sellbag.do")
+	public String sellbag(){
+		
+		return "sell/sellBag";
+	}
+	//////////////////////
 	
 	
 	

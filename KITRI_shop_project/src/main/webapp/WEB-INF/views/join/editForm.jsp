@@ -7,7 +7,7 @@
 function editCancel(){
 	var editCancel = window.confirm("수정을 취소 하시겠습니까?");
 	if(editCancel){
-		location.href=history.back();
+		location.href="${pageContext.request.contextPath}/join/main.do";
 	}
 }
 
