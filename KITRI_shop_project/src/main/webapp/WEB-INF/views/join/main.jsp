@@ -11,6 +11,22 @@ function delcheck(){
 		location.href="${pageContext.request.contextPath}/join/out.do";
 	}
 	
+	function sellreg() {
+		alert("adasd");
+		location.href="sellReg.jsp"
+	}
+	function sellmod() {
+		location.href="sellMod.jsp"
+	}
+	function sellist() {
+		location.href="selList.jsp"
+	}
+	function sellbag() {
+		location.href="sellBag.jsp"
+	}
+	function logout() {
+		location.href="${pageContext.request.contextPath}/join/Logout.do"
+	}
 }
 
 </script>
@@ -20,12 +36,21 @@ function delcheck(){
 <body>
 
 <h2>${sessionScope.id}님 로그인중입니다.</h2>
-<br>
-<a href="${pageContext.request.contextPath}/board/list.do">게시판으로 이동</a><br>
-<a href="${pageContext.request.contextPath}/imgBoard/list.do">이미지 게시판 이동</a><br>
+
 <a href="${pageContext.request.contextPath}/join/editForm.do">내정보 수정</a><br>
 <a href="${pageContext.request.contextPath}/join/Logout.do">로그아웃</a><br>
-<a href="#" onclick="delcheck()">탈퇴</a><br>
+<input type="button" name="sellreg" value="판매등록" onclick="${pageContext.request.contextPath}/join/Logout.do" required/>
+<input type="button" name="memdel" value="탈퇴" onclick="delcheck()" required/>
+
+<br><br>
+<input type="button" name="reg" value="판매등록" onclick="sellreg()">
+<input type="button" name="mod" value="상품수정" onclick="sellmod()">
+<input type="button" name="list" value="판매목록" onclick="sellist()">
+<input type="button" name="bag" value="장바구니" onclick="sellbag()">
+
+
+
+
 
 </body>
 </html>

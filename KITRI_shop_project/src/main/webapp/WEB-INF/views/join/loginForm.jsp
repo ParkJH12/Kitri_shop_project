@@ -20,6 +20,7 @@
 <form action = "${pageContext.request.contextPath}/join/login.do" name="logform" method="post">
 아이디 : <input type="text"	name="id" /><br>
 패스워드 : <input type="password" name="pwd" />
+<br>
 <input type= "submit" value="로그인">
 <input type= "reset"  value="취소"><br>
 <a href ="${pageContext.request.contextPath }/join/joinForm.do">회원가입</a>
