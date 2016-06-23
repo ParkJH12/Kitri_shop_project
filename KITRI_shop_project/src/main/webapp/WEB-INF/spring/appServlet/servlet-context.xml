@@ -23,6 +23,40 @@
 	
 	<context:component-scan base-package="com.kitri.myapp" />
 	
+		<beans:bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<!-- 컨넥션 풀 -->
+		
+		<beans:property name="driverClassName">
+			<beans:value>oracle.jdbc.driver.OracleDriver</beans:value>
+		</beans:property>
+		<beans:property name="url">
+			<beans:value>jdbc:oracle:thin:@localhost:1521:XE</beans:value>
+		</beans:property>
+		<beans:property name="username">
+			<beans:value>hr</beans:value>
+		</beans:property>
+		<beans:property name="password">
+			<beans:value>hr</beans:value>
+		</beans:property>
+	</beans:bean>
+	<!-- 트랜잭션 -->
+	<!-- 마이바티스 이용을 위해 필요 -->
+	<beans:bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<beans:property name="dataSource" ref="dataSource" />
+	</beans:bean>
+	<!-- 자주사용하는 객체를 api화? --> 
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="typeAliasesPackage" value="mybatis" />
+		<beans:property name="mapperLocations" value="classpath:/com/kitri/myapp/res/*.xml" />
+		
+	</beans:bean>
+	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg name="sqlSessionFactory" 
+		ref="sqlSessionFactory" />
+	</beans:bean>
 	
 	
 </beans:beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kitri.myapp.member.JoinMapper">
+<!-- 이름영역 만듦 -->
+
+
+	<resultMap type="com.kitri.myapp.member.Join" 
+	id="JoinResultMap">
+		<result property="id" column="id" />
+		<result property="pwd" column="pwd" />
+		<result property="name" column="name" />
+		<result property="email" column="email" />
+	</resultMap>
+	<!-- resultSet의 역할을 해주는 resultMap result맵은 여러개에 대해 만들어 줘도 된다. -->
+
+		
+	<select id="select" resultMap="JoinResultMap" 
+	parameterType="String">
+	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
+		SELECT * FROM join where id=#{id}
+	</select>
+	
+	<insert id="insert" 
+	parameterType="com.kitri.myapp.member.Join" >
+		INSERT INTO join values(#{id}, #{pwd},#{name},#{email})
+	</insert>
+	
+	<update id="update" parameterType="com.kitri.myapp.member.Join">
+	update join set pwd=#{pwd},	name=#{name}, email=#{email} where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete join where id=#{id}
+	</delete>
+
+</mapper>

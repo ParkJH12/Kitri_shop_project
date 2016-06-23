@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kitri.myapp.board.BoardMapper">
+<!-- 이름영역 만듦 -->
+
+
+	<resultMap type="com.kitri.myapp.board.Article" 
+	id="boardResultMap">
+		<result property="num" column="num" />
+		<result property="w_date" column="w_date" />
+		<result property="writer" column="writer" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="parent" column="parent" />
+		
+	</resultMap>
+	<!-- 클래스 이름, 컬럼명, property 멤버변수에 넣어서 생성하라는 이야기 -->
+	<!-- resultSet의 역할을 해주는 resultMap result맵은 여러개에 대해 만들어 줘도 된다. -->
+
+		
+	<select id="select" resultMap="boardResultMap" 
+	parameterType="int">
+	<!-- id는 구현클래스의 메소드이름과 같아야 한다. -->
+	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
+		SELECT * FROM springboard where num=#{num}
+	</select>
+	
+	<select id="selectAll" resultMap="boardResultMap">
+	<!-- 	위에 보구 DTO객체를 생성하라는 말 -->
+	<!-- 	모두검색 -->
+		select * from springboard where parent=0 order by num desc 
+	</select>
+	
+	<select id="selectByParentNum" resultMap="boardResultMap" 
+	parameterType="int">
+	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
+		select * from springboard where parent=#{parent}
+	</select>
+	
+	
+	<select id="selectByWriter" resultMap="boardResultMap" 
+	parameterType="String">
+	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
+		select * from springboard where writer=#{writer}
+	</select>
+	
+	<select id="selectBytitle" resultMap="boardResultMap" 
+	parameterType="String">
+	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
+		select * from springboard where title=#{title}
+	</select>
+	
+	
+	
+		
+	<insert id="insert" 
+	parameterType="com.kitri.myapp.board.Article" >
+		insert into springboard VALUES(SEQ_SPRINGBOARD.nextval, sysdate, #{writer}, #{title}, #{content}, #{parent})
+				
+	</insert>
+	
+	
+	
+	<update id="update" parameterType="com.kitri.myapp.board.Article">
+		UPDATE SPRINGBOARD SET w_date=sysdate, TITLE=#{TITLE}, CONTENT=#{CONTENT} where num=#{num}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM SPRINGBOARD WHERE NUM=#{num}
+	</delete>
+
+</mapper>
