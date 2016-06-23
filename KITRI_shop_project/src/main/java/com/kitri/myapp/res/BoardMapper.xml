@@ -25,32 +25,32 @@
 	parameterType="int">
 	<!-- id는 구현클래스의 메소드이름과 같아야 한다. -->
 	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
-		SELECT * FROM springboard where num=#{num}
+		SELECT * FROM board where num=#{num}
 	</select>
 	
 	<select id="selectAll" resultMap="boardResultMap">
 	<!-- 	위에 보구 DTO객체를 생성하라는 말 -->
 	<!-- 	모두검색 -->
-		select * from springboard where parent=0 order by num desc 
+		select * from board where parent=0 order by num desc 
 	</select>
 	
 	<select id="selectByParentNum" resultMap="boardResultMap" 
 	parameterType="int">
 	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
-		select * from springboard where parent=#{parent}
+		select * from board where parent=#{parent}
 	</select>
 	
 	
 	<select id="selectByWriter" resultMap="boardResultMap" 
 	parameterType="String">
 	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
-		select * from springboard where writer=#{writer}
+		select * from board where writer=#{writer}
 	</select>
 	
 	<select id="selectBytitle" resultMap="boardResultMap" 
 	parameterType="String">
 	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
-		select * from springboard where title=#{title}
+		select * from board where title=#{title}
 	</select>
 	
 	
@@ -58,18 +58,18 @@
 		
 	<insert id="insert" 
 	parameterType="com.kitri.myapp.board.Article" >
-		insert into springboard VALUES(SEQ_SPRINGBOARD.nextval, sysdate, #{writer}, #{title}, #{content}, #{parent})
+		insert into board VALUES(SEQ_BOARD.nextval, sysdate, #{writer}, #{title}, #{content}, #{parent})
 				
 	</insert>
 	
 	
 	
 	<update id="update" parameterType="com.kitri.myapp.board.Article">
-		UPDATE SPRINGBOARD SET w_date=sysdate, TITLE=#{TITLE}, CONTENT=#{CONTENT} where num=#{num}
+		UPDATE BOARD SET w_date=sysdate, TITLE=#{TITLE}, CONTENT=#{CONTENT} where num=#{num}
 	</update>
 	
 	<delete id="delete" parameterType="int">
-		DELETE FROM SPRINGBOARD WHERE NUM=#{num}
+		DELETE FROM BOARD WHERE NUM=#{num}
 	</delete>
 
 </mapper>

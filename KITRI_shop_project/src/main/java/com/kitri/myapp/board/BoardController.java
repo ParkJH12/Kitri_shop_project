@@ -25,8 +25,7 @@ public class BoardController {
 	public ModelAndView boardList(){
 		
 		ModelAndView mav = new ModelAndView("board/list");
-		ArrayList<Article> list = (ArrayList<Article>) service.getArticleRoot();
-		
+		ArrayList<Article> list = (ArrayList<Article>) service.getArticleRoot();		
 		mav.addObject("list", list);
 		return mav;
 	}
