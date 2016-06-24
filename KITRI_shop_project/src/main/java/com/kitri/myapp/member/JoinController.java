@@ -67,7 +67,7 @@ public class JoinController {
 		boolean flag = service.login(j);
 		if(flag){
 			session = req.getSession();
-			session.setAttribute("id", j.getId());
+			session.setAttribute("name", j.getName());
 			result = "join/main";
 		}
 		return result;

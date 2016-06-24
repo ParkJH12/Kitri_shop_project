@@ -33,11 +33,6 @@ EMAIL VARCHAR2(30),
 		SELECT * FROM member where name=#{name}
 	</select>
 	
-	<select id="select_num" resultMap="JoinResultMap" parameterType="Int">
-	<!-- 이름을 검색 -->
-		SELECT * FROM member where m_num=#{m_num}
-	</select>
-	
 	<insert id="insert" 
 	parameterType="com.kitri.myapp.member.Join" >
 		INSERT INTO member values(seq_MEMBER.nextval, #{name}, #{pass}, #{phone_num}, #{address}, #{email})
