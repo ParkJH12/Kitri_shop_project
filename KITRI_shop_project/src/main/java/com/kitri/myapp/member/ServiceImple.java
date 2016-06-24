@@ -32,10 +32,8 @@ public class ServiceImple implements Service {
 	public boolean login(Join j) {
 		Join y = getJoin(j.getName());
 		if (y != null && y.getPass().equals(j.getPass())) {
-			System.out.println("여기까지는된다1");
 			return true;
 		} else {
-			System.out.println("여기까지는된다1");
 			return false;
 		}
 	}

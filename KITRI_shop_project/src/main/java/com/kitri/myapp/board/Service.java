@@ -46,4 +46,5 @@ public interface Service {
 	
 	List getArticleBytitle(String title);
 	
+	List getArticleByContent(String content);
 }

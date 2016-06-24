@@ -4,68 +4,124 @@ import java.sql.Date;
 
 public class Article {
 	
-	
-	private int num;
-	private Date w_date;
-	private String writer;
+	private int pb_num;
+	private int m_num;
 	private String title;
 	private String content;
-	private int parent;
+	private String model;
+	private int count;
+	private String color;
+	private String agency;
+	private String statement;
+	private String img_path;
+	private Date w_date;
 	
-	public Article(int num, Date w_date, String writer, String title, String content, int parent) {
-		this.num = num;
-		this.w_date = w_date;
-		this.writer = writer;
+	
+	public Article() {
+	}
+
+	public Article(int pb_num, int m_num, String title, String content, String model, int count, String color,
+			String agency, String statement, String img_path, Date w_date) {
+		this.pb_num = pb_num;
+		this.m_num = m_num;
 		this.title = title;
 		this.content = content;
-		this.parent = parent;
-	}
-	
-	public Article() {}
-	
-	public int getNum() {
-		return num;
-	}
-	public void setNum(int num) {
-		this.num = num;
-	}
-	public Date getW_date() {
-		return w_date;
-	}
-	public void setW_date(Date w_date) {
+		this.model = model;
+		this.count = count;
+		this.color = color;
+		this.agency = agency;
+		this.statement = statement;
+		this.img_path = img_path;
 		this.w_date = w_date;
 	}
-	public String getWriter() {
-		return writer;
+
+	public int getPb_num() {
+		return pb_num;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+
+	public void setPb_num(int pb_num) {
+		this.pb_num = pb_num;
 	}
+
+	public int getM_num() {
+		return m_num;
+	}
+
+	public void setM_num(int m_num) {
+		this.m_num = m_num;
+	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getContent() {
 		return content;
 	}
+
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public int getParent() {
-		return parent;
-	}
-	public void setParent(int parent) {
-		this.parent = parent;
+
+	public String getModel() {
+		return model;
 	}
 
-	@Override
-	public String toString() {
-		return "Article [num=" + num + ", w_date=" + w_date + ", writer=" + writer + ", title=" + title + ", content="
-				+ content + ", parent=" + parent + "]";
+	public void setModel(String model) {
+		this.model = model;
 	}
-	
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getAgency() {
+		return agency;
+	}
+
+	public void setAgency(String agency) {
+		this.agency = agency;
+	}
+
+	public String getStatement() {
+		return statement;
+	}
+
+	public void setStatement(String statement) {
+		this.statement = statement;
+	}
+
+	public String getImg_path() {
+		return img_path;
+	}
+
+	public void setImg_path(String img_path) {
+		this.img_path = img_path;
+	}
+
+	public Date getW_date() {
+		return w_date;
+	}
+
+	public void setW_date(Date w_date) {
+		this.w_date = w_date;
+	}
 	
 	
 
