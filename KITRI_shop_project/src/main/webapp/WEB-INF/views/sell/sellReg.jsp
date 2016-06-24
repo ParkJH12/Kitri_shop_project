@@ -26,48 +26,48 @@ function readURL(input){
 <title>Insert title here</title>
 </head>
 <body>
-<form action = "${pageContext.request.contextPath}/sell/sellreg.do" name="sellreg" method="post">
+<form action = "${pageContext.request.contextPath}/sell/sellreg.do" name="sellreg" method="post" enctype="multipart/form-data">
 img&nbsp;:&nbsp;
-  <input type="file" id="fileName" value="ph_img" onchange="readURL(this)"> <br><br>
+  <input type="file" id="fileName" value="img_path" onchange="readURL(this)"> <br><br>
     <div id="UploadedImg">
      
     </div>
 
 제목 &nbsp;:&nbsp;<input type="text" name="title" size="20"><br><br>
-제품명&nbsp;:&nbsp;<input type="text" name="ph_name" size="10"><br><br>
+제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10"><br><br>
 가격&nbsp;:&nbsp;<input type="text" name="price" size="10"><br><br>
-수량&nbsp;:&nbsp;<select name="quantity" size="1">
-    <option selected value="1ea">1</option>
-    <option value="2ea">2</option>
-    <option value="3ea">3</option>
-    <option value="4ea">4</option>
-    <option value="5ea">5</option>
-    <option value="6ea">6</option>
-    <option value="7ea">7</option>
-    <option value="8ea">8</option>
-    <option value="9ea">9</option>
-    <option value="10ea">10</option>
+수량&nbsp;:&nbsp;<select name="count" size="1">
+    <option selected value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
 </select><br><br>
 색상&nbsp;:&nbsp;<input type="text" name="color"><br><br>
-통신사&nbsp;:&nbsp;<select name="telcom" size="1">
+통신사&nbsp;:&nbsp;<select name="agency" size="1">
     <option selected value="SKT">SKT</option>
     <option value="KT">KT</option>
     <option value="LG">LG</option>
     <option value="ETC">ETC</option>
 </select><br><br>
-상태&nbsp;:&nbsp;<select name="quality" size="1"><br>
+상태&nbsp;:&nbsp;<select name="statement" size="1"><br>
     <option selected value="sq">S</option>
     <option value="aq">A</option>
     <option value="bq">B</option>
     <option value="cq">C</option>
 </select>
 <br><br>
-상품 내용<input type="text" name="etc" size="80" style="height:100px;">
-</form>
+상품 내용<input type="text" name="content" size="80" style="height:100px;">
+
 <br><br>
 <input type= "submit" value="등록">
 <input type= "reset"  value="취소"><br>
-
+</form>
 
 </body>
 </html>

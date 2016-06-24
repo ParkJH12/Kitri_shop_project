@@ -22,7 +22,7 @@ public class SellBoardController {
 	@RequestMapping(value ="/sell/sellreg.do" )
 	public String write(SellBoard s){
 		String fileName = s.getFile().getOriginalFilename();
-		String path = "C:\\Workspace\\Network\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\img\\" + fileName;
+		String path = "C:\\Users\\Administrator\\Documents\\Kitri_shop_project\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\img\\" + fileName;
 		File f = new File(path);
 		try {
 			s.getFile().transferTo(f);
