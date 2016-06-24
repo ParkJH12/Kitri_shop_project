@@ -14,6 +14,11 @@ function idchk(){
 	
 }
 
+function back() {
+	location.href="${pageContext.request.contextPath }/";
+}
+
+
 function checkResult(){
 	if(httpRequest.readyState==4){
 		if(httpRequest.status==200){
@@ -23,8 +28,7 @@ function checkResult(){
 			var myDiv= document.getElementById("checkMsg");
 			var html = "";
 			if(o.flag){
-				html = "사용가능한 아이디";
-				
+				html = "사용가능한 아이디";				
 			}else{
 				html = "사용불가능한 아이디";
 			}
@@ -41,14 +45,16 @@ function checkResult(){
 <body>
 
 <form action="${pageContext.request.contextPath}/join/join.do" id="joinFrm" method="post">
-아이디 : <input type="text" name="id" id="id" /> 
+아이디 : <input type="text" name="name" id="id" /> 
 <input type="button" value="중복체크" onclick="idchk()"/> <br>
 <span id="checkMsg"></span><br>
-패스워드 : <input type="password" name="pwd" /><br>
-이름 : <input type="text" name="name" /><br>
+패스워드 : <input type="password" name="pass" /><br>
+휴대폰번호 : <input type="text" name="phone_num" /><br>
+주소 : <input type="text" name="address" /><br>
 이메일 : <input type="text" name="email" /><br>
 <input type="submit" value="가입">
 <input type="reset" value="취소">
+<input type="button" value="뒤로가기" onclick="back()">
 
 </form>
 

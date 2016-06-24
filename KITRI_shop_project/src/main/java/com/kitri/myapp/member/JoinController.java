@@ -80,7 +80,7 @@ public class JoinController {
 	@RequestMapping(value= "/join/editForm.do")
 	public ModelAndView editInfo(HttpServletRequest req){
 		HttpSession session = req.getSession();
-		String id = (String) session.getAttribute("id");
+		String id = (String) session.getAttribute("name");
 		Join j=service.getJoin(id);
 		ModelAndView mav = new ModelAndView("join/editForm");
 		mav.addObject("editInfo", j);
