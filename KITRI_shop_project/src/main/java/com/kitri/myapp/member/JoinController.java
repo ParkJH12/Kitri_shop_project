@@ -19,10 +19,6 @@ public class JoinController {
 		this.service = service;
 	}
 
-	
-    /*  index.do (초기 로그인 페이지)
-     *  넘겨야할 인자값 :: x 
-     */
 	@RequestMapping(value="/")
 	public String loginForm(){
 		System.out.println("초기화면 띄우기");
