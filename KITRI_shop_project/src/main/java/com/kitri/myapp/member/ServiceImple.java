@@ -46,9 +46,9 @@ public class ServiceImple implements Service {
 	}
 
 	@Override
-	public void delJoin(String id) {
+	public void delJoin(String name) {
 		JoinMapper joinMapper = sqlSession.getMapper(JoinMapper.class);
-		joinMapper.delete(id);
+		joinMapper.delete(name);
 	}
 
 }
