@@ -40,19 +40,25 @@ public class JoinController {
 	}
 	@RequestMapping(value="/join/pwdFind.do")
 	public ModelAndView join2(@RequestParam(value="id")String id,@RequestParam(value="email")String email){
-		
-		System.out.println("id"+id);
-		System.out.println("em"+email);
+	
 		System.out.println("ID Email체크중 ");
 		Join i = service.getJoin(id);
+		Join j = service.getJoin(email);
 		boolean flag = false;
-		if( i== null && i.getEmail() ==null){
+		String pass = null;
+		if(i== null && j ==null){
 			flag = true;
+		}else{
+			pass = i.getPass();
+			System.out.println(pass);
+			System.out.println("flag"+flag);
+			System.out.println("ID Email체크중 ");
+		
 		}
-		String pass = i.getPass();
-		System.out.println(pass);
-		System.out.println("ID Email체크중 ");
-		ModelAndView mav = new ModelAndView("join/check");
+		
+		
+		
+		ModelAndView mav = new ModelAndView("join/check2");
 		mav.addObject("result",flag);
 		mav.addObject("result2",pass);
 		

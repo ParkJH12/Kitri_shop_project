@@ -6,28 +6,30 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/httpRequest.js"></script>
 <script type="text/javascript">
 function idemailchk(){
-	alert("!!");
 	var idElement = document.getElementById('id');
 	var emailElement = document.getElementById('email');
 
 	var param = "id="+idElement.value+"&email="+emailElement.value;
 	sendRequest("${pageContext.request.contextPath}/join/pwdFind.do", param, checkResult, "POST");
-	alert(param);
 	
 }
 function checkResult(){
 	if(httpRequest.readyState==4){
 		if(httpRequest.status==200){
 			var str = httpRequest.responseText;
-			alert(httpRequest.responseText);
+			alert("responseText"+httpRequest.responseText);
+			
+			alert(responseText);
 			var o = eval("("+str+")");
-			alert(o.flag);
+			alert("o.flag"+o.flag);
 			var myDiv= document.getElementById("checkMsg");
 			var html = "";
 			if(o.flag){
-				alert(o.pass);
+				alert("패스워드는"+o.pass+"입니다");
+				
 			}else{
-				html = "없는 아이디";
+				alert(o.pass);
+				alert("아이디나 이메일이 일치하지 않습니다");
 			}
 			myDiv.innerHTML = html;
 		}

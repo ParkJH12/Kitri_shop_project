@@ -51,4 +51,11 @@ public class ServiceImple implements Service {
 		joinMapper.delete(name);
 	}
 
+	@Override
+	public Join getJoin2(String email) {
+		JoinMapper joinMapper = sqlSession.getMapper(JoinMapper.class);
+		return joinMapper.select_name(email);
+	
+	}
+
 }
