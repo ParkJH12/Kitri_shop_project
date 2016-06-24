@@ -107,7 +107,7 @@ public class JoinController {
 		
 		return "sell/sellReg";
 	}
-	@RequestMapping(value="/join/sellmod")
+	@RequestMapping(value="/join/sellmod.do")
 	public String sellmod(){
 		
 		return "sell/sellMod";

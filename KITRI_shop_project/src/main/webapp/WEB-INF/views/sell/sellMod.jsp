@@ -4,16 +4,32 @@
 <html>
 <head>
 
-<script type="text/javascript">
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-////////////////////////
-
+<script>
+function readURL(input){
+	  
+	 if(input.files && input.files[0]){
+	   var reader = new FileReader();
+	   reader.onload = function(e){
+	    $('#UploadedImg').html("<img id=img src=''>");
+	    $('#img').attr('src', e.target.result);
+	   }
+	   reader.readAsDataURL(input.files[0]);
+	 }  
+	  
+	}
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <form action = "${pageContext.request.contextPath}/sell/sellreg.do" name="sellreg" method="post">
+img&nbsp;:&nbsp;
+  <input type="file" id="fileName" value="ph_img" onchange="readURL(this)"> <br><br>
+    <div id="UploadedImg">
+    
+    </div>
 제목 &nbsp;<input type="text" name="title" size="20" value="${sellmod.title }"><br><br>
 제품명&nbsp;<input type="text" name="ph_name" size="10" value="${sellmod.ph_name }"><br><br>
 제품명&nbsp;<input type="text" name="price" size="10" value="${sellmod.price }"><br><br>
@@ -47,9 +63,6 @@
 <input type= "submit" value="수정">
 <input type= "reset"  value="취소"><br>
 
-<select name="name" id='id">
- <c:foreach var="list" items="${sellmod.quantity}" varStatus="status">
-   <option>~</option>
-</c:forEach>
+
 </body>
 </html>
