@@ -48,19 +48,19 @@ function checkResult(){
 <div id="wrapper">
 <form action="${pageContext.request.contextPath}/join/join.do" id="login-form" method="post" class="login-form">
  <div class="content">
-아이디 : <input type="text" class="input username" name="name" id="id" /> 
+<br>아이디 : <input type="text" class="input username" name="name" id="id" /> 
 <input type="button" value="중복체크" onclick="idchk()"/> <br>
 <span id="checkMsg"></span><br>
-패스워드 : <input type="password" class="input username" name="pass" /><br>
-휴대폰번호 : <input type="text" class="input username" name="phone_num" /><br>
-주소 : <input type="text" class="input username" name="address" /><br>
-이메일 : <input type="text" class="input username" name="email" /><br>
+<br>패스워드 : <input type="password" class="input username" name="pass" /><br>
+<br>휴대폰번호 : <input type="text" class="input username" name="phone_num" /><br>
+<br>주소 : <input type="text" class="input username" name="address" /><br>
+<br>이메일 : <input type="text" class="input username" name="email" /><br>
 </div>
-<div class="footer">
-<input type="reset" class="button" value="Cancel">
-<input type="submit" class="button" value="Join">
 
-<input type="button" class="button" value="Back" onclick="back()">
+<div class="footer" >
+<input type="button"  class="register" value="Back" onclick="back()">
+<input type="submit" class="register" value="Join">
+
 </div>
 </form>
 </div>
