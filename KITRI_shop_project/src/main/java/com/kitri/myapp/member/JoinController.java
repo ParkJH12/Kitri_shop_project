@@ -18,6 +18,16 @@ public class JoinController {
 	public void setService(Service service) {
 		this.service = service;
 	}
+
+	
+    /*  index.do (초기 로그인 페이지)
+     *  넘겨야할 인자값 :: x 
+     */
+	@RequestMapping(value="/")
+	public String loginForm(){
+		System.out.println("초기화면 띄우기");
+		return "join/loginForm";
+	}
 	
 	@RequestMapping(value="/join/idCheck.do")
 	public ModelAndView join(@RequestParam(value="id")String id){
@@ -53,15 +63,7 @@ public class JoinController {
 	public String joinForm(){
 		return "join/joinForm";
 	}
-/*	@RequestMapping(value="/join/loginForm.do")
-	public String loginForm(){
-		return "join/loginForm";
-	}*/
-	
-	@RequestMapping(value="/")
-	public String loginForm(){
-		return "join/loginForm";
-	}
+
 	
 	
 	@RequestMapping(value= "/join/login.do")
