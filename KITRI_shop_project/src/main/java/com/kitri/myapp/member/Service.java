@@ -18,7 +18,6 @@ public interface Service {
 	 * @param j
 	 * @return
 	 */
-	
 	boolean login(Join j);
 	/**
 	 * 회원 정보 수정 하는 메소드

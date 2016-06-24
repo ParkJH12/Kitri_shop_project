@@ -5,25 +5,27 @@
 <head>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/httpRequest.js"></script>
 <script type="text/javascript">
-function idchk(){
+function idemailchk(){
+	alert("!!");
 	var idElement = document.getElementById('id');
-	var param = "id="+idElement.value;
-	
-	sendRequest("${pageContext.request.contextPath}/join/idCheck.do", param, checkResult, "POST");
-	
+	var emailElement = document.getElementById('email');
+
+	var param = "id="+idElement.value+"&email="+emailElement.value;
+	sendRequest("${pageContext.request.contextPath}/join/pwdFind.do", param, checkResult, "POST");
+	alert(param);
 	
 }
 function checkResult(){
 	if(httpRequest.readyState==4){
 		if(httpRequest.status==200){
 			var str = httpRequest.responseText;
+			alert(httpRequest.responseText);
 			var o = eval("("+str+")");
 			alert(o.flag);
 			var myDiv= document.getElementById("checkMsg");
 			var html = "";
 			if(o.flag){
-				html = "아이디 확인완료";
-				
+				alert(o.pass);
 			}else{
 				html = "없는 아이디";
 			}
@@ -39,9 +41,10 @@ function checkResult(){
 <h3>비밀번호 찾기 페이지</h3>
 
 
-ID &nbsp;:&nbsp;<input type="text" name="name">
-<input type="button" value="아이디체크" onclick="idchk()"/> <br>
-Email &nbsp;:&nbsp;<input type="text" name="email"><br><br>
+ID &nbsp;:&nbsp;<input type="text" name="name" id = "id">
+<input type="button" value="아이디체크" onclick="idemailchk()"/> <br>
+<span id="checkMsg"></span><br>
+Email &nbsp;:&nbsp;<input type="text" name="email" id = "email"><br><br>
 
 
 <input type= "submit" value="찾기">

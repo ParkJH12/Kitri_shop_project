@@ -28,16 +28,38 @@ public class JoinController {
 	@RequestMapping(value="/join/idCheck.do")
 	public ModelAndView join(@RequestParam(value="id")String id){
 		System.out.println("ID체크중 ");
-		Join j = service.getJoin(id);
-		boolean flag = false;
-		if( j== null){
-			flag = true;
+		Join j = service.getJoin(id); // request로 불러오는 id를 getJoin()에 넣어서 join j라는 새로운 객체에 넣는다
+		boolean flag = false; 
+		if( j== null){ // 만약 조회건수가 없을경우
+			flag = true; // false >> 조회실패 >> 다시 롤백, true >> 조회성공 >> 뿌려준다
 		}
 		System.out.println("ID체크완료 ");
 		ModelAndView mav = new ModelAndView("join/check");
 		mav.addObject("result",flag);
 		return mav;
 	}
+	@RequestMapping(value="/join/pwdFind.do")
+	public ModelAndView join2(@RequestParam(value="id")String id,@RequestParam(value="email")String email){
+		
+		System.out.println("id"+id);
+		System.out.println("em"+email);
+		System.out.println("ID Email체크중 ");
+		Join i = service.getJoin(id);
+		boolean flag = false;
+		if( i== null && i.getEmail() ==null){
+			flag = true;
+		}
+		String pass = i.getPass();
+		System.out.println(pass);
+		System.out.println("ID Email체크중 ");
+		ModelAndView mav = new ModelAndView("join/check");
+		mav.addObject("result",flag);
+		mav.addObject("result2",pass);
+		
+		return mav;
+	}
+	
+
 	
 	@RequestMapping(value="/join/join.do")
 	public String joinResult(Join join){
@@ -61,7 +83,6 @@ public class JoinController {
 		System.out.println("비번찾기이동중 ");
 		return "join/pwd_find";
 	}
-	
 	
 	@RequestMapping(value= "/join/login.do")
 	public String login(Join j, HttpServletRequest req){
