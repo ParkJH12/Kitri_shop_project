@@ -23,9 +23,9 @@ public class ServiceImple implements Service {
 	}
 
 	@Override
-	public Join getJoin(String id) {
+	public Join getJoin(String name) {
 		JoinMapper joinMapper = sqlSession.getMapper(JoinMapper.class);
-		return joinMapper.select(id);
+		return joinMapper.select_name(name);
 	}
 
 	@Override

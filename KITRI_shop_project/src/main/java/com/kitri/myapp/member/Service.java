@@ -12,12 +12,13 @@ public interface Service {
 	 * @param id
 	 * @return
 	 */
-	Join getJoin(String id);
+	Join getJoin(String name);
 	/**
 	 * 회원 로그인 하는 메소드
 	 * @param j
 	 * @return
 	 */
+	
 	boolean login(Join j);
 	/**
 	 * 회원 정보 수정 하는 메소드

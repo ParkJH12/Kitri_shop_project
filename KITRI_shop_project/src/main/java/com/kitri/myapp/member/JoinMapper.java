@@ -4,7 +4,9 @@ public interface JoinMapper {
 
 	void insert(Join j);
 
-	Join select(String id);
+	Join select_name(String name);
+	
+	Join select_m_num(String m_num);
 
 	void update(Join j);
 
