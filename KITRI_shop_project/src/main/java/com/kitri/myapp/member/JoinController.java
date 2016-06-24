@@ -27,13 +27,13 @@ public class JoinController {
 	
 	@RequestMapping(value="/join/idCheck.do")
 	public ModelAndView join(@RequestParam(value="id")String id){
-		
+		System.out.println("ID체크중 ");
 		Join j = service.getJoin(id);
 		boolean flag = false;
 		if( j== null){
 			flag = true;
 		}
-//		return "join/join";
+		System.out.println("ID체크완료 ");
 		ModelAndView mav = new ModelAndView("join/check");
 		mav.addObject("result",flag);
 		return mav;
@@ -42,21 +42,18 @@ public class JoinController {
 	@RequestMapping(value="/join/join.do")
 	public String joinResult(Join join){
 		service.addJoin(join);
+		System.out.println("회원가입완료 ");
 		return "join/loginForm";
 	}
 	@RequestMapping(value="/join/main.do")
 	public String main(){
-		
+		System.out.println("메인화면이동중 ");
 		return "join/main";
 	}
 	
-
-	
-	
-	
-	
 	@RequestMapping(value="/join/joinForm.do")
 	public String joinForm(){
+		System.out.println("회원가입이동중 ");
 		return "join/joinForm";
 	}
 
