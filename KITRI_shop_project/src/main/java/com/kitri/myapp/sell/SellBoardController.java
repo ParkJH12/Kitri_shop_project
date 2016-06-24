@@ -18,9 +18,9 @@ public class SellBoardController {
 	public void setService(Service service) {
 		this.service = service;
 	}
-	
+/*	
 	@RequestMapping(value ="/sell/sellreg.do" )
-	public String add(SellBoard s){
+	public String write(SellBoard s){
 		String fileName = s.getFile().getOriginalFilename();
 		String path = "C:\\Workspace\\Network\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\img\\" + fileName;
 		File f = new File(path);
@@ -35,7 +35,7 @@ public class SellBoardController {
 		service.WriteSellBoard(s);
 		return "redirect:/sell/selllist.do";
 		
-	}
+	}*/
 	
 	@RequestMapping(value="/sell/sellist.do") 
 	public ModelAndView list(){

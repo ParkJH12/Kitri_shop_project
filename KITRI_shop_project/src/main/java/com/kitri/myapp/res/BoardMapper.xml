@@ -34,7 +34,6 @@
 
 	<select id="selectByParentNum" resultMap="boardResultMap" 
 	parameterType="int">
-	한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.
 		select * from sell_ph_board where parent=#{parent}
 	</select>
 
@@ -46,13 +45,11 @@
 	
 	<select id="selectBytitle" resultMap="boardResultMap" 
 	parameterType="String">
-	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
 		select * from sell_ph_board where title=#{title}
 	</select>
 	
 	<select id="selectBycontent" resultMap="boardResultMap" 
 	parameterType="String">
-	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
 		select * from sell_ph_board where content = %#{content}%
 	</select>
 	
