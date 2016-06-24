@@ -55,12 +55,14 @@ img&nbsp;:&nbsp;
     <option value="LG">LG</option>
     <option value="ETC">ETC</option>
 </select><br><br>
-상태&nbsp;:&nbsp;<select name="quality" size="1">
+상태&nbsp;:&nbsp;<select name="quality" size="1"><br>
     <option selected value="sq">S</option>
     <option value="aq">A</option>
     <option value="bq">B</option>
     <option value="cq">C</option>
 </select>
+<br><br>
+상품 내용<input type="text" name="etc" size="80" style="height:100px;">
 </form>
 <br><br>
 <input type= "submit" value="등록">
