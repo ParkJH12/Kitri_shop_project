@@ -18,7 +18,7 @@ public class SellBoardController {
 	public void setService(Service service) {
 		this.service = service;
 	}
-/*	
+	
 	@RequestMapping(value ="/sell/sellreg.do" )
 	public String write(SellBoard s){
 		String fileName = s.getFile().getOriginalFilename();
@@ -35,7 +35,7 @@ public class SellBoardController {
 		service.WriteSellBoard(s);
 		return "redirect:/sell/selllist.do";
 		
-	}*/
+	}
 	
 	@RequestMapping(value="/sell/sellist.do") 
 	public ModelAndView list(){

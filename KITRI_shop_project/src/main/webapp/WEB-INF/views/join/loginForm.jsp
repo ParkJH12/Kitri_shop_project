@@ -67,7 +67,7 @@ $(document).ready(function() {
     <div class="footer">
     <!--LOGIN BUTTON--><input type="submit" name="submit" value="Login" class="button" /><!--END LOGIN BUTTON-->
     <!--REGISTER BUTTON--><input type="button" name="submit" value="Register" class="register" onclick=regist() /><!--END REGISTER BUTTON-->
-    <input type="button" value="패스워드찾기" onclick="pwd_find()">
+    <input type="button" value="Forgot password?" class="register" onclick="pwd_find()">
     </div>
     <!--END FOOTER-->
 

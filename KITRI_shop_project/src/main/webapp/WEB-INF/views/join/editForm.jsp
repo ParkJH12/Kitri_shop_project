@@ -18,7 +18,6 @@ function editCancel(){
 <title>::유저 정보 수정::</title>
 </head>
 <body>
-<h2>수정할 내용을 입력하세요</h2>
 <div id="wrapper">
 <form action = "${pageContext.request.contextPath}/join/edit.do" class="login-form name="logfrm" method="post">
  <div class="content">
