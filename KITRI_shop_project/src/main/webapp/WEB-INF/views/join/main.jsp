@@ -37,7 +37,7 @@
 </head>
 <body>
 
-<h2>${sessionScope.id}님 로그인중입니다.</h2>
+<h2>${sessionScope.name}님 로그인중입니다.</h2>
 
 <input type="button" name="memmod" value="정보수정" onclick="memmod()" required/>
 <input type="button" name="logout" value="로그아웃" onclick="logout()" required/>
