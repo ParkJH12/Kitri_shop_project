@@ -14,12 +14,12 @@
 </head>
 <body>
 <form action = "${pageContext.request.contextPath}/sell/sellreg.do" name="sellreg" method="post">
-제목 &nbsp;<input type="text" name="title" size="20"><br><br>
-제품명&nbsp;<input type="text" name="ph_name" size="10"><br><br>
-가격&nbsp;<input type="text" name="price" size="10"><br><br>
-수량&nbsp;<select name="quantity" size="1">
+제목 &nbsp;<input type="text" name="title" size="20" value="${sellmod.title }"><br><br>
+제품명&nbsp;<input type="text" name="ph_name" size="10" value="${sellmod.ph_name }"><br><br>
+제품명&nbsp;<input type="text" name="price" size="10" value="${sellmod.price }"><br><br>
+수량&nbsp;<select name="quantity" size="1" value="${sellmod.quantity }">
     <option selected value="1ea">1</option>
-    <option name="2ea">2</option>
+    <option value="2ea">2</option>
     <option value="3ea">3</option>
     <option value="4ea">4</option>
     <option value="5ea">5</option>
@@ -44,7 +44,7 @@
 </select>
 </form>
 <br><br>
-<input type= "submit" value="등록">
+<input type= "submit" value="수정">
 <input type= "reset"  value="취소"><br>
 
 
