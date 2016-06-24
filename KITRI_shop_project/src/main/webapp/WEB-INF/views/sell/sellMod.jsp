@@ -17,7 +17,7 @@
 제목 &nbsp;<input type="text" name="title" size="20" value="${sellmod.title }"><br><br>
 제품명&nbsp;<input type="text" name="ph_name" size="10" value="${sellmod.ph_name }"><br><br>
 제품명&nbsp;<input type="text" name="price" size="10" value="${sellmod.price }"><br><br>
-수량&nbsp;<select name="quantity" size="1" value="${sellmod.quantity }">
+수량&nbsp;<select name="quantity" size="1">
     <option selected value="1ea">1</option>
     <option value="2ea">2</option>
     <option value="3ea">3</option>
@@ -29,8 +29,8 @@
     <option value="9ea">9</option>
     <option value="10ea">10</option>
 </select><br><br>
-색상&nbsp;<input type="text" name="color"><br><br>
-통신사&nbsp;<select name="telcom" size="1">
+색상&nbsp;<input type="text" name="color" value="${sellmod.color }"><br><br>
+통신사&nbsp;<select name="telcom" size="1" >
     <option selected value="SKT">SKT</option>
     <option value="KT">KT</option>
     <option value="LG">LG</option>
@@ -47,6 +47,9 @@
 <input type= "submit" value="수정">
 <input type= "reset"  value="취소"><br>
 
-
+<select name="name" id='id">
+ <c:foreach var="list" items="${sellmod.quantity}" varStatus="status">
+   <option>~</option>
+</c:forEach>
 </body>
 </html>

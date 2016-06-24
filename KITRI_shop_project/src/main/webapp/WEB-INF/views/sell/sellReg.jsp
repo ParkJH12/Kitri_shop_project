@@ -19,7 +19,7 @@
 가격&nbsp;<input type="text" name="price" size="10"><br><br>
 수량&nbsp;<select name="quantity" size="1">
     <option selected value="1ea">1</option>
-    <option name="2ea">2</option>
+    <option value="2ea">2</option>
     <option value="3ea">3</option>
     <option value="4ea">4</option>
     <option value="5ea">5</option>
