@@ -56,7 +56,11 @@ public class JoinController {
 		System.out.println("회원가입이동중 ");
 		return "join/joinForm";
 	}
-
+	@RequestMapping(value="/join/pwd_find.do")
+	public String pwd_find(){
+		System.out.println("비번찾기이동중 ");
+		return "join/pwd_find";
+	}
 	
 	
 	@RequestMapping(value= "/join/login.do")
