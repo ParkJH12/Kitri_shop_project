@@ -21,8 +21,7 @@
 	<!-- resultSet의 역할을 해주는 resultMap result맵은 여러개에 대해 만들어 줘도 된다. -->
 
 		
-	<select id="select" resultMap="boardResultMap" 
-	parameterType="int">
+	<select id="select" resultMap="boardResultMap" parameterType="int">
 	<!-- id는 구현클래스의 메소드이름과 같아야 한다. -->
 	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
 		SELECT * FROM board where num=#{num}

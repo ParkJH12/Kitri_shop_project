@@ -23,17 +23,19 @@ public class ServiceImple implements Service {
 	}
 
 	@Override
-	public Join getJoin(String id) {
+	public Join getJoin(String name) {
 		JoinMapper joinMapper = sqlSession.getMapper(JoinMapper.class);
-		return joinMapper.select(id);
+		return joinMapper.select_name(name);
 	}
 
 	@Override
 	public boolean login(Join j) {
-		Join y = getJoin(j.getId());
-		if (y != null && y.getPwd().equals(j.getPwd())) {
+		Join y = getJoin(j.getName());
+		if (y != null && y.getPass().equals(j.getPass())) {
+			System.out.println("여기까지는된다1");
 			return true;
 		} else {
+			System.out.println("여기까지는된다1");
 			return false;
 		}
 	}

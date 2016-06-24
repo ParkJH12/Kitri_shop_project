@@ -6,34 +6,44 @@
 <mapper namespace="com.kitri.myapp.member.JoinMapper">
 <!-- 이름영역 만듦 -->
 
+<!-- CREATE TABLE MEMBER(
+M_NUM NUMBER PRIMARY KEY,
+NAME VARCHAR2(20) NOT NULL,
+PASS VARCHAR2(50) NOT NULL,
+PHONE_NUM VARCHAR2(30) NOT NULL,
+ADDRESS VARCHAR2(100) NOT NULL,
+EMAIL VARCHAR2(30),
+);
+ -->
 
 	<resultMap type="com.kitri.myapp.member.Join" 
 	id="JoinResultMap">
-		<result property="id" column="id" />
-		<result property="pwd" column="pwd" />
-		<result property="name" column="name" />
+		<result property="m_num" column="m_num" />
+		<result property="name" column="NAME" />
+		<result property="pass" column="pass" />
+		<result property="phone_num" column="phone_num" />
+		<result property="address" column="address" />
 		<result property="email" column="email" />
 	</resultMap>
 	<!-- resultSet의 역할을 해주는 resultMap result맵은 여러개에 대해 만들어 줘도 된다. -->
 
 		
-	<select id="select" resultMap="JoinResultMap" 
-	parameterType="String">
-	<!-- 한명검색 parametertype을 지정해준다. 예전 ?로 표기했던것.-->
-		SELECT * FROM join where id=#{id}
+	<select id="select_name" resultMap="JoinResultMap" parameterType="String">
+	<!-- 이름을 검색 -->
+		SELECT * FROM member where name=#{name}
 	</select>
 	
 	<insert id="insert" 
 	parameterType="com.kitri.myapp.member.Join" >
-		INSERT INTO join values(#{id}, #{pwd},#{name},#{email})
+		INSERT INTO member values(seq_MEMBER.nextval, #{name}, #{pass}, #{phone_num}, #{address}, #{email})
 	</insert>
 	
 	<update id="update" parameterType="com.kitri.myapp.member.Join">
-	update join set pwd=#{pwd},	name=#{name}, email=#{email} where id=#{id}
+	update member set pass=#{pass}, phone_num = #{phone_num}, address = #{address}, email=#{email} where name=#{name}
 	</update>
 	
 	<delete id="delete" parameterType="String">
-		delete join where id=#{id}
+		delete member where m_num=#{m_num}
 	</delete>
 
 </mapper>
