@@ -19,9 +19,10 @@ function editCancel(){
 <h2>수정할 내용을 입력하세요</h2>
 
 <form action = "${pageContext.request.contextPath}/join/edit.do" name="logfrm" method="post">
-아이디 : <input type="text"	name="id" readonly="readonly"  value="${editInfo.id}"/><br>
-패스워드 : <input type="password" name="pwd" value="${editInfo.pwd}"/><br>
-이름 : <input type="text" name="name" value="${editInfo.name}" /><br>
+아이디 : <input type="text"	name="name" readonly="readonly"  value="${editInfo.name}"/><br>
+패스워드 : <input type="pass" name="pass" value="${editInfo.pass}"/><br>
+휴대폰번호 : <input type="text" name="phone_num" value="${editInfo.phone_num}" /><br>
+주소 : <input type="text" name="address" value="${editInfo.address}" /><br>
 이메일 : <input type="text" name="email"  value="${editInfo.email}"/><br>
 <input type= "submit" value="수정완료"/> &nbsp;
 <input type= "button"  value="수정취소" onclick="editCancel()"/>
