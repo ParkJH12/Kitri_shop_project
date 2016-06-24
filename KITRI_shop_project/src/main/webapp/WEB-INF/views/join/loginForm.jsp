@@ -11,6 +11,10 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
 <!--Slider-in icons-->
 <script type="text/javascript">
+function regist() {
+	location.href="${pageContext.request.contextPath }/join/joinForm.do";
+}
+
 $(document).ready(function() {
 	$(".username").focus(function() {
 		$(".user-icon").css("left","-48px");
@@ -44,8 +48,8 @@ $(document).ready(function() {
 
 	<!--HEADER-->
     <div class="header">
-    <!--TITLE--><h1>Login Form</h1><!--END TITLE-->
-    <!--DESCRIPTION--><span>Fill out the form below to login to my super awesome imaginary control panel.</span><!--END DESCRIPTION-->
+    <!--TITLE--><h1>쇼핑몰 로그인</h1><!--END TITLE-->
+    <!--DESCRIPTION--><span>Welcome to cellphone market</span><!--END DESCRIPTION-->
     </div>
     <!--END HEADER-->
 	
@@ -59,7 +63,7 @@ $(document).ready(function() {
     <!--FOOTER-->
     <div class="footer">
     <!--LOGIN BUTTON--><input type="submit" name="submit" value="Login" class="button" /><!--END LOGIN BUTTON-->
-    <!--REGISTER BUTTON--><input type="submit" name="submit" value="Register" class="register" /><!--END REGISTER BUTTON-->
+    <!--REGISTER BUTTON--><input type="button" name="submit" value="Register" class="register" onclick=regist() /><!--END REGISTER BUTTON-->
     </div>
     <!--END FOOTER-->
 
