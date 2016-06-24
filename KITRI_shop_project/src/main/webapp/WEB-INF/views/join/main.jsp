@@ -41,6 +41,8 @@
 
 <input type="button" name="memmod" value="정보수정" onclick="memmod()" required/>
 <input type="button" name="logout" value="로그아웃" onclick="logout()" required/>
+<input type="button" name="out" value="회원탈퇴" onclick="delcheck()" required/>
+
 
 <br><br>
 <input type="button" name="reg" value="판매등록" onclick="sellreg()" required/>

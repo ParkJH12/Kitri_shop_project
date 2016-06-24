@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/httpRequest.js"></script>
 <script type="text/javascript">
 function idchk(){
@@ -43,20 +45,24 @@ function checkResult(){
 <title>회원가입</title>
 </head>
 <body>
-
-<form action="${pageContext.request.contextPath}/join/join.do" id="joinFrm" method="post">
-아이디 : <input type="text" name="name" id="id" /> 
+<div id="wrapper">
+<form action="${pageContext.request.contextPath}/join/join.do" id="login-form" method="post" class="login-form">
+ <div class="content">
+아이디 : <input type="text" class="input username" name="name" id="id" /> 
 <input type="button" value="중복체크" onclick="idchk()"/> <br>
 <span id="checkMsg"></span><br>
-패스워드 : <input type="password" name="pass" /><br>
-휴대폰번호 : <input type="text" name="phone_num" /><br>
-주소 : <input type="text" name="address" /><br>
-이메일 : <input type="text" name="email" /><br>
-<input type="submit" value="가입">
-<input type="reset" value="취소">
-<input type="button" value="뒤로가기" onclick="back()">
+패스워드 : <input type="password" class="input username" name="pass" /><br>
+휴대폰번호 : <input type="text" class="input username" name="phone_num" /><br>
+주소 : <input type="text" class="input username" name="address" /><br>
+이메일 : <input type="text" class="input username" name="email" /><br>
+</div>
+<div class="footer">
+<input type="reset" class="button" value="Cancel">
+<input type="submit" class="button" value="Join">
 
+<input type="button" class="button" value="Back" onclick="back()">
+</div>
 </form>
-
+</div>
 </body>
 </html>
