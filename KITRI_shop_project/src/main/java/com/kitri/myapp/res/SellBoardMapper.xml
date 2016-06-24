@@ -6,7 +6,6 @@
 <mapper namespace="com.kitri.myapp.sell.BoardMapper">
 <!-- 이름영역 만듦 -->
 
-
 	<resultMap type="com.kitri.myapp.sell.SellBoard" id="SellResultMap">
 		<result property="pb_num" column="pb_num" />
 		<result property="m_num" column="m_num" />
@@ -14,12 +13,13 @@
 		<result property="content" column="content" />
 		<result property="model" column="model" />
 		<result property="count" column="count" />
+		<result property="product_name" column="product_name" />
+		<result property="price" column="price" />
 		<result property="color" column="color" />
 		<result property="agency" column="agecny" />
 		<result property="statement" column="statement" />
 		<result property="img_path" column="img_path" />
 		<result property="w_date" column="w_date" />
-		
 		
 	</resultMap>
 		
@@ -54,11 +54,11 @@
 	
 	<insert id="insert" 
 	parameterType="com.kitri.myapp.sell.SellBoard" >
-		insert into sell_ph_board VALUES(SEQ_sell_ph_board.nextval, null, #{title}, #{content}, #{content}, #{model}, #{count}, #{agency}, #{statement}, #{img_path}, sysdate)
+		insert into sell_ph_board VALUES(SEQ_sell_ph_board.nextval, null, #{title}, #{content}, #{content}, #{model}, #{count}, #{product_name}, #{price}, #{agency}, #{statement}, #{img_path}, sysdate)
 	</insert>
 	
 	<update id="update" parameterType="com.kitri.myapp.sell.SellBoard">
-		UPDATE sell_ph_board SET w_date = sysdate, TITLE=#{TITLE}, CONTENT=#{CONTENT}, model=#{model}, count = #{count}, agency = #{agency}, statement = #{statement}, img_path = #{img_path} where pb_num=#{pb_num}
+		UPDATE sell_ph_board SET w_date = sysdate, TITLE=#{TITLE}, CONTENT=#{CONTENT}, model=#{model}, count = #{count}, agency = #{agency}, price = #{price}, statement = #{statement}, img_path = #{img_path}, product_name=#{product_name} where pb_num=#{pb_num}
 	</update>
 	
 	<delete id="delete" parameterType="int">
