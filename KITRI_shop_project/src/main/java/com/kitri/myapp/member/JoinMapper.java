@@ -12,6 +12,6 @@ public interface JoinMapper {
 
 	void update(Join j);
 
-	void delete(String id);
+	void delete(String name);
 	
 }

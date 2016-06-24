@@ -84,7 +84,7 @@
 <body>
 <h3>글목록</h3>
 
-<a href="${pageContext.request.contextPath }/board/writeForm.do">
+<a href="${pageContext.request.contextPath }/sell/selllist.do">
 글작성</a><br>
 
 
@@ -99,9 +99,9 @@
 	<c:forEach var="a" items="${list}">
 	<tr>
 			<td>${a.num}</td>
-			<td><a href="${pageContext.request.contextPath}/board/read.do?num=${a.num}" onmouseover="over(${a.num})" onmouseout="out()">${a.title}</a></td>
+			<td><a href="${pageContext.request.contextPath}/board/read.do?num=${a.pb_num}" onmouseover="over(${a.pb_num})" onmouseout="out()">${a.title}</a></td>
 		 		
-			<td>${a.writer}</td>
+			<td>${a.m_num}</td>
 			<td>${a.w_date}</td>
 	</tr>
 	</c:forEach>

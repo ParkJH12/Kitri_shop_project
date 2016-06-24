@@ -1,18 +1,18 @@
-package com.kitri.myapp.board;
+package com.kitri.myapp.sell;
 
 import java.util.List;
 
 public interface BoardMapper {
 
-	void insert(Article a);
+	void insert(SellBoard a);
 
-	Article select(int num);
+	SellBoard select(int num);
 	
-	List<Article> selectAll();
+	List<SellBoard> selectAll();
 	
-	List<Article> selectByParentNum(int parentNum);
+	List<SellBoard> selectByParentNum(int parentNum);
 
-	void update(Article a);
+	void update(SellBoard a);
 
 	void delete(int num);
 	

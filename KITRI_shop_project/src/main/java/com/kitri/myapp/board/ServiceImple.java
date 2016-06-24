@@ -70,4 +70,10 @@ public class ServiceImple implements Service {
 		return boardMapper.selectBytitle(title);
 	}
 
+	@Override
+	public List getArticleByContent(String content) {
+		BoardMapper boardMapper = sqlSession.getMapper(BoardMapper.class);
+		return boardMapper.selectByContent(content);
+	}
+
 }

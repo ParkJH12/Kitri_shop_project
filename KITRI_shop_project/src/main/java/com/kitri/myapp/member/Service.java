@@ -28,7 +28,7 @@ public interface Service {
 	 * 회원 정보 삭제 하는 메소드
 	 * @param id
 	 */
-	void delJoin(String id);
+	void delJoin(String name);
 	
 	
 }

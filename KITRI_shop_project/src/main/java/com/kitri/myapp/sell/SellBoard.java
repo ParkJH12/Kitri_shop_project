@@ -1,8 +1,10 @@
-package com.kitri.myapp.board;
+package com.kitri.myapp.sell;
 
 import java.sql.Date;
 
-public class Article {
+import org.springframework.web.multipart.MultipartFile;
+
+public class SellBoard {
 	
 	private int pb_num;
 	private int m_num;
@@ -11,20 +13,18 @@ public class Article {
 	private String model;
 	private int count;
 	private String product_name;
-	private int price;
 	private String color;
 	private String agency;
 	private String statement;
 	private String img_path;
 	private Date w_date;
+	private MultipartFile file;
 	
-
-	public Article() {
+	public SellBoard() {
 	}
-
-
-	public Article(int pb_num, int m_num, String title, String content, String model, int count, String product_name,
-			int price, String color, String agency, String statement, String img_path, Date w_date) {
+	
+	public SellBoard(int pb_num, int m_num, String title, String content, String model, int count, String product_name,
+			String color, String agency, String statement, String img_path, Date w_date, MultipartFile file) {
 		this.pb_num = pb_num;
 		this.m_num = m_num;
 		this.title = title;
@@ -32,24 +32,14 @@ public class Article {
 		this.model = model;
 		this.count = count;
 		this.product_name = product_name;
-		this.price = price;
 		this.color = color;
 		this.agency = agency;
 		this.statement = statement;
 		this.img_path = img_path;
 		this.w_date = w_date;
+		this.file = file;
 	}
 
-
-
-	public int getPrice() {
-		return price;
-	}
-
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
 
 
 	public int getPb_num() {
@@ -87,13 +77,6 @@ public class Article {
 	public String getModel() {
 		return model;
 	}
-	public String getProduct_name() {
-		return product_name;
-	}
-
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
-	}
 
 	public void setModel(String model) {
 		this.model = model;
@@ -105,6 +88,14 @@ public class Article {
 
 	public void setCount(int count) {
 		this.count = count;
+	}
+
+	public String getProduct_name() {
+		return product_name;
+	}
+
+	public void setProduct_name(String product_name) {
+		this.product_name = product_name;
 	}
 
 	public String getColor() {
@@ -146,7 +137,13 @@ public class Article {
 	public void setW_date(Date w_date) {
 		this.w_date = w_date;
 	}
-	
-	
 
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+	
 }

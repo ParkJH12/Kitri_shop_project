@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
 <script type="text/javascript">
 function editCancel(){
 	var editCancel = window.confirm("수정을 취소 하시겠습니까?");
@@ -16,17 +18,21 @@ function editCancel(){
 <title>::유저 정보 수정::</title>
 </head>
 <body>
-<h2>수정할 내용을 입력하세요</h2>
+<div id="wrapper">
+<form action = "${pageContext.request.contextPath}/join/edit.do" class="login-form name="logfrm" method="post">
+ <div class="content">
+<br>아이디 : <input type="text" class="input username"	name="name" readonly="readonly"  value="${editInfo.name}"/><br>
+<br>패스워드 : <input type="pass" class="input username" name="pass" value="${editInfo.pass}"/><br>
+<br>휴대폰번호 : <input type="text" class="input username" name="phone_num" value="${editInfo.phone_num}" /><br>
+<br>주소 : <input type="text" class="input username" name="address" value="${editInfo.address}" /><br>
+<br>이메일 : <input type="text" class="input username" name="email"  value="${editInfo.email}"/><br>
+</div>
+<div class="footer" >
+<input type= "button" class="register"  value="Cancle" onclick="editCancel()"/>
+<input type= "submit" class="register" value="modify"/>
 
-<form action = "${pageContext.request.contextPath}/join/edit.do" name="logfrm" method="post">
-아이디 : <input type="text"	name="name" readonly="readonly"  value="${editInfo.name}"/><br>
-패스워드 : <input type="pass" name="pass" value="${editInfo.pass}"/><br>
-휴대폰번호 : <input type="text" name="phone_num" value="${editInfo.phone_num}" /><br>
-주소 : <input type="text" name="address" value="${editInfo.address}" /><br>
-이메일 : <input type="text" name="email"  value="${editInfo.email}"/><br>
-<input type= "submit" value="수정완료"/> &nbsp;
-<input type= "button"  value="수정취소" onclick="editCancel()"/>
+</div>
 </form>
-
+</div>
 </body>
 </html>

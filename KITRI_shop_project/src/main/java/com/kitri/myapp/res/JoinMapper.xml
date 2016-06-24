@@ -42,8 +42,8 @@ EMAIL VARCHAR2(30),
 	update member set pass=#{pass}, phone_num = #{phone_num}, address = #{address}, email=#{email} where name=#{name}
 	</update>
 	
-	<delete id="delete" parameterType="String">
-		delete member where m_num=#{m_num}
+	<delete id="delete" parameterType="string">
+		delete member where name=#{name}
 	</delete>
 
 </mapper>

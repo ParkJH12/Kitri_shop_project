@@ -121,8 +121,8 @@ public class JoinController {
 	@RequestMapping(value= "/join/out.do")
 	public String leaveUser(HttpServletRequest req){
 		HttpSession session = req.getSession();
-		String id = (String)session.getAttribute("id");
-		service.delJoin(id);
+		String name = (String)session.getAttribute("name");
+		service.delJoin(name);
 		return "join/loginForm";
 	}
 	//판매버튼/////////////////////////
