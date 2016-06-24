@@ -14,6 +14,9 @@
 function regist() {
 	location.href="${pageContext.request.contextPath }/join/joinForm.do";
 }
+function pwd_find(){
+	location.href="${pageContext.request.contextPath }/join/pwd_find.do";
+}
 
 $(document).ready(function() {
 	$(".username").focus(function() {
@@ -64,6 +67,7 @@ $(document).ready(function() {
     <div class="footer">
     <!--LOGIN BUTTON--><input type="submit" name="submit" value="Login" class="button" /><!--END LOGIN BUTTON-->
     <!--REGISTER BUTTON--><input type="button" name="submit" value="Register" class="register" onclick=regist() /><!--END REGISTER BUTTON-->
+    <input type="button" value="패스워드찾기" onclick="pwd_find()">
     </div>
     <!--END FOOTER-->
 
