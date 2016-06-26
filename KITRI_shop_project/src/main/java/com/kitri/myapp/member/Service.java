@@ -19,6 +19,7 @@ public interface Service {
 	 * @return
 	 */
 	Join getJoin2(String email);
+	
 	boolean login(Join j);
 	/**
 	 * 회원 정보 수정 하는 메소드
@@ -31,5 +32,5 @@ public interface Service {
 	 */
 	void delJoin(String name);
 	
-	
+	void cashUp(int cash);
 }

@@ -8,22 +8,25 @@ public class Join {
 	private String phone_num;
 	private String address;
 	private String email;
+	private int cash;
 	
 	
-	@Override
-	public String toString() {
-		return "Join [m_num=" + m_num + ", name=" + name + ", pass=" + pass + ", phone_num=" + phone_num + ", address="
-				+ address + ", email=" + email + "]";
-	}
-	public Join() {
-	}
-	public Join(int m_num, String name, String pass, String phone_num, String address, String email) {
+	public Join(int m_num, String name, String pass, String phone_num, String address, String email, int cash) {
+		super();
 		this.m_num = m_num;
 		this.name = name;
 		this.pass = pass;
 		this.phone_num = phone_num;
 		this.address = address;
 		this.email = email;
+		this.cash = cash;
+	}
+	@Override
+	public String toString() {
+		return "Join [m_num=" + m_num + ", name=" + name + ", pass=" + pass + ", phone_num=" + phone_num + ", address="
+				+ address + ", email=" + email + "]";
+	}
+	public Join() {
 	}
 	public int getM_num() {
 		return m_num;
@@ -60,6 +63,12 @@ public class Join {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public int getCash() {
+		return cash;
+	}
+	public void setCash(int cash) {
+		this.cash = cash;
 	}
 	
 }

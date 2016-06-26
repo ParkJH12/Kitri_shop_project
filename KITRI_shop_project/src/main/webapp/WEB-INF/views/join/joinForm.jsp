@@ -9,10 +9,8 @@
 <script type="text/javascript">
 function idchk(){
 	var idElement = document.getElementById('id');
-	var param = "id="+idElement.value;
-	
+	var param = "name="+idElement.value;
 	sendRequest("${pageContext.request.contextPath}/join/idCheck.do", param, checkResult, "POST");
-	
 	
 }
 
@@ -24,17 +22,19 @@ function back() {
 function checkResult(){
 	if(httpRequest.readyState==4){
 		if(httpRequest.status==200){
-			var str = httpRequest.responseText;
+							
+			 var str = httpRequest.responseText;
 			var o = eval("("+str+")");
-			alert(o.flag);
 			var myDiv= document.getElementById("checkMsg");
 			var html = "";
-			if(o.flag){
+			alert(o.flag);
+			if(o.flag == 'true'){
 				html = "사용가능한 아이디";				
-			}else{
+			}else if(o.flag == 'false'){
 				html = "사용불가능한 아이디";
 			}
-			myDiv.innerHTML = html;
+			alert(html);
+			myDiv.innerHTML = html; 
 		}
 	}
 }

@@ -41,7 +41,6 @@ public class ServiceImple implements Service {
 	@Override
 	public void editJoin(Join j) {
 		JoinMapper joinMapper = sqlSession.getMapper(JoinMapper.class);
-
 		joinMapper.update(j);
 	}
 
@@ -56,6 +55,12 @@ public class ServiceImple implements Service {
 		JoinMapper joinMapper = sqlSession.getMapper(JoinMapper.class);
 		return joinMapper.select_name(email);
 	
+	}
+
+	@Override
+	public void cashUp(int cash) {
+		JoinMapper joinMapper = sqlSession.getMapper(JoinMapper.class);
+		joinMapper.cashUp(cash);
 	}
 
 }

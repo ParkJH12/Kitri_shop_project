@@ -18,18 +18,14 @@ function checkResult(){
 		if(httpRequest.status==200){
 			var str = httpRequest.responseText;
 			alert("responseText"+httpRequest.responseText);
-			
-			alert(responseText);
 			var o = eval("("+str+")");
-			alert("o.flag"+o.flag);
+			alert(o.flag);
 			var myDiv= document.getElementById("checkMsg");
 			var html = "";
-			if(o.flag){
+			if(o.flag == 'true'){
 				alert("패스워드는"+o.pass+"입니다");
-				
 			}else{
-				alert(o.pass);
-				alert("아이디나 이메일이 일치하지 않습니다");
+				alert("아이디나 이메일이 일치하지 않습니다 다시 확인해주세요");
 			}
 			myDiv.innerHTML = html;
 		}
@@ -44,12 +40,11 @@ function checkResult(){
 
 
 ID &nbsp;:&nbsp;<input type="text" name="name" id = "id">
-<input type="button" value="아이디체크" onclick="idemailchk()"/> <br>
 <span id="checkMsg"></span><br>
 Email &nbsp;:&nbsp;<input type="text" name="email" id = "email"><br><br>
 
 
-<input type= "submit" value="찾기">
-<input type= "reset"  value="취소"><br>
+<input type= "button" value="찾기" onclick="idemailchk()"/>
+<input type= "button" value="취소" onclick="location.href='${pageContext.request.contextPath}/'"><br>
 </body>
 </html>

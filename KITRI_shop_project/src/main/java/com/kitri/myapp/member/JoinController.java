@@ -26,42 +26,36 @@ public class JoinController {
 	}
 	
 	@RequestMapping(value="/join/idCheck.do")
-	public ModelAndView join(@RequestParam(value="id")String id){
+	public ModelAndView join(@RequestParam(value="name")String name){
 		System.out.println("ID체크중 ");
-		Join j = service.getJoin(id); // request로 불러오는 id를 getJoin()에 넣어서 join j라는 새로운 객체에 넣는다
+		Join j = service.getJoin(name); // request로 불러오는 id를 getJoin()에 넣어서 join j라는 새로운 객체에 넣는다
 		boolean flag = false; 
-		if( j== null){ // 만약 조회건수가 없을경우
+		if( j == null){ // 만약 조회건수가 없을경우
 			flag = true; // false >> 조회실패 >> 다시 롤백, true >> 조회성공 >> 뿌려준다
 		}
 		System.out.println("ID체크완료 ");
 		ModelAndView mav = new ModelAndView("join/check");
-		mav.addObject("result",flag);
+		mav.addObject("flag",flag);
 		return mav;
 	}
+	
 	@RequestMapping(value="/join/pwdFind.do")
 	public ModelAndView join2(@RequestParam(value="id")String id,@RequestParam(value="email")String email){
 	
 		System.out.println("ID Email체크중 ");
 		Join i = service.getJoin(id);
-		Join j = service.getJoin(email);
 		boolean flag = false;
-		String pass = null;
-		if(i== null && j ==null){
+		String pass = "";
+		if(i != null && i.getEmail().equals(email)){
 			flag = true;
-		}else{
 			pass = i.getPass();
-			System.out.println(pass);
-			System.out.println("flag"+flag);
-			System.out.println("ID Email체크중 ");
-		
+		}else{
+			pass = "";
 		}
-		
-		
 		
 		ModelAndView mav = new ModelAndView("join/check2");
 		mav.addObject("result",flag);
 		mav.addObject("result2",pass);
-		
 		return mav;
 	}
 	
@@ -130,7 +124,13 @@ public class JoinController {
 		String name = (String)session.getAttribute("name");
 		service.delJoin(name);
 		return "join/loginForm";
+	}	
+	@RequestMapping(value= "/join/cashup.do")
+	public String cashup(HttpServletRequest req, @RequestParam("cash") int cash){
+		
+		return "join/main";
 	}
+	
 	//판매버튼/////////////////////////
 	
 	@RequestMapping(value="/join/sellreg.do")

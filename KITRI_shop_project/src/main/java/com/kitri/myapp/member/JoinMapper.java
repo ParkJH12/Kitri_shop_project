@@ -13,5 +13,7 @@ public interface JoinMapper {
 	void update(Join j);
 
 	void delete(String name);
+
+	void cashUp(int cash);
 	
 }

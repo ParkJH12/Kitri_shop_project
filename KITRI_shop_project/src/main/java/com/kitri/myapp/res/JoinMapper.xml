@@ -13,6 +13,7 @@ PASS VARCHAR2(50) NOT NULL,
 PHONE_NUM VARCHAR2(30) NOT NULL,
 ADDRESS VARCHAR2(100) NOT NULL,
 EMAIL VARCHAR2(30),
+// 캐시충전 추가
 );
  -->
 
@@ -35,11 +36,15 @@ EMAIL VARCHAR2(30),
 	
 	<insert id="insert" 
 	parameterType="com.kitri.myapp.member.Join" >
-		INSERT INTO member values(seq_MEMBER.nextval, #{name}, #{pass}, #{phone_num}, #{address}, #{email})
+		INSERT INTO member values(seq_MEMBER.nextval, #{name}, #{pass}, #{phone_num}, #{address}, #{email}, 0)
 	</insert>
 	
 	<update id="update" parameterType="com.kitri.myapp.member.Join">
 	update member set pass=#{pass}, phone_num = #{phone_num}, address = #{address}, email=#{email} where name=#{name}
+	</update>
+	
+	<update id="cashUp" parameterType="com.kitri.myapp.member.Join">
+		update member set cash = cash+#{cash} where name=#{name}
 	</update>
 	
 	<delete id="delete" parameterType="string">
