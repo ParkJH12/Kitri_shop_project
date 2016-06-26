@@ -55,7 +55,7 @@
 		(SEQ_sell_ph_board.nextval, #{writer}, 
 		#{title}, #{content}, #{content}, #{model}, 
 		#{count}, #{product_name}, #{price}, #{color}, 
-		#{agency}, #{statement}, #{img_path}, sysdate)
+		#{agency}, #{statement}, <!-- #{img_path} -->null, sysdate)
 	</insert>
 	
 	<update id="update" parameterType="com.kitri.myapp.sell.SellBoard">

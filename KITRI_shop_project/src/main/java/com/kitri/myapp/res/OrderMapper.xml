@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kitri.myapp.order.OrderMapper">
+<!-- 이름영역 만듦 -->
+
+	<resultMap type="com.kitri.myapp.order.Order" 
+	id="OrderResultMap">
+		<result property="order_no" column="order_no" />
+		<result property="seller_name" column="seller_name" />
+		<result property="seller_phone_num" column="seller_phone_num" />
+		<result property="buyer_name" column="buyer_name" />
+		<result property="buyer_phone_num" column="buyer_phone_num" />
+		<result property="title" column="title" />
+		<result property="product_name" column="product_name" />
+		<result property="count" column="count" />
+		<result property="price" column="price" />
+		<result property="w_date" column="w_date" />
+	</resultMap>
+
+	<resultMap type="com.kitri.myapp.member.Join" 
+	id="JoinResultMap">
+		<result property="m_num" column="m_num" />
+		<result property="name" column="NAME" />
+		<result property="pass" column="pass" />
+		<result property="phone_num" column="phone_num" />
+		<result property="address" column="address" />
+		<result property="email" column="email" />
+	</resultMap>
+		
+	<resultMap type="com.kitri.myapp.sell.SellBoard" id="SellResultMap">
+		<result property="pb_num" column="pb_num" />
+		<result property="writer" column="writer" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="model" column="model" />
+		<result property="count" column="count" />
+		<result property="color" column="color" />
+		<result property="agency" column="agecny" />
+		<result property="statement" column="statement" />
+		<result property="img_path" column="img_path" />
+		<result property="w_date" column="w_date" />
+	</resultMap>
+	
+	<select id="select_name" resultMap="JoinResultMap" parameterType="String">
+		SELECT * FROM member where name=#{name}
+	</select>
+	
+	<select id="select" resultMap="SellResultMap" parameterType="int">
+		SELECT * FROM sell_ph_board where pb_num=#{pb_num}
+	</select>
+	
+	<insert id="insert" parameterType="com.kitri.myapp.order.Order" >
+		INSERT INTO order values(seq_order.nextval, #{seller_name}, 
+		#{seller_phone_num}, #{buyer_name}, #{buyer_phone_num}, 
+		#{title}, #{product_name}, #{count}, #{price}, sysdate)
+	</insert>
+	
+	<delete id="delete" parameterType="int">
+		delete order where order_no=#{order_no}
+	</delete>
+
+</mapper>

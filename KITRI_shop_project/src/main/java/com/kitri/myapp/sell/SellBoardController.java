@@ -21,7 +21,7 @@ public class SellBoardController {
 	
 	@RequestMapping(value ="/sell/sellreg.do" )
 	public String write(SellBoard s){
-		String fileName = s.getFile().getOriginalFilename();
+		/*String fileName = s.getFile().getOriginalFilename();
 		String path = "C:\\Users\\Administrator\\Documents\\Kitri_shop_project\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\img\\" + fileName;
 		File f = new File(path);
 		try {
@@ -31,7 +31,7 @@ public class SellBoardController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		s.setImg_path("/sellboard/" + fileName);
+		s.setImg_path("/sellboard/" + fileName);*/
 		service.WriteSellBoard(s);
 		return "redirect:/sell/selllist.do";
 		

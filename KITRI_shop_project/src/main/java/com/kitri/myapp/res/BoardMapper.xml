@@ -34,8 +34,6 @@ W_DATE DATE DEFAULT SYSDATE
 		<result property="statement" column="statement" />
 		<result property="img_path" column="img_path" />
 		<result property="w_date" column="w_date" />
-		
-		
 	</resultMap>
 		
 	<select id="select" resultMap="boardResultMap" parameterType="int">
