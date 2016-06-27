@@ -15,7 +15,7 @@ public interface OrderMapper {
 	
 	void insert(Order o);
 	
-	void delete(String name);
+	void delete(int order_no);
 	
 	
 }

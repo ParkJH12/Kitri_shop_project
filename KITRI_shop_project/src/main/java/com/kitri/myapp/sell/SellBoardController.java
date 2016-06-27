@@ -8,6 +8,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -45,6 +46,14 @@ public class SellBoardController {
 		ModelAndView mav = new ModelAndView("sell/selList");
 		ArrayList<SellBoard> list = (ArrayList<SellBoard>) service.getSellBoardRoot();
 		mav.addObject("list", list);
+		return mav;
+	}
+	
+	@RequestMapping(value="/sell/seldetail.do") 
+	public ModelAndView detail(@RequestParam(value="pb_num")int pb_num){
+		SellBoard s = service.getSellBoardBynum(pb_num);
+		ModelAndView mav = new ModelAndView("sell/seldetail");
+		mav.addObject("s", s);
 		return mav;
 	}
 	
