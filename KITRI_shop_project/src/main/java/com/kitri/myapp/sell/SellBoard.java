@@ -7,7 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class SellBoard {
 	
 	private int pb_num;
-	private int m_num;
+	private String writer;
 	private String title;
 	private String content;
 	private String model;
@@ -20,15 +20,14 @@ public class SellBoard {
 	private String img_path;
 	private Date w_date;
 	private MultipartFile file;
-	private String writer;
 
-	
-	public SellBoard(int pb_num, int m_num, String title, String content, String model, int count, String product_name,
-			int price, String color, String agency, String statement, String img_path, Date w_date, MultipartFile file,
-			String writer) {
+
+	public SellBoard(int pb_num, String writer, String title, String content, String model, int count,
+			String product_name, int price, String color, String agency, String statement, String img_path,
+			Date w_date) {
 		super();
 		this.pb_num = pb_num;
-		this.m_num = m_num;
+		this.writer = writer;
 		this.title = title;
 		this.content = content;
 		this.model = model;
@@ -40,21 +39,18 @@ public class SellBoard {
 		this.statement = statement;
 		this.img_path = img_path;
 		this.w_date = w_date;
-		this.file = file;
-		this.writer = writer;
-	}
-
-	public String getWriter() {
-		return writer;
-	}
-
-	public void setWriter(String writer) {
-		this.writer = writer;
 	}
 
 	public SellBoard() {
 	}
 
+	public String getWriter() {
+		return writer;
+	}
+	
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
 
 	public int getPrice() {
 		return price;
@@ -70,14 +66,6 @@ public class SellBoard {
 
 	public void setPb_num(int pb_num) {
 		this.pb_num = pb_num;
-	}
-
-	public int getM_num() {
-		return m_num;
-	}
-
-	public void setM_num(int m_num) {
-		this.m_num = m_num;
 	}
 
 	public String getTitle() {
