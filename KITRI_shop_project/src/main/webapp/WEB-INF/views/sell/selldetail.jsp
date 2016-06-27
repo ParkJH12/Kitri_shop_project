@@ -9,11 +9,12 @@
 function back(){
 	location.href="${pageContext.request.contextPath}/sell/sellist.do";
 }
+function sellmod(){
 
-function modi_pro(){
-	location.href="${pageContext.request.contextPath}/sell/sellmod.do";
+	alert("aa");
+	alert('${pb_num}');
+	location.href="${pageContext.request.contextPath }/sell/sellmod.do?pb_num=${s.pb_num}";
 }
-
 
 
 </script>
