@@ -46,7 +46,7 @@ img&nbsp;:&nbsp;
 
 <input type="button" value="뒤로가기" onclick="back()">
 
-<c:if test="${s.m_num eq sessionScope.m_num }">
+<c:if test="${s.m_num eq 'sessionScope.m_num' }">
 <input type="button" value="상품수정" onclick="modi_pro()">
 </c:if>
 </body>

@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.context.request.SessionScope;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -145,9 +145,13 @@ public class JoinController {
 	//판매버튼/////////////////////////
 	
 	@RequestMapping(value="/join/sellreg.do")
-	public String sellreg(){
-		
-		return "sell/sellReg";
+	public ModelAndView sellreg(HttpServletRequest req){
+		HttpSession session = req.getSession();
+		String name = (String) session.getAttribute("name");
+		Join j = service.getJoin(name);
+		ModelAndView mav = new ModelAndView("sell/sellReg");
+		mav.addObject("j",j);
+		return mav;
 	}
 	@RequestMapping(value="/join/sellmod.do")
 	public String sellmod(){
