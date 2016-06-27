@@ -29,7 +29,7 @@
 	function memmod(){
 		location.href="${pageContext.request.contextPath}/join/editForm.do";
 	}
-	function sellreg(){
+	function cashup(){
 		location.href="${pageContext.request.contextPath}/join/cashup.do";
 	}
 </script>
@@ -53,7 +53,7 @@
 
 <br><br>
 
-<input type="button" name="out" value="캐시충전" onclick="cashup()" required/>
+<input type="button" name="cash" value="캐시충전" onclick="cashup()" required/>
 
 
 
