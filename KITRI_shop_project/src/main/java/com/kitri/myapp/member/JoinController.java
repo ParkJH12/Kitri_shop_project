@@ -127,7 +127,7 @@ public class JoinController {
 	}	
 	@RequestMapping(value= "/join/cashup.do")
 	public String cashup(HttpServletRequest req, @RequestParam("cash") int cash){
-		
+		System.out.println("충");
 		return "join/main";
 	}
 	
@@ -154,13 +154,6 @@ public class JoinController {
 		return "sell/sellBag";
 	}
 	//////////////////////
-	@RequestMapping(value="/sell/charge.do")
-	public String joinResult(int cash){
-		service.cashUp(cash);
-		System.out.println("회원가입완료 ");
-		return "join/loginForm";
-	}
-	
 	
 	
 }

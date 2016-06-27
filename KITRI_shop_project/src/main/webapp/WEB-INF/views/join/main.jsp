@@ -30,8 +30,8 @@
 		location.href="${pageContext.request.contextPath}/join/editForm.do";
 	}
 	function sellreg(){
-		location.href="${pageContext.request.contextPath}/cash/charge.do";
-
+		location.href="${pageContext.request.contextPath}/join/cashup.do";
+	}
 </script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -39,7 +39,7 @@
 <body>
 
 <h2>${sessionScope.name}님 로그인중입니다.</h2>
-<br>보유 캐시 : ${cash.cash } 원 입니다.
+<br>보유 캐시 : ${cash.cash } 원 입니다.<br>
 <input type="button" name="memmod" value="정보수정" onclick="memmod()" required/>
 <input type="button" name="logout" value="로그아웃" onclick="logout()" required/>
 <input type="button" name="out" value="회원탈퇴" onclick="delcheck()" required/>
@@ -53,7 +53,7 @@
 
 <br><br>
 
-<input type="button" name="out" value="캐시충전" onclick="charge()" required/>
+<input type="button" name="out" value="캐시충전" onclick="cashup()" required/>
 
 
 
