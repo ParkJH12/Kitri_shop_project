@@ -98,7 +98,7 @@
 	<c:forEach var="a" items="${list}">
 	<tr>
 			<td>${a.pb_num}</td>
-			<td><a href="${pageContext.request.contextPath}/sell/selldetail.do?num=${a.pb_num}">${a.title}</a></td>
+			<td><a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${a.pb_num}">${a.title}</a></td>
 			<td>${a.writer}</td>
 			<td>${a.w_date}</td>
 	</tr>
@@ -106,7 +106,7 @@
 
 </table>
 <div id="previewDiv" style="postition:absolute;top:100px;left:300px;"></div>
-<form form action = "${pageContext.request.contextPath}/sell/selllist.do" name="sell_list" method="post">
+<form form action = "${pageContext.request.contextPath}/sell/sellist.do" name="sell_list" method="post">
 <input type="radio" name="type" value="1" checked>작성자
 <input type="radio" name="type" value="2">제목
 <input type="text" name="keyword">

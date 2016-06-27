@@ -24,7 +24,7 @@ img&nbsp;:&nbsp;
 색상&nbsp;:&nbsp;<input type="text" name="color" value="${s.color }" readonly="readonly"><br><br>
 통신사&nbsp;:&nbsp;<input type="text" name="agency" value="${s.agency }" readonly="readonly"><br><br>
 상태&nbsp;:&nbsp;<input type="text" name="statement" value="${s.statement }" readonly="readonly"><br><br>
-상품 내용<input type="text" name="content" value="${pb_num.content }" readonly="readonly" size="80" style="height:100px;">
+상품 내용<input type="text" name="content" value="${s.content }" readonly="readonly" size="80" style="height:100px;">
 <br><br>
 </form>
 
