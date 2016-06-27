@@ -12,7 +12,7 @@
 		}
 	}
 	function sellreg(){
-		location.href="${pageContext.request.contextPath}/join/sellreg.do";
+		location.href="${pageContext.request.contextPath}/join/sellreg.do?=${sessionScope.name}";
 	}
 	function sellmod(){
 		location.href="${pageContext.request.contextPath}/join/sellmod.do";
