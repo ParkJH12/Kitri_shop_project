@@ -2,6 +2,7 @@ package com.kitri.myapp.sell;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.ProcessBuilder.Redirect;
 import java.util.ArrayList;
 
 import javax.annotation.Resource;
@@ -64,18 +65,22 @@ public class SellBoardController {
 		mav.addObject("j", j); // join
 		return mav;
 	}
+	
 	@RequestMapping(value="/sell/sellup.do") 
-	public ModelAndView sellup(@RequestParam(value="pb_num")int pb_num){
-		SellBoard s = service.getSellBoardBynum(pb_num);
-		ModelAndView mav = new ModelAndView("sell/sellMod");
-		mav.addObject("s", s);
-		return mav;
+	public String sellup(SellBoard s){
+		System.out.println(s);
+		service.editSellBoard(s);
+		return "redirect:/sell/sellist.do";
 	}
+	
+	@RequestMapping(value="/sell/sellmod.do") 
 	public ModelAndView sellmod(@RequestParam(value="pb_num")int pb_num){
+		System.out.println(pb_num);
 		SellBoard s = service.getSellBoardBynum(pb_num);
 		ModelAndView mav = new ModelAndView("sell/sellMod");
 		mav.addObject("s", s);
 		return mav;
 	}
+	
 	
 }

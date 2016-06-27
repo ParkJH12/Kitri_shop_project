@@ -160,6 +160,8 @@ public class JoinController {
 	@RequestMapping(value="/join/sellist.do")
 	public String sellist(){
 		
+		
+		
 		return "sell/selList";
 	}
 	@RequestMapping(value="/join/sellbag.do")

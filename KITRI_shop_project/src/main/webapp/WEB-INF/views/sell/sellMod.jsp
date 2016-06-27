@@ -9,15 +9,16 @@
 function back(){
 	location.href="${pageContext.request.contextPath}/sell/sellist.do";
 }
-function sellmod(){
+/* function sellup(){
+	alert('${s.pb_num}');
 	location.href="${pageContext.request.contextPath}/sell/sellup.do";
 }
-
+ */
 </script>
 <title>Insert title here</title>
 </head>
 <body>
-<form action = "${pageContext.request.contextPath}/sell/sellnum.do?=${s.pb_num}" name="sellreg" method="post" enctype="multipart/form-data">
+<form action = "${pageContext.request.contextPath}/sell/sellup.do" name="sellreg" method="post" enctype="multipart/form-data">
 img&nbsp;:&nbsp;
 	
 	<!-- 
@@ -35,10 +36,14 @@ img&nbsp;:&nbsp;
 통신사&nbsp;:&nbsp;<input type="text" name="agency" value="${s.agency }"><br><br>
 상태&nbsp;:&nbsp;<input type="text" name="statement" value="${s.statement }"><br><br>
 상품 내용<input type="text" name="content" value="${s.content }" size="80" style="height:100px;">
+<input type="hidden" name="w_date" value="${s.w_date }">
+<input type="hidden" name="writer" value="${s.writer }">
+<input type="hidden" name="pb_num" value="${s.pb_num}">
 <br><br>
+<input type="submit" value="상품수정"/>
+
 </form>
 
-<input type="button" name="mod" value="상품수정" onclick="sellup()" required/>
 
 <input type="button" value="뒤로가기" onclick="back()">
 
