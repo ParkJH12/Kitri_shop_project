@@ -42,15 +42,13 @@ img&nbsp;:&nbsp;
 <br><br>
 
 DB 저장 ${s.m_num }<br>
-세션 ${sessionScope.m_num }
+세션 ${j.m_num }<br>
 
-<c:if test="${s.m_num eq sessionScope.m_num}">
-<input type="button" value="상품수정" onclick="modi_pro()">
+<c:if test="${s.m_num eq j.m_num}">
+<input type="button" value="상품수정(c:if)" onclick="modi_pro()"/>
 </c:if>
 </form>
-
 <input type="button" name="mod" value="상품수정" onclick="sellmod()" required/>
 <input type="button" value="뒤로가기" onclick="back()">
-
 </body>
 </html>

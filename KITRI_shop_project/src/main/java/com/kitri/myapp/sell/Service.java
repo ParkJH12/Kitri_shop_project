@@ -2,6 +2,8 @@ package com.kitri.myapp.sell;
 
 import java.util.List;
 
+import com.kitri.myapp.member.Join;
+
 public interface Service {
 	
 	void WriteSellBoard(SellBoard a);
@@ -19,6 +21,8 @@ public interface Service {
     List getSellBoardByWriter(String writer);
 	
 	List getSellBoardBytitle(String title);
+	
+	Join getJoin(String name);
 	
 	List getSellBoardByContent(String content);
 }

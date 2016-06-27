@@ -70,8 +70,8 @@ img&nbsp;:&nbsp;
 </select>
 <br><br>
 상품 내용<input type="text" name="content" size="80" style="height:100px;">
-
-<input type="hidden" name="writer" value="${sessionScope.name }">
+<br>
+작성자<input type="text" name="writer" value="${sessionScope.name }" readonly/>
 <input type="hidden" name="m_num" value="${j.m_num}" >
 <br><br>
 <input type= "submit" value="등록">

@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -148,7 +147,7 @@ public class JoinController {
 	public ModelAndView sellreg(HttpServletRequest req){
 		HttpSession session = req.getSession();
 		String name = (String) session.getAttribute("name");
-		Join j = service.getJoin(name);
+		Join j = service.getJoin(name); // 현재접속자에 대한 것
 		ModelAndView mav = new ModelAndView("sell/sellReg");
 		mav.addObject("j",j);
 		return mav;

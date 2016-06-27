@@ -5,11 +5,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.kitri.myapp.member.Join;
 
 
 
@@ -50,10 +54,14 @@ public class SellBoardController {
 	}
 	
 	@RequestMapping(value="/sell/selldetail.do") 
-	public ModelAndView detail(@RequestParam(value="pb_num")int pb_num){
+	public ModelAndView detail(@RequestParam(value="pb_num")int pb_num, HttpServletRequest req){
+		HttpSession session = req.getSession();
+		String id = (String) session.getAttribute("name");
+		Join j = service.getJoin(id);
 		SellBoard s = service.getSellBoardBynum(pb_num);
 		ModelAndView mav = new ModelAndView("sell/selldetail");
-		mav.addObject("s", s);
+		mav.addObject("s", s); // board
+		mav.addObject("j", j); // join
 		return mav;
 	}
 	@RequestMapping(value="/sell/sellup.do") 

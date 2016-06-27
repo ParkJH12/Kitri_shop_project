@@ -7,6 +7,9 @@ import javax.annotation.Resource;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Component;
 
+import com.kitri.myapp.member.Join;
+import com.kitri.myapp.member.JoinMapper;
+
 @Component("sellboardService")
 public class ServiceImple implements Service {
 
@@ -69,6 +72,12 @@ public class ServiceImple implements Service {
 	public List getSellBoardByContent(String content) {
 		BoardMapper boardMapper = SqlSession.getMapper(BoardMapper.class);
 		return boardMapper.selectByContent(content);
+	}
+
+	@Override
+	public Join getJoin(String name) {
+		JoinMapper joinMapper = SqlSession.getMapper(JoinMapper.class);
+		return joinMapper.select_name(name);
 	}
 
 }
