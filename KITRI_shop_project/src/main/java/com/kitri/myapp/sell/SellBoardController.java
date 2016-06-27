@@ -57,16 +57,17 @@ public class SellBoardController {
 		return mav;
 	}
 	@RequestMapping(value="/sell/sellup.do") 
-	public ModelAndView sellmod(@RequestParam(value="pb_num")int pb_num){
+	public ModelAndView sellup(@RequestParam(value="pb_num")int pb_num){
 		SellBoard s = service.getSellBoardBynum(pb_num);
-		ModelAndView mav = new ModelAndView("sell/sellmod");
+		ModelAndView mav = new ModelAndView("sell/sellMod");
 		mav.addObject("s", s);
 		return mav;
 	}
-	@RequestMapping(value="/sell/sellmod.do") 
-	public String pwd_find(){
-		System.out.println("셀모디 ");
-		return "sell/sellMod";
+	public ModelAndView sellmod(@RequestParam(value="pb_num")int pb_num){
+		SellBoard s = service.getSellBoardBynum(pb_num);
+		ModelAndView mav = new ModelAndView("sell/sellMod");
+		mav.addObject("s", s);
+		return mav;
 	}
 	
 }

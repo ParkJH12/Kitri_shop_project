@@ -18,7 +18,7 @@
 		location.href="${pageContext.request.contextPath}/join/sellmod.do";
 	}
 	function sellist(){
-		location.href="${pageContext.request.contextPath}/sell/sellist.do";
+		location.href="${pageContext.request.contextPath}/join/sellist.do";
 	}
 	function sellbag(){
 		location.href="${pageContext.request.contextPath}/join/sellbag.do";
