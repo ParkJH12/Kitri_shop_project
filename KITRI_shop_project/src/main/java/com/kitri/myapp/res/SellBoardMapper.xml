@@ -20,6 +20,7 @@
 		<result property="statement" column="statement" />
 		<result property="img_path" column="img_path" />
 		<result property="w_date" column="w_date" />
+		<result property="m_num" column="m_num" />
 	</resultMap>
 		
 	<select id="select" resultMap="SellResultMap" parameterType="int">
@@ -56,7 +57,7 @@
 		(SEQ_sell_ph_board.nextval, #{writer}, 
 		#{title}, #{content}, #{model}, 
 		#{count}, #{product_name}, #{price}, #{color}, 
-		#{agency}, #{statement}, <!-- #{img_path} -->null, sysdate)
+		#{agency}, #{statement}, <!-- #{img_path} -->null, sysdate, #{m_num})
 	</insert>
 	
 	<update id="update" parameterType="com.kitri.myapp.sell.SellBoard">

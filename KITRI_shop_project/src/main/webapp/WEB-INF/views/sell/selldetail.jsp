@@ -16,6 +16,7 @@ function sellmod(){
 	location.href="${pageContext.request.contextPath }/sell/sellmod.do?pb_num=${s.pb_num}";
 }
 
+
 </script>
 <title>Insert title here</title>
 </head>
