@@ -13,6 +13,8 @@
 		<result property="content" column="content" />
 		<result property="model" column="model" />
 		<result property="count" column="count" />
+		<result property="product_name" column="product_name" />
+		<result property="price" column="price" />
 		<result property="color" column="color" />
 		<result property="agency" column="agecny" />
 		<result property="statement" column="statement" />
@@ -49,11 +51,10 @@
 		select * from sell_ph_board where content = %#{content}%
 	</select>
 	
-	<insert id="insert" 
-	parameterType="com.kitri.myapp.sell.SellBoard" >
+	<insert id="insert" parameterType="com.kitri.myapp.sell.SellBoard" >
 		insert into sell_ph_board VALUES
 		(SEQ_sell_ph_board.nextval, #{writer}, 
-		#{title}, #{content}, #{content}, #{model}, 
+		#{title}, #{content}, #{model}, 
 		#{count}, #{product_name}, #{price}, #{color}, 
 		#{agency}, #{statement}, <!-- #{img_path} -->null, sysdate)
 	</insert>
@@ -63,7 +64,7 @@
 		title=#{title}, content=#{content}, model=#{model}, 
 		count = #{count}, color = #{color}, 
 		agency = #{agency}, price = #{price}, 
-		statement = #{statement}, img_path = #{img_path}, 
+		statement = #{statement}, img_path = null, 
 		product_name=#{product_name} where pb_num=#{pb_num}
 	</update>
 	
