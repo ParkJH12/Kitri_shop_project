@@ -13,6 +13,7 @@ public class SellBoard {
 	private String model;
 	private int count;
 	private String product_name;
+	private int price;
 	private String color;
 	private String agency;
 	private String statement;
@@ -22,9 +23,10 @@ public class SellBoard {
 	
 	public SellBoard() {
 	}
-	
+
 	public SellBoard(int pb_num, int m_num, String title, String content, String model, int count, String product_name,
-			String color, String agency, String statement, String img_path, Date w_date, MultipartFile file) {
+			int price, String color, String agency, String statement, String img_path, Date w_date,
+			MultipartFile file) {
 		this.pb_num = pb_num;
 		this.m_num = m_num;
 		this.title = title;
@@ -32,6 +34,7 @@ public class SellBoard {
 		this.model = model;
 		this.count = count;
 		this.product_name = product_name;
+		this.price = price;
 		this.color = color;
 		this.agency = agency;
 		this.statement = statement;
@@ -40,7 +43,13 @@ public class SellBoard {
 		this.file = file;
 	}
 
+	public int getPrice() {
+		return price;
+	}
 
+	public void setPrice(int price) {
+		this.price = price;
+	}
 
 	public int getPb_num() {
 		return pb_num;
