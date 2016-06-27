@@ -37,7 +37,7 @@ img&nbsp;:&nbsp;
     <div id="UploadedImg">
      
     </div>
-
+<input type="hidden" name="m_num" value="${sessionScope.m_num }" >
 제목 &nbsp;:&nbsp;<input type="text" name="title" size="20"><br><br>
 제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10"><br><br>
 모델명&nbsp;:&nbsp;<input type="text" name="model" size="10"><br><br>

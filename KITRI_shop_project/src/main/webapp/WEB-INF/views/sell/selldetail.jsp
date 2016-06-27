@@ -10,6 +10,11 @@ function back(){
 	location.href="${pageContext.request.contextPath}/sell/sellist.do";
 }
 
+function modi_pro(){
+	location.href="${pageContext.request.contextPath}/sell/sellmod.do";
+}
+
+
 
 </script>
 <title>Insert title here</title>
@@ -36,5 +41,8 @@ img&nbsp;:&nbsp;
 <br><br>
 </form>
 <input type="button" value="뒤로가기" onclick="back()">
+<c:if test="${s.m_num eq ${sessionScope.m_num}">
+<input type="button" value="상품수정" onclick="modi_pro()"> 
+</c:if>
 </body>
 </html>

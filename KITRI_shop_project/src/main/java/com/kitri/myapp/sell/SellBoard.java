@@ -19,12 +19,15 @@ public class SellBoard {
 	private String statement;
 	private String img_path;
 	private Date w_date;
+	private int m_num;
 	private MultipartFile file;
 
+	
+	
 
 	public SellBoard(int pb_num, String writer, String title, String content, String model, int count,
-			String product_name, int price, String color, String agency, String statement, String img_path,
-			Date w_date) {
+			String product_name, int price, String color, String agency, String statement, String img_path, Date w_date,
+			int m_num, MultipartFile file) {
 		super();
 		this.pb_num = pb_num;
 		this.writer = writer;
@@ -39,6 +42,16 @@ public class SellBoard {
 		this.statement = statement;
 		this.img_path = img_path;
 		this.w_date = w_date;
+		this.m_num = m_num;
+		this.file = file;
+	}
+
+	public int getM_num() {
+		return m_num;
+	}
+
+	public void setM_num(int m_num) {
+		this.m_num = m_num;
 	}
 
 	public SellBoard() { }
@@ -160,7 +173,8 @@ public class SellBoard {
 		return "SellBoard [pb_num=" + pb_num + ", writer=" + writer + ", title=" + title + ", content=" + content
 				+ ", model=" + model + ", count=" + count + ", product_name=" + product_name + ", price=" + price
 				+ ", color=" + color + ", agency=" + agency + ", statement=" + statement + ", img_path=" + img_path
-				+ ", w_date=" + w_date + ", file=" + file + "]";
+				+ ", w_date=" + w_date + ", m_num=" + m_num + ", file=" + file + "]";
 	}
-	
+
+
 }
