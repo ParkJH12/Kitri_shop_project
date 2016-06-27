@@ -3,66 +3,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-
-<script>
-function readURL(input){
-	  
-	 if(input.files && input.files[0]){
-	   var reader = new FileReader();
-	   reader.onload = function(e){
-	    $('#UploadedImg').html("<img id=img src=''>");
-	    $('#img').attr('src', e.target.result);
-	   }
-	   reader.readAsDataURL(input.files[0]);
-	 }  
-	  
-	}
-</script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+
+function back(){
+	location.href="${pageContext.request.contextPath}/sell/sellist.do";
+}
+function sellmod(){
+	location.href="${pageContext.request.contextPath}/sell/sellup.do";
+}
+
+</script>
 <title>Insert title here</title>
 </head>
 <body>
-<form action = "${pageContext.request.contextPath}/sell/sellreg.do" name="sellreg" method="post">
+<form action = "${pageContext.request.contextPath}/sell/sellnum.do?=${s.pb_num}" name="sellreg" method="post" enctype="multipart/form-data">
 img&nbsp;:&nbsp;
-  <input type="file" id="fileName" value="ph_img" onchange="readURL(this)"> <br><br>
+	
+	<!-- 
+<input type="file" id="fileName" value="img_path" onchange="readURL(this)"> <br><br>
     <div id="UploadedImg">
-    
-    </div>
-제목 &nbsp;<input type="text" name="title" size="20" value="${sellmod.title }"><br><br>
-제품명&nbsp;<input type="text" name="ph_name" size="10" value="${sellmod.ph_name }"><br><br>
-제품명&nbsp;<input type="text" name="price" size="10" value="${sellmod.price }"><br><br>
-수량&nbsp;<select name="quantity" size="1">
-    <option selected value="1ea">1</option>
-    <option value="2ea">2</option>
-    <option value="3ea">3</option>
-    <option value="4ea">4</option>
-    <option value="5ea">5</option>
-    <option value="6ea">6</option>
-    <option value="7ea">7</option>
-    <option value="8ea">8</option>
-    <option value="9ea">9</option>
-    <option value="10ea">10</option>
-</select><br><br>
-색상&nbsp;<input type="text" name="color" value="${sellmod.color }"><br><br>
-통신사&nbsp;<select name="telcom" size="1" >
-    <option selected value="SKT">SKT</option>
-    <option value="KT">KT</option>
-    <option value="LG">LG</option>
-    <option value="ETC">ETC</option>
-</select><br><br>
-상태&nbsp;<select name="quality" size="1">
-    <option selected value="sq">S</option>
-    <option value="aq">A</option>
-    <option value="bq">B</option>
-    <option value="cq">C</option>
-</select>
-</form>
-<br><br>
-<input type= "submit" value="수정">
-<input type= "reset"  value="취소"><br>
+     
+    </div> -->
 
+제목 &nbsp;:&nbsp;<input type="text" name="title" size="20" value="${s.title }"><br><br>
+제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10" value="${s.product_name }"><br><br>
+모델명&nbsp;:&nbsp;<input type="text" name="model" size="10"value="${s.model }" ><br><br>
+가격&nbsp;:&nbsp;<input type="text" name="price" size="10" value="${s.price }"><br><br>
+수량&nbsp;:&nbsp;<input type="text" name="count" size="10" value="${s.count }"><br><br>
+색상&nbsp;:&nbsp;<input type="text" name="color" value="${s.color }"><br><br>
+통신사&nbsp;:&nbsp;<input type="text" name="agency" value="${s.agency }"><br><br>
+상태&nbsp;:&nbsp;<input type="text" name="statement" value="${s.statement }"><br><br>
+상품 내용<input type="text" name="content" value="${s.content }" size="80" style="height:100px;">
+<br><br>
+</form>
+
+<input type="button" name="mod" value="상품수정" onclick="sellup()" required/>
+
+<input type="button" value="뒤로가기" onclick="back()">
 
 </body>
 </html>
