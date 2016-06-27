@@ -8,6 +8,13 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/httpRequest.js"></script>
 <script type="text/javascript">
 
+
+function back(){
+	location.href="${pageContext.request.contextPath}/join/main.do";
+}
+
+
+
 	function over(num){
 		var param = "num="+num;
 		sendRequest("${pageContext.request.contextPath}/board/preview.do", param, previewResult, "POST");
@@ -113,5 +120,6 @@
 <input type="button" value="검색" onclick="search()">
 </form>
 <div id="searchDiv"></div>
+<input type="button" value="뒤로가기" onclick="back()">
 </body>
 </html>

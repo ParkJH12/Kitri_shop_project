@@ -7,6 +7,11 @@
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 
 <script>
+
+function back(){
+	location.href="${pageContext.request.contextPath}/join/main.do";
+}
+
 function readURL(input){
 	  
 	 if(input.files && input.files[0]){
@@ -68,8 +73,10 @@ img&nbsp;:&nbsp;
 <input type="hidden" name="writer" value="${sessionScope.name }">
 <br><br>
 <input type= "submit" value="등록">
-<input type= "reset"  value="취소"><br>
+<input type= "reset"  value="취소">
 </form>
+<input type= "button"  value="뒤로가기" onclick="back()"><br>
+
 
 </body>
 </html>
