@@ -1,12 +1,9 @@
-package com.kitri.myapp.sell;
+package com.kitri.myapp.busket;
 
 import java.sql.Date;
 
-import org.springframework.web.multipart.MultipartFile;
-
-public class SellBoard {
-	
-	private int pb_num;
+public class Busket {
+	private int bk_num;
 	private String writer;
 	private String title;
 	private String content;
@@ -18,15 +15,12 @@ public class SellBoard {
 	private String agency;
 	private String statement;
 	private String img_path;
-	private Date w_date;
-	private MultipartFile file;
-
-
-	public SellBoard(int pb_num, String writer, String title, String content, String model, int count,
-			String product_name, int price, String color, String agency, String statement, String img_path,
-			Date w_date) {
-		super();
-		this.pb_num = pb_num;
+	private Date b_date;
+	
+	public Busket() {  }
+	public Busket(int bk_num, String writer, String title, String content, String model, int count, String product_name,
+			int price, String color, String agency, String statement, String img_path, Date b_date) {
+		this.bk_num = bk_num;
 		this.writer = writer;
 		this.title = title;
 		this.content = content;
@@ -38,33 +32,23 @@ public class SellBoard {
 		this.agency = agency;
 		this.statement = statement;
 		this.img_path = img_path;
-		this.w_date = w_date;
+		this.b_date = b_date;
 	}
 
-	public SellBoard() { }
+	public int getBk_num() {
+		return bk_num;
+	}
+
+	public void setBk_num(int bk_num) {
+		this.bk_num = bk_num;
+	}
 
 	public String getWriter() {
 		return writer;
 	}
-	
+
 	public void setWriter(String writer) {
 		this.writer = writer;
-	}
-
-	public int getPrice() {
-		return price;
-	}
-
-	public void setPrice(int price) {
-		this.price = price;
-	}
-
-	public int getPb_num() {
-		return pb_num;
-	}
-
-	public void setPb_num(int pb_num) {
-		this.pb_num = pb_num;
 	}
 
 	public String getTitle() {
@@ -107,6 +91,14 @@ public class SellBoard {
 		this.product_name = product_name;
 	}
 
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
 	public String getColor() {
 		return color;
 	}
@@ -139,28 +131,13 @@ public class SellBoard {
 		this.img_path = img_path;
 	}
 
-	public Date getW_date() {
-		return w_date;
+	public Date getB_date() {
+		return b_date;
 	}
 
-	public void setW_date(Date w_date) {
-		this.w_date = w_date;
+	public void setB_date(Date b_date) {
+		this.b_date = b_date;
 	}
-
-	public MultipartFile getFile() {
-		return file;
-	}
-
-	public void setFile(MultipartFile file) {
-		this.file = file;
-	}
-
-	@Override
-	public String toString() {
-		return "SellBoard [pb_num=" + pb_num + ", writer=" + writer + ", title=" + title + ", content=" + content
-				+ ", model=" + model + ", count=" + count + ", product_name=" + product_name + ", price=" + price
-				+ ", color=" + color + ", agency=" + agency + ", statement=" + statement + ", img_path=" + img_path
-				+ ", w_date=" + w_date + ", file=" + file + "]";
-	}
+	
 	
 }
