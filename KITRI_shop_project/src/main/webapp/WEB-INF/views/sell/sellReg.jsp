@@ -35,6 +35,7 @@ img&nbsp;:&nbsp;
 
 제목 &nbsp;:&nbsp;<input type="text" name="title" size="20"><br><br>
 제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10"><br><br>
+모델명&nbsp;:&nbsp;<input type="text" name="model" size="10"><br><br>
 가격&nbsp;:&nbsp;<input type="text" name="price" size="10"><br><br>
 수량&nbsp;:&nbsp;<select name="count" size="1">
     <option selected value="1">1</option>
