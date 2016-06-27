@@ -1,5 +1,7 @@
 package com.kitri.myapp.member;
 
+import org.apache.ibatis.annotations.Param;
+
 public interface Service {
 	
 	/**
@@ -33,5 +35,5 @@ public interface Service {
 	void delJoin(String name);
 	
 	
-	void cashUp(Join cash);
+	void cashUp(@Param("cash")int cash, @Param("m_num")int m_num);
 }
