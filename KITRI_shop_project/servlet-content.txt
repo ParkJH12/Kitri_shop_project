@@ -14,6 +14,9 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/css/**" location="/css/" />
+	<resources mapping="/js/**" location="/js/" />
+	<resources mapping="/img/**" location="/img/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -23,21 +26,17 @@
 	
 	<context:component-scan base-package="com.kitri.myapp" />
 
-
 	<beans:bean
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 		id="dataSource">
 
-
 		<beans:property name="driverClassName">
-
 			<beans:value>oracle.jdbc.driver.OracleDriver</beans:value>
-
 		</beans:property>
 
 
 		<beans:property name="url">
-			<beans:value>jdbc:oracle:thin:@localhost:1521:XE</beans:value>
+			<beans:value>jdbc:oracle:thin:@192.168.14.24:1521:XE</beans:value>
 		</beans:property>
 
 
@@ -70,41 +69,8 @@
 		<beans:constructor-arg name="sqlSessionFactory"
 			ref="sqlSessionFactory" />
 	</beans:bean>
+	
+	<beans:bean id="multipartResolver"
+   class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 
 </beans:beans>
-
-
-cash 추가 (member)
-m_num -> writer로 수정
-
-<<구매.jsp 구현>>
-1. 구매 count가 증감하면 가격도 변동되게끔수정
-2. 구매버튼 클릭 시 order테이블 추가, sell에 있는 count 감소
-3. 
-
-<<sell>>
-
-<<order>>
-
-(order번호) 판매자정보,    구매자정보,      (sell)에서가져온 상품들
-           (이름,연락처)  (이름, 연락처)    (상품명, 수량, 가격, 판매일자) 
-
-구입.jsp에서 구입을 하게 되면 order테이블에 insert
-order에서 만약 delete(취소)하게되면 테이블 삭제, 그리고 사유를 묻는 창이 뜨게끔함
-update는 안함
-
-
-<recent_sell>
-판매정보번호, 구입자, 상품명, 수량, 가격, 판매일자, 판매여부, 거절사유
-
-1. order테이블 내 삭제시 트리거에 의해 동작 (주문이 완료됫던가 취소됫던가)
-2. 만약 취소할 경우 거절사유에 기록하게 된다.
-
-<recent_buy>
-구입정보번호, 판매자, 상품명, 수량, 가격, 판매일자, 구입여부, 거절사유
-1. order테이블 내 삭제시 트리거에 의해 동작 (주문이 완료됫던가 취소됫던가)
-2. 만약 취소할 경우 거절사유에 기록하게 된다.
-
-
-
-내일가서 jsp 폼을 완성시키는 걸로 (board) 그리고 구매 시 order가 작동되는지 확인
