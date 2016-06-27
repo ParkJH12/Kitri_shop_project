@@ -37,7 +37,7 @@ public class SellBoardController {
 		s.setImg_path("/sellboard/" + fileName);*/
 		System.out.println(s);
 		service.WriteSellBoard(s);
-		return "redirect:/sell/selllist.do";
+		return "redirect:/sell/sellist.do";
 		
 	}
 	
@@ -49,10 +49,10 @@ public class SellBoardController {
 		return mav;
 	}
 	
-	@RequestMapping(value="/sell/seldetail.do") 
+	@RequestMapping(value="/sell/selldetail.do") 
 	public ModelAndView detail(@RequestParam(value="pb_num")int pb_num){
 		SellBoard s = service.getSellBoardBynum(pb_num);
-		ModelAndView mav = new ModelAndView("sell/seldetail");
+		ModelAndView mav = new ModelAndView("sell/selldetail");
 		mav.addObject("s", s);
 		return mav;
 	}

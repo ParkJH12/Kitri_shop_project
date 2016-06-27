@@ -98,7 +98,7 @@
 	<c:forEach var="a" items="${list}">
 	<tr>
 			<td>${a.pb_num}</td>
-			<td>${a.title }"/></td>	
+			<td><a href="${pageContext.request.contextPath}/sell/selldetail.do?num=${a.pb_num}">${a.title}</a></td>
 			<td>${a.writer}</td>
 			<td>${a.w_date}</td>
 	</tr>
