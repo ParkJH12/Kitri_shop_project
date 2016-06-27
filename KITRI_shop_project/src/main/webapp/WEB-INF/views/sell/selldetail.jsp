@@ -40,9 +40,10 @@ img&nbsp;:&nbsp;
 상품 내용<input type="text" name="content" value="${s.content }" readonly="readonly" size="80" style="height:100px;">
 <br><br>
 </form>
+
+<input type="button" name="mod" value="상품수정" onclick="sellmod()" required/>
+
 <input type="button" value="뒤로가기" onclick="back()">
-<c:if test="${s.m_num eq ${sessionScope.m_num}">
-<input type="button" value="상품수정" onclick="modi_pro()"> 
-</c:if>
+
 </body>
 </html>
