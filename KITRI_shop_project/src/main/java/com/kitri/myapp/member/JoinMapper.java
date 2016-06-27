@@ -1,5 +1,7 @@
 package com.kitri.myapp.member;
 
+import org.apache.ibatis.annotations.Param;
+
 public interface JoinMapper {
 
 	void insert(Join j);
@@ -14,6 +16,6 @@ public interface JoinMapper {
 
 	void delete(String name);
 
-	void cashUp(Join cash);
+	void cashUp(@Param("cash")int cash, @Param("m_num")int m_num);
 	
 }

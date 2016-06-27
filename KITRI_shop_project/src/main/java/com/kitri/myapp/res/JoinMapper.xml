@@ -20,7 +20,7 @@ EMAIL VARCHAR2(30),
 	<resultMap type="com.kitri.myapp.member.Join" 
 	id="JoinResultMap">
 		<result property="m_num" column="m_num" />
-		<result property="name" column="NAME" />
+		<result property="name" column="name" />
 		<result property="pass" column="pass" />
 		<result property="phone_num" column="phone_num" />
 		<result property="address" column="address" />
@@ -35,17 +35,16 @@ EMAIL VARCHAR2(30),
 		SELECT * FROM member where name=#{name}
 	</select>
 	
-	<insert id="insert" 
-	parameterType="com.kitri.myapp.member.Join" >
+	<insert id="insert" parameterType="com.kitri.myapp.member.Join" >
 		INSERT INTO member values(seq_MEMBER.nextval, #{name}, #{pass}, #{phone_num}, #{address}, #{email}, 0)
 	</insert>
 	
 	<update id="update" parameterType="com.kitri.myapp.member.Join">
-	update member set pass=#{pass}, phone_num = #{phone_num}, address = #{address}, email=#{email} where name=#{name}
+		update member set pass=#{pass}, phone_num = #{phone_num}, address = #{address}, email=#{email} where name=#{name}
 	</update>
 	
 	<update id="cashUp" parameterType="com.kitri.myapp.member.Join">
-		update member set cash = cash+#{cash} where name=#{name}
+		update member set cash = cash+#{cash} where m_num=#{m_num}
 	</update>
 	
 	<delete id="delete" parameterType="string">

@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.request.SessionScope;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -41,7 +42,6 @@ public class JoinController {
 	
 	@RequestMapping(value="/join/pwdFind.do")
 	public ModelAndView join2(@RequestParam(value="id")String id,@RequestParam(value="email")String email){
-	
 		System.out.println("ID Email체크중 ");
 		Join i = service.getJoin(id);
 		boolean flag = false;
@@ -52,7 +52,6 @@ public class JoinController {
 		}else{
 			pass = "";
 		}
-		
 		ModelAndView mav = new ModelAndView("join/check2");
 		mav.addObject("result",flag);
 		mav.addObject("result2",pass);
@@ -126,19 +125,21 @@ public class JoinController {
 		return "join/loginForm";
 	}	
 	@RequestMapping(value= "/join/cashup.do")
-	//public String cashup(HttpServletRequest req, @RequestParam("cash") int cash){
-	public String cashup(){
-		System.out.println("충");
-		return "join/cashup";
+	public ModelAndView cashup(HttpServletRequest req){
+		HttpSession session = req.getSession();
+		String name = (String)session.getAttribute("name");		
+		Join j=service.getJoin(name);
+		ModelAndView mav = new ModelAndView("join/cashup");
+		mav.addObject("J", j);
+		return mav;
 	}
 	
-	//////
 	@RequestMapping(value="/join/charge.do")
-	public String charge(Join cash){
-		System.out.println(cash);
-		service.cashUp(cash);
+	public String charge(@RequestParam(value="m_num")int m_num, @RequestParam(value="cash")int cash){
+		service.cashUp(cash,m_num);
 		System.out.println("캐시충전완료 ");
-		return "join/cashup";
+		System.out.println(cash);
+		return "join/main";
 	}
 	
 	//판매버튼/////////////////////////

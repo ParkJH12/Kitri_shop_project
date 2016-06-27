@@ -37,7 +37,7 @@ img&nbsp;:&nbsp;
     <div id="UploadedImg">
      
     </div>
-<input type="hidden" name="m_num" value="${sessionScope.m_num }" >
+<%-- <input type="hidden" name="m_num" value="${sessionScope.m_num }" > --%>
 제목 &nbsp;:&nbsp;<input type="text" name="title" size="20"><br><br>
 제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10"><br><br>
 모델명&nbsp;:&nbsp;<input type="text" name="model" size="10"><br><br>
@@ -63,9 +63,9 @@ img&nbsp;:&nbsp;
 </select><br><br>
 상태&nbsp;:&nbsp;<select name="statement" size="1">
     <option selected value="sq">S</option>
-    <option value="aq">A</option>
-    <option value="bq">B</option>
-    <option value="cq">C</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
 </select>
 <br><br>
 상품 내용<input type="text" name="content" size="80" style="height:100px;">

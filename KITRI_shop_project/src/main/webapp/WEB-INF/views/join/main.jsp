@@ -40,7 +40,6 @@
 <body>
 
 <h2>${sessionScope.name}님 로그인중입니다.</h2>
-<br>보유 캐시 : ${cash.cash } 원 입니다.<br>
 <input type="button" name="memmod" value="정보수정" onclick="memmod()" required/>
 <input type="button" name="logout" value="로그아웃" onclick="logout()" required/>
 <input type="button" name="out" value="회원탈퇴" onclick="delcheck()" required/>
