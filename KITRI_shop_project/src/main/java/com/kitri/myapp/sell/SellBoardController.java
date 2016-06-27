@@ -34,6 +34,7 @@ public class SellBoardController {
 			e.printStackTrace();
 		}
 		s.setImg_path("/sellboard/" + fileName);*/
+		System.out.println(s);
 		service.WriteSellBoard(s);
 		return "redirect:/sell/selllist.do";
 		

@@ -155,5 +155,13 @@ public class SellBoard {
 	public void setFile(MultipartFile file) {
 		this.file = file;
 	}
+
+	@Override
+	public String toString() {
+		return "SellBoard [pb_num=" + pb_num + ", writer=" + writer + ", title=" + title + ", content=" + content
+				+ ", model=" + model + ", count=" + count + ", product_name=" + product_name + ", price=" + price
+				+ ", color=" + color + ", agency=" + agency + ", statement=" + statement + ", img_path=" + img_path
+				+ ", w_date=" + w_date + ", file=" + file + "]";
+	}
 	
 }
