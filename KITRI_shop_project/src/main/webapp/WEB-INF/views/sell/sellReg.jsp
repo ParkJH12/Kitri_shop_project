@@ -37,7 +37,8 @@ img&nbsp;:&nbsp;
     <div id="UploadedImg">
      
     </div>
-<%-- <input type="hidden" name="m_num" value="${sessionScope.m_num }" > --%>
+
+
 제목 &nbsp;:&nbsp;<input type="text" name="title" size="20"><br><br>
 제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10"><br><br>
 모델명&nbsp;:&nbsp;<input type="text" name="model" size="10"><br><br>
@@ -71,6 +72,7 @@ img&nbsp;:&nbsp;
 상품 내용<input type="text" name="content" size="80" style="height:100px;">
 
 <input type="hidden" name="writer" value="${sessionScope.name }">
+<input type="hidden" name="m_num" value="${j.m_num}" >
 <br><br>
 <input type= "submit" value="등록">
 <input type= "reset"  value="취소">
