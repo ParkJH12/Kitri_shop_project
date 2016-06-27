@@ -25,6 +25,7 @@ EMAIL VARCHAR2(30),
 		<result property="phone_num" column="phone_num" />
 		<result property="address" column="address" />
 		<result property="email" column="email" />
+		<result property="cash" column="cash" />
 	</resultMap>
 	<!-- resultSet의 역할을 해주는 resultMap result맵은 여러개에 대해 만들어 줘도 된다. -->
 

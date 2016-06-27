@@ -32,5 +32,6 @@ public interface Service {
 	 */
 	void delJoin(String name);
 	
-	void cashUp(int cash);
+	
+	void cashUp(Join cash);
 }

@@ -24,7 +24,7 @@ public class Join {
 	@Override
 	public String toString() {
 		return "Join [m_num=" + m_num + ", name=" + name + ", pass=" + pass + ", phone_num=" + phone_num + ", address="
-				+ address + ", email=" + email + "]";
+				+ address + ", email=" + email + ", cash=" + cash + "]";
 	}
 	public Join() {
 	}

@@ -58,7 +58,7 @@ public class ServiceImple implements Service {
 	}
 
 	@Override
-	public void cashUp(int cash) {
+	public void cashUp(Join cash) {
 		JoinMapper joinMapper = sqlSession.getMapper(JoinMapper.class);
 		joinMapper.cashUp(cash);
 	}

@@ -14,6 +14,6 @@ public interface JoinMapper {
 
 	void delete(String name);
 
-	void cashUp(int cash);
+	void cashUp(Join cash);
 	
 }

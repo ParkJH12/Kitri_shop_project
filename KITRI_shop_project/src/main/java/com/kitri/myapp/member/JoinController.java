@@ -126,9 +126,19 @@ public class JoinController {
 		return "join/loginForm";
 	}	
 	@RequestMapping(value= "/join/cashup.do")
-	public String cashup(HttpServletRequest req, @RequestParam("cash") int cash){
+	//public String cashup(HttpServletRequest req, @RequestParam("cash") int cash){
+	public String cashup(){
 		System.out.println("충");
-		return "join/main";
+		return "join/cashup";
+	}
+	
+	//////
+	@RequestMapping(value="/join/charge.do")
+	public String charge(Join cash){
+		System.out.println(cash);
+		service.cashUp(cash);
+		System.out.println("캐시충전완료 ");
+		return "join/cashup";
 	}
 	
 	//판매버튼/////////////////////////
