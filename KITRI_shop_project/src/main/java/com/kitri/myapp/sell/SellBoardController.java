@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+
+
 @Controller
 public class SellBoardController {
 	@Resource(name = "sellboardService")
@@ -44,4 +46,5 @@ public class SellBoardController {
 		mav.addObject("list", list);
 		return mav;
 	}
+	
 }

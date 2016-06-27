@@ -154,6 +154,12 @@ public class JoinController {
 		return "sell/sellBag";
 	}
 	//////////////////////
+	@RequestMapping(value="/sell/charge.do")
+	public String joinResult(int cash){
+		service.cashUp(cash);
+		System.out.println("회원가입완료 ");
+		return "join/loginForm";
+	}
 	
 	
 	
