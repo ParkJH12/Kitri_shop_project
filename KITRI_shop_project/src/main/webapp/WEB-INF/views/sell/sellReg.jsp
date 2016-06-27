@@ -55,7 +55,7 @@ img&nbsp;:&nbsp;
     <option value="LG">LG</option>
     <option value="ETC">ETC</option>
 </select><br><br>
-상태&nbsp;:&nbsp;<select name="statement" size="1"><br>
+상태&nbsp;:&nbsp;<select name="statement" size="1">
     <option selected value="sq">S</option>
     <option value="aq">A</option>
     <option value="bq">B</option>
@@ -64,6 +64,7 @@ img&nbsp;:&nbsp;
 <br><br>
 상품 내용<input type="text" name="content" size="80" style="height:100px;">
 
+<input type="hidden" name="writer" value="${sessionScope.name }">
 <br><br>
 <input type= "submit" value="등록">
 <input type= "reset"  value="취소"><br>
