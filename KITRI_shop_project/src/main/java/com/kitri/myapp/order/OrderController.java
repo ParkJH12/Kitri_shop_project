@@ -38,7 +38,17 @@ public class OrderController {
 	}
 	
 	@RequestMapping(value = "/order/addlist.do")
-	public String addList(Order o){
+	public String addList(Order o, HttpServletRequest req,  @RequestParam(value="seller_name")String seller_name){
+		HttpSession session = req.getSession();
+		String buyer = (String) session.getAttribute("name"); // 구매자의 name
+		Join buyer_join = service.getJoin(buyer);
+		o.setBuyer_name(buyer_join.getName());
+		o.setBuyer_phone_num(buyer_join.getPhone_num());
+		//-----------------구매자------------------//
+		Join seller_join = service.getJoin(seller_name);
+		o.setSeller_name(seller_join.getName());
+		o.setSeller_phone_num(seller_join.getPhone_num());
+		//------------------판매자-----------------//
 		service.InsertOrder(o);
 		return "redirect:/order/order_list.do";
 	}
