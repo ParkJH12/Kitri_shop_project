@@ -1,0 +1,10 @@
+diff a/KITRI_shop_project/src/main/webapp/WEB-INF/views/sell/selldetail.jsp b/KITRI_shop_project/src/main/webapp/WEB-INF/views/sell/selldetail.jsp	(rejected hunks)
+@@ -28,7 +28,7 @@
+ 
+ function order_list(){
+ 
+-	location.href="${pageContext.request.contextPath }/order/order_list.do?m_num=${s.m_num}";
++	location.href="${pageContext.request.contextPath }/order/reserve.do?pb_num=${s.pb_num}";
+ }
+ 
+ </script>

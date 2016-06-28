@@ -2,7 +2,6 @@ package com.kitri.myapp.sell;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.ProcessBuilder.Redirect;
 import java.util.ArrayList;
 
 import javax.annotation.Resource;
@@ -30,12 +29,15 @@ public class SellBoardController {
 	@RequestMapping(value ="/sell/sellreg.do" )
 	public String write(SellBoard s){
 		String fileName = s.getFile().getOriginalFilename();
-		// img path는 자신의 워크스페이스(workspace)에 저장되어있는 metadata 경로를 추적해서 적어야 합니다.
+		// img path는 자신의 워크스페이스(workspace)에 저장되어있는 metadata 경로를 추적해서 적어야 합니다.\"
+		if(fileName == null){
+			fileName = "sclinqwe.jpg";
+		}
 		String path1 = "C:\\Workspace\\Network\\.metadata\\.plugins\\"
 				+ "org.eclipse.wst.server.core\\tmp0\\webapps\\img\\" + fileName; // 봉기전용
 		String path2 = "C:\\Users\\Administrator\\Documents\\Kitri_shop_project\\"
 				+ ".metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\img" + fileName; // 지훈전용
-		File f = new File(path1);
+		File f = new File(path1); //원하는 데 쓰면됨
 		try {
 			s.getFile().transferTo(f);
 		} catch (IllegalStateException e) {
