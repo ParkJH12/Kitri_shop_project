@@ -30,7 +30,6 @@
 		location.href="${pageContext.request.contextPath}/join/editForm.do";
 	}
 	function cashup(){
-		alert("cash");
 		location.href="${pageContext.request.contextPath}/join/cashup.do";
 	}
 </script>
