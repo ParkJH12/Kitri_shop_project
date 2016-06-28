@@ -37,6 +37,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<% response.setHeader("Cache-Control","no-store"); %>
+<% response.setHeader("Pragma","no-cache");%>
+<% response.setDateHeader("Expires", 0);%>
+ 
 
 <h2>${sessionScope.name}님 로그인중입니다.</h2>
 <h2>${sessionScope.name}님의 현재 캐시잔액 ${J.cash } 원.</h2>
