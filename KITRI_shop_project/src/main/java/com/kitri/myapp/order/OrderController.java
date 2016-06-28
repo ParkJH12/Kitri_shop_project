@@ -18,7 +18,7 @@ public class OrderController {
 		this.service = service;
 	}
 	
-	@RequestMapping(value = "/order/list.do")
+	@RequestMapping(value = "/order/order_list.do")
 	public ModelAndView orderList(@RequestParam(value="m_num")int m_num){
 		ModelAndView mav = new ModelAndView("order/orderList");
 		ArrayList<Order> list = (ArrayList<Order>)service.getOrderList();
