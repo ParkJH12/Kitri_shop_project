@@ -43,7 +43,8 @@ img&nbsp;:&nbsp;
 모델명&nbsp;:&nbsp;<input type="text" name="model" size="10"><br><br>
 가격&nbsp;:&nbsp;<input type="text" name="price" size="10"><br><br>
 수량&nbsp;:&nbsp;<select name="count" size="1">
-    <option selected value="1">1</option>
+	<option selected value="0">0</option>
+    <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>

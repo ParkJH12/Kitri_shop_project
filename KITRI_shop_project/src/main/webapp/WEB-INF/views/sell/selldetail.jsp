@@ -5,6 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript">
+function checkcount(pcount) {
+	if(pcount==0){
+		alert("매진되었습니다.")
+	}else{
+		alert("구매가 가능합니다.")
+		/* location.href="${pageContext.request.contextPath }/order/addlist.do?m_num=${s.m_num}"; */
+	}
+}
 
 function back(){
    location.href="${pageContext.request.contextPath}/sell/sellist.do";
@@ -37,6 +45,10 @@ img&nbsp;:&nbsp;
 상태&nbsp;:&nbsp;<input type="text" name="statement" value="${s.statement }" readonly="readonly"><br><br>
 상품 내용<input type="text" name="content" value="${s.content }" readonly="readonly" size="80" style="height:100px;">
 <br><br>
+
+
+<input type="button" name="buyit" value="구매하기" onclick="checkcount(${s.count})">
+
 
 <c:if test="${s.m_num eq j.m_num}">
 <input type="button" name="mod" value="상품수정" onclick="sellmod()"/>
