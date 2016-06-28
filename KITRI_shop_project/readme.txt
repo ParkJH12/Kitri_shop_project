@@ -1,6 +1,5 @@
 6/28 해야할 것
 
-1. 상품수정 삭제 (MAIN.JSP)
 2. 주문내역 추가 (DB - ORDER TABLE // JSP - 새로하나팔것 // JAVA :: ORDERCONTROLLER전까지 구현)
    - 세션.NAME != 작성자.NAME일 경우 "주문"버튼이 들어나도록 함
 3. 구매버튼을 클릭 시 해당 값이 구매내역으로 이동(이때, count와 price에 값이 조정되어 캐시가 조정됨)

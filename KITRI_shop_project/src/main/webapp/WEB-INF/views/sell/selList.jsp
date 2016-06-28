@@ -88,26 +88,31 @@ function back(){
 </script>
 </head>
 <body>
-<h3>글목록</h3>
+<h3>판매목록</h3>
 
 <a href="${pageContext.request.contextPath }/join/sellreg.do">
-판매등록</a><br>
-
+판매하러가기ㄱㄱ</a><br><br>
 
 <table border="1" cellspacing="0">
 	<tr>
 		<th>번호</th>
 		<th>제목</th>
+		<th>제품명</th>
+		<td>가격</td>
+		<td>통신사</td>
 		<th>작성자</th>
 		<th>작성일</th>
 	</tr>
 	
 	<c:forEach var="a" items="${list}">
 	<tr>
-			<td>${a.pb_num}</td>
-			<td><a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${a.pb_num}">${a.title}</a></td>
-			<td>${a.writer}</td>
-			<td>${a.w_date}</td>
+			<td>&nbsp;&nbsp;${a.pb_num}&nbsp;&nbsp;</td>
+			<td>&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${a.pb_num}">${a.title}&nbsp;&nbsp;</a></td>
+			<td>&nbsp;&nbsp;${a.product_name }&nbsp;&nbsp;</td>
+			<td>&nbsp;&nbsp;${a.price }&nbsp;원&nbsp;</td>
+			<td>&nbsp;&nbsp;${a.agency }&nbsp;&nbsp;</td>
+			<td>&nbsp;&nbsp;${a.writer}&nbsp;&nbsp;</td>
+			<td>&nbsp;&nbsp;${a.w_date}&nbsp;&nbsp;</td>
 	</tr>
 	</c:forEach>
 
