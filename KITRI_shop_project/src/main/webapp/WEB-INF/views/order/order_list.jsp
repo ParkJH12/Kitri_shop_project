@@ -26,21 +26,25 @@
 		<th>제품명</th>
 		<th>가격</th>
 		<th>수량</th>
+		<th>구매자</th>
+		<th>날짜</th>
 		
 	</tr>
 	
 	<c:forEach var="o" items="${o}">
 	<tr>
 			<td>${o.seller_name}</td>
-			<td><a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${a.pb_num}">${o.product_name}</a></td>
+			<%-- <td><a href="${pageContext.request.contextPath}/order/complete.do?pb_num=${o.pb_num}">${o.product_name}</a></td> --%>
 			<td>${o.price}</td>
 			<td>${o.count}</td>
+			<td>${o.buyer_name }
+			<td>${o.w_date }</td>
 	</tr>
 </c:forEach>
 
 </table>
 
-
+<input type="hidden" name="${pb_num }"/>
 <input type="button" value="뒤로가기" onclick="back()">
 </body>
 </html>
