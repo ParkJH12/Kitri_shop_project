@@ -31,6 +31,7 @@ img&nbsp;:&nbsp;
     </div>
 
 제목 &nbsp;:&nbsp;<input type="text" name="title" size="20" value="${s.title }"><br><br>
+작성일자&nbsp;:&nbsp;<input type="text" name="w_date" size="10" value="${s.w_date }"><br><br>
 제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10" value="${s.product_name }"><br><br>
 모델명&nbsp;:&nbsp;<input type="text" name="model" size="10"value="${s.model }" ><br><br>
 가격&nbsp;:&nbsp;<input type="text" name="price" size="10" value="${s.price }"><br><br>
@@ -39,8 +40,6 @@ img&nbsp;:&nbsp;
 통신사&nbsp;:&nbsp;<input type="text" name="agency" value="${s.agency }"><br><br>
 상태&nbsp;:&nbsp;<input type="text" name="statement" value="${s.statement }"><br><br>
 상품 내용<input type="text" name="content" value="${s.content }" size="80" style="height:100px;">
-<input type="hidden" name="w_date" value="${s.w_date }">
-<input type="hidden" name="writer" value="${s.writer }">
 <input type="hidden" name="pb_num" value="${s.pb_num}">
 <br><br>
 <input type="submit" value="상품수정"/>
