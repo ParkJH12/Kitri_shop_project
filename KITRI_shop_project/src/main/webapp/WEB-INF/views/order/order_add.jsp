@@ -41,8 +41,8 @@ private Date date; */
      
     </div> -->
 판매자 &nbsp;:&nbsp;<input type="text" name="seller_name" value="${s.writer}" size="10" readonly="readonly"><br><br>
-판매자전화번호  &nbsp;:&nbsp; <input type="text" name="seller_phone_num" size="20" value="${j.phone_num}" size="15" readonly="readonly"><br><br>
 구매자 이름  &nbsp;:&nbsp;<input type="text" name="buyer_name" value="${sessionScope.name}" size="10" readonly="readonly"><br><br>
+구매자전화번호  &nbsp;:&nbsp; <input type="text" name="seller_phone_num" size="20" value="${j.phone_num}" size="15" readonly="readonly"><br><br>
 제목 &nbsp;:&nbsp;<input type="text" name="title" size="20" value="${s.title }" readonly="readonly"><br><br>
 제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10" value="${s.product_name }" readonly="readonly"><br><br>
 가격&nbsp;:&nbsp;<input type="text" name="price" size="10" value="${s.price }" readonly="readonly"><br><br>

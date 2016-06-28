@@ -36,8 +36,8 @@ public class SellBoardController {
 		String path1 = "C:\\Workspace\\Network\\.metadata\\.plugins\\"
 				+ "org.eclipse.wst.server.core\\tmp0\\webapps\\img\\" + fileName; // 봉기전용
 		String path2 = "C:\\Users\\Administrator\\Documents\\Kitri_shop_project\\"
-				+ ".metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\img" + fileName; // 지훈전용
-		File f = new File(path1); //원하는 데 쓰면됨
+				+ ".metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\img\\" + fileName; // 지훈전용
+		File f = new File(path2); //원하는 데 쓰면됨
 		try {
 			s.getFile().transferTo(f);
 		} catch (IllegalStateException e) {
