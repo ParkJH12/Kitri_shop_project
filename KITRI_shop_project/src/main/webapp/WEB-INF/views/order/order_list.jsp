@@ -10,7 +10,7 @@
 
 
 function back(){
-	location.href="${pageContext.request.contextPath}/join/main.do";
+/* 	location.href="${pageContext.request.contextPath}/join/main.do"; */
 }
 
 
@@ -89,8 +89,7 @@ function back(){
 <body>
 <h3>주문목록</h3>
 
-<a href="${pageContext.request.contextPath }/join/sellreg.do">
-주문목록</a><br>
+주문목록<br>
 
 
 <table border="1" cellspacing="0">
@@ -104,7 +103,7 @@ function back(){
 	
 	
 	<tr>
-			<td>${o.name}</td>
+			<td>${o.seller_name}</td>
 			<td>${o.product_name}</td>
 			<td>${o.price}</td>
 			<td>${o.count}</td>

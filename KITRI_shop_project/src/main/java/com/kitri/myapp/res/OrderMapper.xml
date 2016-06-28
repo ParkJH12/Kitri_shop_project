@@ -58,8 +58,8 @@
 	
 	<insert id="insert" parameterType="com.kitri.myapp.order.Order" >
 		INSERT INTO order_list values(seq_order_list.nextval, #{seller_name}, 
-		#{seller_phone_num}, #{buyer_name}, #{buyer_phone_num}, 
-		#{title}, #{product_name}, #{count}, #{price}, sysdate)
+		#{buyer_phone_num}, #{buyer_name}, #{title}, #{product_name}, 
+		#{count}, #{price}, sysdate)
 	</insert>
 	
 	<delete id="delete" parameterType="int">

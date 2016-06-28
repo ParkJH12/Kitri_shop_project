@@ -31,6 +31,7 @@ public class OrderController {
 		return mav;
 	} // m_num을 parameter로 받아(해당되는 id)의 list를 뿌려주는 기능
 	
+	
 	@RequestMapping(value = "/order/dellist.do")
 	public String delList(@RequestParam(value="order_no")int order_no){
 		service.CancelOrder(order_no);
