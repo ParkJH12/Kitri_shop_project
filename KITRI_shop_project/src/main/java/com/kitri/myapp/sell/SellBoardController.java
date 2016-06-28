@@ -32,7 +32,7 @@ public class SellBoardController {
 		String fileName = s.getFile().getOriginalFilename();
 		// img path는 자신의 워크스페이스(workspace)에 저장되어있는 metadata 경로를 추적해서 적어야 합니다.
 		String path1 = "C:\\Workspace\\Network\\.metadata\\.plugins\\"
-				+ "org.eclipse.wst.server.core\\tmp0\\webapps\\img" + fileName; // 봉기전용
+				+ "org.eclipse.wst.server.core\\tmp0\\webapps\\img\\" + fileName; // 봉기전용
 		String path2 = "C:\\Users\\Administrator\\Documents\\Kitri_shop_project\\"
 				+ ".metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\webapps\\img" + fileName; // 지훈전용
 		File f = new File(path1);

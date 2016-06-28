@@ -4,28 +4,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
-
-function back(){
-	location.href="${pageContext.request.contextPath}/sell/sellist.do";
-}
-/* function sellup(){
-	alert('${s.pb_num}');
-	location.href="${pageContext.request.contextPath}/sell/sellup.do";
-}
- */
+	function back() {
+		location.href = "${pageContext.request.contextPath}/sell/sellist.do";
+	}
+	function readURL(input) {
+		if (input.files && input.files[0]) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				$('#UploadedImg').html("<img id=img src=''>");
+				$('#img').attr('src', e.target.result);
+			}
+			reader.readAsDataURL(input.files[0]);
+		}
+	}se
 </script>
 <title>Insert title here</title>
 </head>
 <body>
 <form action = "${pageContext.request.contextPath}/sell/sellup.do" name="sellreg" method="post" enctype="multipart/form-data">
 img&nbsp;:&nbsp;
-	
-	<!-- 
-<input type="file" id="fileName" value="img_path" onchange="readURL(this)"> <br><br>
+  <input type="file" name="file" onchange="readURL(this)"> <br><br>
     <div id="UploadedImg">
-     
-    </div> -->
+    
+    </div>
 
 제목 &nbsp;:&nbsp;<input type="text" name="title" size="20" value="${s.title }"><br><br>
 제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10" value="${s.product_name }"><br><br>

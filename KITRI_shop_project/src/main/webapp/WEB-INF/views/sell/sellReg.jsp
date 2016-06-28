@@ -17,7 +17,7 @@ function readURL(input){
 	 if(input.files && input.files[0]){
 	   var reader = new FileReader();
 	   reader.onload = function(e){
-	    $('#UploadedImg').html("<img id=img src=''>");
+	    $('#UploadedImg').html("<img id=img src='' >");
 	    $('#img').attr('src', e.target.result);
 	   }
 	   reader.readAsDataURL(input.files[0]);
@@ -34,7 +34,7 @@ function readURL(input){
 <form action = "${pageContext.request.contextPath}/sell/sellreg.do" name="sellreg" method="post" enctype="multipart/form-data">
 img&nbsp;:&nbsp;
   <input type="file" name="file" onchange="readURL(this)"> <br><br>
-    <div id="UploadedImg">
+    <div id="UploadedImg" >
     
     </div>
     

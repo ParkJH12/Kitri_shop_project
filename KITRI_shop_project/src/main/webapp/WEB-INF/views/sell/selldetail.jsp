@@ -37,8 +37,8 @@ function order_list(){
 <body>
 <form action = "${pageContext.request.contextPath}/sell/seldetail.do?=${s.pb_num}" name="sellreg" method="post" enctype="multipart/form-data">
 img&nbsp;:&nbsp;
-    <div id="img" style ="width:300px;height:200px;">
-    	<img src = "${s.img_path }">
+    <div id="img">
+    	<img src = "${s.img_path }"  style ="width:300px;height:200px;">
     </div>
 제목 &nbsp;:&nbsp;<input type="text" name="title" size="20" value="${s.title }" readonly="readonly"><br><br>
 제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10" value="${s.product_name }" readonly="readonly"><br><br>
