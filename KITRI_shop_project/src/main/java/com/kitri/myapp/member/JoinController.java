@@ -70,9 +70,14 @@ public class JoinController {
 	
 	
 	@RequestMapping(value="/join/main.do")
-	public String main(){
+	public ModelAndView main(HttpServletRequest req){
 		System.out.println("메인화면이동중 ");
-		return "join/main";
+		HttpSession session = req.getSession();
+		String name = (String)session.getAttribute("name");		
+		Join j=service.getJoin(name);
+		ModelAndView mav = new ModelAndView("join/main");
+		mav.addObject("J", j);
+		return mav;
 	}
 	
 	
@@ -92,8 +97,7 @@ public class JoinController {
 	}
 	
 	@RequestMapping(value= "/join/login.do")
-	public String login(Join j, HttpServletRequest req){
-		HttpSession session = null;
+	public String login(Join j, HttpServletRequest req){		HttpSession session = null;
 		String result = "join/loginForm";
 		System.out.println(j+"j의 값");
 		boolean flag = service.login(j);
@@ -102,7 +106,11 @@ public class JoinController {
 			session.setAttribute("name", j.getName());
 			result = "join/main";
 		}
-		return result;
+		session = req.getSession();
+		String name = (String)session.getAttribute("name");		
+		j=service.getJoin(name);
+		ModelAndView mav = new ModelAndView("join/main");
+		return "redirect:/join/main.do";
 	}
 	
 	@RequestMapping(value= "/join/editForm.do")
@@ -147,7 +155,7 @@ public class JoinController {
 		service.cashUp(cash,m_num);
 		System.out.println("캐시충전완료 ");
 		System.out.println(cash);
-		return "join/main";
+		return "redirect:/join/main.do";
 	}
 	
 	//판매버튼/////////////////////////

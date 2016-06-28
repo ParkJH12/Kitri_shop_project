@@ -41,6 +41,7 @@
 
 <h2>${sessionScope.name}님 로그인중입니다.</h2>
 <h2>${sessionScope.name}님의 현재 캐시잔액 ${J.cash } 원.</h2>
+
 <input type="button" name="memmod" value="정보수정" onclick="memmod()" required/>
 <input type="button" name="logout" value="로그아웃" onclick="logout()" required/>
 <input type="button" name="out" value="회원탈퇴" onclick="delcheck()" required/>
