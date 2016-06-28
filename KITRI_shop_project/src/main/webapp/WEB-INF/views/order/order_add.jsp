@@ -48,7 +48,7 @@ private Date date; */
 제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10" value="${s.product_name }" readonly="readonly"><br><br>
 수량&nbsp;:&nbsp;<input type="text" name="count" size="10" value="${s.count }" ><br><br>
 가격&nbsp;:&nbsp;<input type="text" name="price" size="10" value="${s.price }" readonly="readonly"><br><br>
-
+<input type = "hidden" name="pb_num" value="${s.pb_num }">
 <br><br>
 
 

@@ -14,12 +14,15 @@ public class Order {
 	private int count;
 	private int price;
 	private Date w_date;
+	private int pb_num;
 	
 	
+
 	public Order() { }
 
+	
 	public Order(int order_no, String seller_name, String seller_phone_num, String buyer_name, String buyer_phone_num,
-			String title, String product_name, int count, int price, Date date) {
+			String title, String product_name, int count, int price, Date w_date, int pb_num) {
 		this.order_no = order_no;
 		this.seller_name = seller_name;
 		this.seller_phone_num = seller_phone_num;
@@ -29,7 +32,17 @@ public class Order {
 		this.product_name = product_name;
 		this.count = count;
 		this.price = price;
-		this.w_date = date;
+		this.w_date = w_date;
+		this.pb_num = pb_num;
+	}
+
+
+	public int getPb_num() {
+		return pb_num;
+	}
+	
+	public void setPb_num(int pb_num) {
+		this.pb_num = pb_num;
 	}
 
 
@@ -97,12 +110,13 @@ public class Order {
 		this.w_date = w_date;
 	}
 
+
 	@Override
 	public String toString() {
 		return "Order [order_no=" + order_no + ", seller_name=" + seller_name + ", seller_phone_num=" + seller_phone_num
 				+ ", buyer_name=" + buyer_name + ", buyer_phone_num=" + buyer_phone_num + ", title=" + title
 				+ ", product_name=" + product_name + ", count=" + count + ", price=" + price + ", w_date=" + w_date
-				+ "]";
+				+ ", pb_num=" + pb_num + "]";
 	}
-	
+
 }
