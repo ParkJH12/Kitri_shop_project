@@ -30,6 +30,7 @@ public class OrderController {
 		String buyer_name = (String) session.getAttribute("name"); // 구매자의 name
 		ArrayList<Order> o = (ArrayList<Order>)service.getOrderList(buyer_name);
 		mav.addObject("o", o);
+		System.out.println(o);
 		return mav;
 	}
 	

@@ -120,7 +120,7 @@ function back(){
 	<tr>
 			<td>${a.pb_num}</td>
 			<td><a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${a.pb_num}">${a.title}</a></td>
-			<td> <a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${a.pb_num}"><img src="${a.img_path }" width="200px" height="200px"></a></td>
+			<td><a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${a.pb_num}"><img src="${a.img_path }" width="200px" height="200px"></a></td>
 			<td>${a.product_name }</td>
 			<td>${a.price }&nbsp;원</td>
 			<td>${a.agency }</td>
