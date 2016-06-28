@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+
+<style>
+.table12_4 table {
+	width:100%;
+	margin:15px 0;
+	border:0;
+}
+.table12_4 th {
+	background-color:#C3E7FA;
+	color:#000000
+}
+.table12_4,.table12_4 th,.table12_4 td {
+	font-size:0.95em;
+	text-align:center;
+	padding:4px;
+	border-collapse:collapse;
+}
+.table12_4 th,.table12_4 td {
+	border: 1px solid #afdff8;
+	border-width:1px 0 1px 0;
+	border:2px outset #ffffff;
+}
+.table12_4 tr {
+	border: 1px solid #ffffff;
+}
+.table12_4 tr:nth-child(odd){
+	background-color:#ebf7fd;
+}
+.table12_4 tr:nth-child(even){
+	background-color:#ffffff;
+}
+</style>
