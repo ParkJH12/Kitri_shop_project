@@ -83,8 +83,7 @@ function back(){
 			}
 			}
 		}
-	
-	
+
 </script>
 </head>
 <body>
@@ -96,18 +95,19 @@ function back(){
 
 <table border="1" cellspacing="0">
 	<tr>
-		<th>번호</th>
-		<th>제목</th>
-		<th>작성자</th>
-		<th>작성일</th>
+		<th>판매자</th>
+		<th>제품명</th>
+		<th>가격</th>
+		<th>수량</th>
+		
 	</tr>
 	
 	<c:forEach var="a" items="${list}">
 	<tr>
-			<td>${a.pb_num}</td>
-			<td><a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${a.pb_num}">${a.title}</a></td>
-			<td>${a.writer}</td>
-			<td>${a.w_date}</td>
+			<td>${j.name}</td>
+			<td>${s.product_name}</td>
+			<td>${s.price}</td>
+			<td>${s.count}</td>
 	</tr>
 	</c:forEach>
 
@@ -115,6 +115,7 @@ function back(){
 <div id="previewDiv" style="postition:absolute;top:100px;left:300px;"></div>
 
 <div id="searchDiv"></div>
+
 <input type="button" value="뒤로가기" onclick="back()">
 </body>
 </html>
