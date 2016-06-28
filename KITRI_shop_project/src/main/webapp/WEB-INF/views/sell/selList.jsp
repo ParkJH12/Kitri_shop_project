@@ -5,8 +5,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath}/css/table.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/httpRequest.js"></script>
 <script type="text/javascript">
+
+function readURL(input){
+	    var reader = new FileReader();
+	   reader.onload = function(e){
+	    $('#UploadedImg').html("<img id=img src=''>");
+	    $('#img').attr('src', e.target.result);	   
+	   reader.readAsDataURL(input.files[0]);
+	 }  
+	  
+	}
+
 
 
 function back(){
@@ -87,37 +99,39 @@ function back(){
 	
 </script>
 </head>
-<body>
+<body><center>
 <h3>판매목록</h3>
-
 <a href="${pageContext.request.contextPath }/join/sellreg.do">
-판매하러가기ㄱㄱ</a><br><br>
+판매하러가기ㄱㄱ</a></center><br><br>
 
-<table border="1" cellspacing="0">
+<table class=table12_4 style="text-align:center; margin: auto;">
 	<tr>
 		<th>번호</th>
 		<th>제목</th>
+		<th>제품사진</th>
 		<th>제품명</th>
-		<td>가격</td>
-		<td>통신사</td>
+ 		<th>가격</th>
+		<th>통신사</th> 
 		<th>작성자</th>
 		<th>작성일</th>
 	</tr>
 	
 	<c:forEach var="a" items="${list}">
 	<tr>
-			<td>&nbsp;&nbsp;${a.pb_num}&nbsp;&nbsp;</td>
-			<td>&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${a.pb_num}">${a.title}&nbsp;&nbsp;</a></td>
-			<td>&nbsp;&nbsp;${a.product_name }&nbsp;&nbsp;</td>
-			<td>&nbsp;&nbsp;${a.price }&nbsp;원&nbsp;</td>
-			<td>&nbsp;&nbsp;${a.agency }&nbsp;&nbsp;</td>
-			<td>&nbsp;&nbsp;${a.writer}&nbsp;&nbsp;</td>
-			<td>&nbsp;&nbsp;${a.w_date}&nbsp;&nbsp;</td>
+			<td>${a.pb_num}</td>
+			<td><a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${a.pb_num}">${a.title}</a></td>
+			<td> <a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${a.pb_num}"><img src="${a.img_path }" width="200px" height="200px"></a></td>
+			<td>${a.product_name }</td>
+			<td>${a.price }&nbsp;원</td>
+			<td>${a.agency }</td>
+			<td>${a.writer}</td>
+			<td>${a.w_date}</td>
 	</tr>
 	</c:forEach>
 
 </table>
-<div id="previewDiv" style="postition:absolute;top:100px;left:300px;"></div>
+<center>
+<div id="previewDiv" style="postition:absolute;top:500px;left:300px;"></div>
 <form form action = "${pageContext.request.contextPath}/sell/sellist.do" name="sell_list" method="post">
 <input type="radio" name="type" value="1" checked>작성자
 <input type="radio" name="type" value="2">제목
@@ -126,5 +140,6 @@ function back(){
 </form>
 <div id="searchDiv"></div>
 <input type="button" value="뒤로가기" onclick="back()">
+</center>
 </body>
 </html>
