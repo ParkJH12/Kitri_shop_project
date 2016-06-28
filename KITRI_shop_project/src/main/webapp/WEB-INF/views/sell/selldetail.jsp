@@ -11,9 +11,11 @@ function back(){
 }
 function sellmod(){
 
-	alert("aa");
-	alert('${pb_num}');
 	location.href="${pageContext.request.contextPath }/sell/sellmod.do?pb_num=${s.pb_num}";
+}
+
+function deletepro(){
+	location.href="${pageContext.request.contextPath }/sell/deletebd.do?pb_num=${s.pb_num}";
 }
 
 
@@ -45,10 +47,10 @@ DB 저장 ${s.m_num }<br>
 세션 ${j.m_num }<br>
 
 <c:if test="${s.m_num eq j.m_num}">
-<input type="button" value="상품수정(c:if)" onclick="modi_pro()"/>
+<input type="button" name="mod" value="상품수정" onclick="sellmod()"/>
+<input type="button" name="delete" value="상품삭제" onclick="deletepro()"/>
 </c:if>
 </form>
-<input type="button" name="mod" value="상품수정" onclick="sellmod()" />
 <input type="button" value="뒤로가기" onclick="back()">
 </body>
 </html>

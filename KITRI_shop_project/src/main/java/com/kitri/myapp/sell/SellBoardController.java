@@ -83,4 +83,13 @@ public class SellBoardController {
 	}
 	
 	
+	@RequestMapping(value= "/sell/deletebd.do")
+	public String deletebd(HttpServletRequest req, int pb_num){
+		HttpSession session = req.getSession();
+		String name = (String)session.getAttribute("name");
+		service.delSellBoard(pb_num);
+		return "redirect:/sell/sellist.do";
+	}	
+	
+	
 }

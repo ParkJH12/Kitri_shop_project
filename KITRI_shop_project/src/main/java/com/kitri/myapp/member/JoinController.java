@@ -65,11 +65,20 @@ public class JoinController {
 		System.out.println("회원가입완료 ");
 		return "join/loginForm";
 	}
+	
+	
+	
+	
 	@RequestMapping(value="/join/main.do")
 	public String main(){
 		System.out.println("메인화면이동중 ");
 		return "join/main";
 	}
+	
+	
+	
+	
+	
 	
 	@RequestMapping(value="/join/joinForm.do")
 	public String joinForm(){
