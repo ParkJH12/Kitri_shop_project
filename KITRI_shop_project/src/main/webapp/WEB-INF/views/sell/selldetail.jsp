@@ -7,15 +7,20 @@
 <script type="text/javascript">
 
 function back(){
-   location.href="${pageContext.request.contextPath}/sell/sellist.do";
+	location.href="${pageContext.request.contextPath}/sell/sellist.do";
 }
 function sellmod(){
 
-   location.href="${pageContext.request.contextPath }/sell/sellmod.do?pb_num=${s.pb_num}";
+	location.href="${pageContext.request.contextPath }/sell/sellmod.do?pb_num=${s.pb_num}";
 }
 
 function deletepro(){
-   location.href="${pageContext.request.contextPath }/sell/deletebd.do?pb_num=${s.pb_num}";
+	location.href="${pageContext.request.contextPath }/sell/deletebd.do?pb_num=${s.pb_num}";
+}
+
+function order_list(){
+
+	location.href="${pageContext.request.contextPath }/order/order_list.do?m_num=${s.m_num}";
 }
 
 </script>
@@ -25,7 +30,7 @@ function deletepro(){
 <form action = "${pageContext.request.contextPath}/sell/seldetail.do?=${s.pb_num}" name="sellreg" method="post" enctype="multipart/form-data">
 img&nbsp;:&nbsp;
     <div id="img" style ="width:300px;height:200px;">
-       <img src = "${s.img_path }">
+    	<img src = "${s.img_path }">
     </div>
 제목 &nbsp;:&nbsp;<input type="text" name="title" size="20" value="${s.title }" readonly="readonly"><br><br>
 제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10" value="${s.product_name }" readonly="readonly"><br><br>
@@ -42,7 +47,11 @@ img&nbsp;:&nbsp;
 <input type="button" name="mod" value="상품수정" onclick="sellmod()"/>
 <input type="button" name="delete" value="상품삭제" onclick="deletepro()"/>
 </c:if>
+<c:if test="${s.m_num ne j.m_num}">
+<input type="button" value="주문하기 " onclick="order_list()">
+</c:if>
 </form>
+
 <input type="button" value="뒤로가기" onclick="back()">
 </body>
 </html>
