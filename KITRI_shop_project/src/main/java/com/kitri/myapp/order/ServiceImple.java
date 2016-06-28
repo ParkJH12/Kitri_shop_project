@@ -22,9 +22,9 @@ public class ServiceImple implements Service {
 	}
 
 	@Override
-	public List<Order> getOrderList() {
+	public List<Order> getOrderList(int m_num) {
 		OrderMapper orderMapper = SqlSession.getMapper(OrderMapper.class);
-		return orderMapper.select_name();
+		return orderMapper.select_all(m_num);
 	}
 
 	@Override

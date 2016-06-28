@@ -94,6 +94,13 @@ public class Order {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
+	@Override
+	public String toString() {
+		return "Order [order_no=" + order_no + ", seller_name=" + seller_name + ", seller_phone_num=" + seller_phone_num
+				+ ", buyer_name=" + buyer_name + ", buyer_phone_num=" + buyer_phone_num + ", title=" + title
+				+ ", product_name=" + product_name + ", count=" + count + ", price=" + price + ", date=" + date + "]";
+	}
 	
 	
 }

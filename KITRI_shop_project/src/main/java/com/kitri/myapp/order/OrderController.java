@@ -24,9 +24,10 @@ public class OrderController {
 	}
 	
 	@RequestMapping(value = "/order/order_list.do") // 게시판에 처음으로뿌려지는 화면
-	public ModelAndView orderList(){
-		ModelAndView mav = new ModelAndView("order/order_add");
-		ArrayList<Order> o = (ArrayList<Order>)service.getOrderList(); // 빈객체
+	public ModelAndView orderList(@RequestParam(value="seller_name")String seller_name){
+		ModelAndView mav = new ModelAndView("order/order_list");
+		Join j = service.getJoin(seller_name);
+		ArrayList<Order> o = (ArrayList<Order>)service.getOrderList(j.getM_num());
 		mav.addObject("o", o);
 		return mav;
 	} // m_num을 parameter로 받아(해당되는 id)의 list를 뿌려주는 기능
@@ -35,7 +36,7 @@ public class OrderController {
 	@RequestMapping(value = "/order/dellist.do")
 	public String delList(@RequestParam(value="order_no")int order_no){
 		service.CancelOrder(order_no);
-		return "redirect:/order/list.do";
+		return "redirect:/order/order_list.do";
 	}
 	
 	@RequestMapping(value = "/order/addlist.do")
@@ -43,6 +44,7 @@ public class OrderController {
 		HttpSession session = req.getSession();
 		String buyer = (String) session.getAttribute("name"); // 구매자의 name
 		Join buyer_join = service.getJoin(buyer);
+		System.out.println(o);
 		o.setBuyer_name(buyer_join.getName());
 		o.setBuyer_phone_num(buyer_join.getPhone_num());
 		//-----------------구매자------------------//
@@ -50,6 +52,7 @@ public class OrderController {
 		o.setSeller_name(seller_join.getName());
 		o.setSeller_phone_num(seller_join.getPhone_num());
 		//------------------판매자-----------------//
+		System.out.println(o);
 		service.InsertOrder(o);
 		return "redirect:/order/order_list.do";
 	}
