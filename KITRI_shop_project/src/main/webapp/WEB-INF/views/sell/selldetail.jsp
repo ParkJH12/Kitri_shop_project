@@ -18,6 +18,11 @@ function deletepro(){
 	location.href="${pageContext.request.contextPath }/sell/deletebd.do?pb_num=${s.pb_num}";
 }
 
+function order_list(){
+
+	location.href="${pageContext.request.contextPath }/order/addlist.do?m_num=${s.m_num}";
+}
+
 
 </script>
 <title>Insert title here</title>
@@ -50,7 +55,11 @@ DB 저장 ${s.m_num }<br>
 <input type="button" name="mod" value="상품수정" onclick="sellmod()"/>
 <input type="button" name="delete" value="상품삭제" onclick="deletepro()"/>
 </c:if>
+<c:if test="${s.m_num ne j.m_num}">
+<input type="button" value="주문하기 " onclick="order_list()">
+</c:if>
 </form>
+
 <input type="button" value="뒤로가기" onclick="back()">
 </body>
 </html>
