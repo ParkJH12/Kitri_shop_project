@@ -10,7 +10,7 @@ function checkcount(pcount) {
 		alert("매진되었습니다.")
 	}else{
 		alert("구매가 가능합니다.")
-		/* location.href="${pageContext.request.contextPath }/order/addlist.do?m_num=${s.m_num}"; */
+		location.href="${pageContext.request.contextPath }/order/reserve.do?pb_num=${s.pb_num}";
 	}
 }
 
@@ -24,11 +24,6 @@ function sellmod(){
 
 function deletepro(){
 	location.href="${pageContext.request.contextPath }/sell/deletebd.do?pb_num=${s.pb_num}";
-}
-
-function order_list(){
-
-	location.href="${pageContext.request.contextPath }/order/reserve.do?pb_num=${s.pb_num}";
 }
 
 </script>
@@ -52,8 +47,8 @@ img&nbsp;:&nbsp;
 <br><br>
 
 
-<input type="button" name="buyit" value="구매하기" onclick="checkcount(${s.count})">
 
+<input type="button" name="buyit" value="구매하기" onclick="checkcount(${s.count})">
 
 <c:if test="${s.m_num eq j.m_num}">
 <input type="button" name="mod" value="상품수정" onclick="sellmod()"/>
