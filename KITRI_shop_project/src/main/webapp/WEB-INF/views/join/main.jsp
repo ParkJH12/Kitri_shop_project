@@ -47,7 +47,6 @@
 
 <br><br>
 <input type="button" name="reg" value="판매등록" onclick="sellreg()" required/>
-<input type="button" name="mod" value="상품수정" onclick="sellmod()" required/>
 <input type="button" name="list" value="판매목록" onclick="sellist()" required/>
 <input type="button" name="bag" value="장바구니" onclick="sellbag()" required/>
 
