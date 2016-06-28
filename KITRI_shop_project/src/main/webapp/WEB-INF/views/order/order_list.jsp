@@ -102,14 +102,14 @@ function back(){
 		
 	</tr>
 	
-	<c:forEach var="a" items="${list}">
+	
 	<tr>
-			<td>${j.name}</td>
-			<td>${s.product_name}</td>
-			<td>${s.price}</td>
-			<td>${s.count}</td>
+			<td>${o.name}</td>
+			<td>${o.product_name}</td>
+			<td>${o.price}</td>
+			<td>${o.count}</td>
 	</tr>
-	</c:forEach>
+
 
 </table>
 <div id="previewDiv" style="postition:absolute;top:100px;left:300px;"></div>

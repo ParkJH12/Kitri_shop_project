@@ -28,7 +28,7 @@ function deletepro(){
 
 function order_list(){
 
-	location.href="${pageContext.request.contextPath }/order/order_list.do?m_num=${s.m_num}";
+	location.href="${pageContext.request.contextPath }/order/reserve.do?pb_num=${s.pb_num}";
 }
 
 </script>

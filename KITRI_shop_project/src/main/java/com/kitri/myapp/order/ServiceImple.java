@@ -24,7 +24,7 @@ public class ServiceImple implements Service {
 	@Override
 	public List<Order> getOrderList() {
 		OrderMapper orderMapper = SqlSession.getMapper(OrderMapper.class);
-		return orderMapper.selectAll();
+		return orderMapper.select_name();
 	}
 
 	@Override
@@ -50,5 +50,7 @@ public class ServiceImple implements Service {
 		BoardMapper boardMapper = SqlSession.getMapper(BoardMapper.class);
 		return boardMapper.select(num);
 	}
+
+	
 
 }
