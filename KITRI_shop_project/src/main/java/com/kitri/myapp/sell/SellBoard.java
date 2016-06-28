@@ -22,12 +22,9 @@ public class SellBoard {
 	private int m_num;
 	private MultipartFile file;
 
-	
-	
-
 	public SellBoard(int pb_num, String writer, String title, String content, String model, int count,
 			String product_name, int price, String color, String agency, String statement, String img_path, Date w_date,
-			int m_num, MultipartFile file) {
+			int m_num) {
 		super();
 		this.pb_num = pb_num;
 		this.writer = writer;
@@ -43,7 +40,6 @@ public class SellBoard {
 		this.img_path = img_path;
 		this.w_date = w_date;
 		this.m_num = m_num;
-		this.file = file;
 	}
 
 	public int getM_num() {

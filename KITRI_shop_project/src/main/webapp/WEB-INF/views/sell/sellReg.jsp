@@ -33,12 +33,11 @@ function readURL(input){
 <body>
 <form action = "${pageContext.request.contextPath}/sell/sellreg.do" name="sellreg" method="post" enctype="multipart/form-data">
 img&nbsp;:&nbsp;
-  <input type="file" id="fileName" value="img_path" onchange="readURL(this)"> <br><br>
+  <input type="file" name="file" onchange="readURL(this)"> <br><br>
     <div id="UploadedImg">
-     
+    
     </div>
-
-
+    
 제목 &nbsp;:&nbsp;<input type="text" name="title" size="20"><br><br>
 제품명&nbsp;:&nbsp;<input type="text" name="product_name" size="10"><br><br>
 모델명&nbsp;:&nbsp;<input type="text" name="model" size="10"><br><br>
