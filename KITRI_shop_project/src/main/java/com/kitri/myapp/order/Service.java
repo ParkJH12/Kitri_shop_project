@@ -12,7 +12,7 @@ public interface Service {
 	
 	SellBoard getSellBoardBynum(int num); // 구매하고자 하는 상품의 정보를 불러오기 위함
 	
-	List<Order> getOrderList(int m_num);
+	List<Order> getOrderList(String buyer_name);
 	
 	void InsertOrder(Order o);
 	

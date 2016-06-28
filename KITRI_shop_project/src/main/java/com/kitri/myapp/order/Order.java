@@ -13,7 +13,7 @@ public class Order {
 	private String product_name;
 	private int count;
 	private int price;
-	private Date date;
+	private Date w_date;
 	
 	
 	public Order() { }
@@ -29,7 +29,7 @@ public class Order {
 		this.product_name = product_name;
 		this.count = count;
 		this.price = price;
-		this.date = date;
+		this.w_date = date;
 	}
 
 
@@ -88,19 +88,21 @@ public class Order {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public Date getDate() {
-		return date;
+
+	public Date getW_date() {
+		return w_date;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+
+	public void setW_date(Date w_date) {
+		this.w_date = w_date;
 	}
 
 	@Override
 	public String toString() {
 		return "Order [order_no=" + order_no + ", seller_name=" + seller_name + ", seller_phone_num=" + seller_phone_num
 				+ ", buyer_name=" + buyer_name + ", buyer_phone_num=" + buyer_phone_num + ", title=" + title
-				+ ", product_name=" + product_name + ", count=" + count + ", price=" + price + ", date=" + date + "]";
+				+ ", product_name=" + product_name + ", count=" + count + ", price=" + price + ", w_date=" + w_date
+				+ "]";
 	}
-	
 	
 }

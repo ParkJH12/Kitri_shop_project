@@ -57,7 +57,7 @@
 	</select>
 	
 	<select id="select_all" resultMap="OrderResultMap" parameterType="String">
-		SELECT * FROM order where buyer_name=#{buyer_name} order by w_date desc
+		SELECT * FROM order_list where buyer_name=#{buyer_name} order by w_date desc
 	</select>
 	
 	<insert id="insert" parameterType="com.kitri.myapp.order.Order" >
@@ -68,7 +68,7 @@
 	</insert>
 	
 	<delete id="delete" parameterType="int">
-		delete order where order_no=#{order_no}
+		delete order_list where order_no=#{order_no}
 	</delete>
 
 </mapper>

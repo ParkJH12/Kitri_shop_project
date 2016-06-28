@@ -11,7 +11,7 @@ public interface OrderMapper {
 	
 	SellBoard select(int num); // 구매하고자 하는 상품의 정보를 불러오기 위함
 	
-	List<Order> select_all(int m_num);
+	List<Order> select_all(String buyer_name);
 	
 	void insert(Order o);
 	

@@ -23,20 +23,20 @@ public class OrderController {
 		this.service = service;
 	}
 	
-	@RequestMapping(value = "/order/order_list.do") // 게시판에 처음으로뿌려지는 화면
-	public ModelAndView orderList(@RequestParam(value="seller_name")String seller_name){
+	@RequestMapping(value = "/order/orderlist.do")
+	public ModelAndView orderlist(HttpServletRequest req){
 		ModelAndView mav = new ModelAndView("order/order_list");
-		Join j = service.getJoin(seller_name);
-		ArrayList<Order> o = (ArrayList<Order>)service.getOrderList(j.getM_num());
+		HttpSession session = req.getSession();
+		String buyer_name = (String) session.getAttribute("name"); // 구매자의 name
+		ArrayList<Order> o = (ArrayList<Order>)service.getOrderList(buyer_name);
 		mav.addObject("o", o);
 		return mav;
-	} // m_num을 parameter로 받아(해당되는 id)의 list를 뿌려주는 기능
-	
+	}
 	
 	@RequestMapping(value = "/order/dellist.do")
 	public String delList(@RequestParam(value="order_no")int order_no){
 		service.CancelOrder(order_no);
-		return "redirect:/order/order_list.do";
+		return "redirect:/order/orderlist.do";
 	}
 	
 	@RequestMapping(value = "/order/addlist.do")
@@ -54,7 +54,7 @@ public class OrderController {
 		//------------------판매자-----------------//
 		System.out.println(o);
 		service.InsertOrder(o);
-		return "redirect:/order/order_list.do";
+		return "redirect:/order/orderlist.do";
 	}
 	
 	@RequestMapping(value = "/order/reserve.do")

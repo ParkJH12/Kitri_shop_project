@@ -32,7 +32,7 @@ private Date date; */
 <%-- 	<div id="img">
   img&nbsp;:&nbsp; <img src = "${s.img_path }"  style ="width:300px;height:200px;">
     </div> --%>
-<form action = "${pageContext.request.contextPath}/order/addlist.do?=${s.pb_num}" name="sellreg" method="post" enctype="multipart/form-data">
+<form action = "${pageContext.request.contextPath}/order/addlist.do" name="sellreg" method="post" enctype="multipart/form-data">
 
 
  <!-- 	

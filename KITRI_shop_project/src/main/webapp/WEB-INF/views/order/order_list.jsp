@@ -8,17 +8,15 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/httpRequest.js"></script>
 <script type="text/javascript">
 
+	function back() {
+		/* 	location.href="${pageContext.request.contextPath}/join/main.do"; */
+	}
 
-function back(){
-/* 	location.href="${pageContext.request.contextPath}/join/main.do"; */
-}
+	function over(num) {
+		var param = "num=" + num;
+		sendRequest("${pageContext.request.contextPath}/board/preview.do",
+				param, previewResult, "POST");
 
-
-
-	function over(num){
-		var param = "num="+num;
-		sendRequest("${pageContext.request.contextPath}/board/preview.do", param, previewResult, "POST");
-		
 	}
 	function previewResult() {
 		if (httpRequest.readyState == 4) {
@@ -33,57 +31,58 @@ function back(){
 
 		}
 	}
-	function out(){
+	function out() {
 		var myDiv = document.getElementById("previewDiv");
-		myDiv.innerHTML ="";
-		
+		myDiv.innerHTML = "";
+
 	}
-	
-	function search(){
-		var ch = document.f2.type;  //같은 타입이 2개이상이면 무조건 배열, 즉 ch는 배열타입이 된다.
+
+	function search() {
+		var ch = document.f2.type; //같은 타입이 2개이상이면 무조건 배열, 즉 ch는 배열타입이 된다.
 		var x;
-		for(i=0;i<ch.length;i++){
-			if(ch[i].checked==true){
-				x =ch[i].value;
-				
+		for (i = 0; i < ch.length; i++) {
+			if (ch[i].checked == true) {
+				x = ch[i].value;
+
 			}
 		}
-		var param ="";
+		var param = "";
 		var url = "";
-		if(x==1){
-			param = "writer="+document.f2.keyword.value;
+		if (x == 1) {
+			param = "writer=" + document.f2.keyword.value;
 			url = "searchById.do";
 
-		}else if(x==2){
-			param = "title"+document.f2.keyword.value;
+		} else if (x == 2) {
+			param = "title" + document.f2.keyword.value;
 			url = "searchByTitle.do";
 		}
-		sendRequest("${pageContext.request.contextPath}/board/"+url, param, searchResult, "POST")
-		
+		sendRequest("${pageContext.request.contextPath}/board/" + url, param,
+				searchResult, "POST")
+
 	}
-	
-	function searchResult(){
+
+	function searchResult() {
 		if (httpRequest.readyState == 4) {
 			if (httpRequest.status == 200) {
 				var str = httpRequest.responsText;
 				var o = eval("(" + str + ")");
 				var myDiv = document.getElementById("searchDiv");
-				
+
 				var html = "<table boarer='1'><tr><th>글번호</th><th>작성자</th><th>작성일</th><th>제목</th><tr>";
-				for(i=0;i<o.length;i++){
+				for (i = 0; i < o.length; i++) {
 					html += "<tr>";
-					html += "<td>"+o[i].num+"</td>";
-					html += "<td>"+o[i].writer+"</td>";
-					html += "<td>"+o[i].w_date+"</td>";
-					html += "<td><a href='${pageContext.request.contextPath}board/read.do?num="+o[i].num+"'>"+o[i].title+"</a></td>";
+					html += "<td>" + o[i].num + "</td>";
+					html += "<td>" + o[i].writer + "</td>";
+					html += "<td>" + o[i].w_date + "</td>";
+					html += "<td><a href='${pageContext.request.contextPath}board/read.do?num="
+							+ o[i].num + "'>" + o[i].title + "</a></td>";
 					html += "</tr>";
 				}
-			html +="</table>";
-			myDiv.innerHTML = html;
-			}
+				html += "</table>";
+				myDiv.innerHTML = html;
 			}
 		}
-
+	}
 </script>
 </head>
 <body>
