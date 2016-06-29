@@ -111,6 +111,7 @@ public class SellBoardController {
 	}	
 	@RequestMapping(value="/sell/searchByWriter.do") 
 	public ModelAndView searchByid(@RequestParam(value="writer")String writer){//주소값이 입력되었을때 실행될 함수
+		System.out.println("ada");
 		ModelAndView mav = new ModelAndView("sell/searchResult");   //이동할 페이지
 		ArrayList<SellBoard> list = (ArrayList<SellBoard>) service.getSellBoardByWriter(writer);
 		mav.addObject("list", list);

@@ -4,7 +4,17 @@
 <c:forEach var="a" items="${list }" varStatus="status">
 <c:if test="${not status.first }">,</c:if>
 
-{pb_num:${a.pb_num},title:'{a.title}',img_path:'{a.img_path}' ,product_name:'{a.product_name}',price:'${a.price }',agency:'${a.agency }',writer:'${a.writer }', w_date:'${a.w_date }' }
+{
+pb_num:${a.pb_num},
+title:'${a.title}',
+img_path:'${a.img_path}' ,
+product_name:'${a.product_name}',
+price:'${a.price}',
+agency:'${a.agency}',
+writer:'${a.writer}',
+w_date:'${a.w_date}',
+content:'${a.content}'
+}
 
 
 

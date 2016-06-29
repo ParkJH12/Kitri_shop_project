@@ -52,7 +52,9 @@ function back(){
 	function searchResult(){
 		if (httpRequest.readyState == 4) {
 			if (httpRequest.status == 200) {
+				alert("result");
 				var str = httpRequest.responsText;
+				alert(str);
 				var o = eval("(" + str + ")");
 				var myDiv = document.getElementById("searchDiv");
 				
@@ -60,7 +62,8 @@ function back(){
 				for(i=0;i<o.length;i++){
 					html += "<tr>";
 					html += "<td>"+o[i].pb_num+"</td>";
-					html += "<td><a href='${pageContext.request.contextPath}/sell/sellist.do?pb_num="+o[i].pb_num+"'>"+o[i].title+"</a></td>";
+					html += "<td>"+o[i].title+"</td>";
+				//	html += "<td><a href='${pageContext.request.contextPath}/sell/sellist.do?pb_num="+o[i].pb_num+"'>"+o[i].title+"</a></td>";
 					html += "<td>"+o[i].img_path+"</td>";
 					html += "<td>"+o[i].writer+"</td>";
 					html += "<td>"+o[i].w_date+"</td>";
