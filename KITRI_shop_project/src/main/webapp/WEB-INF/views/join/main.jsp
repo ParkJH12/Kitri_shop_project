@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%request.setCharacterEncoding("UTF-8");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,7 @@
 		location.href="${pageContext.request.contextPath}/sell/sellist.do";
 	}
 	function sellbag(){
-		location.href="${pageContext.request.contextPath}/busket/busket_list.do";
+		location.href="${pageContext.request.contextPath}/busket/busketlist.do";
 	}
 	function logout(){
 		location.href="${pageContext.request.contextPath}/join/Logout.do";

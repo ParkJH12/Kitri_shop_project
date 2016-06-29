@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%request.setCharacterEncoding("UTF-8");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +25,10 @@ function sellmod(){
 
 function deletepro(){
 	location.href="${pageContext.request.contextPath }/sell/deletebd.do?pb_num=${s.pb_num}";
+}
+
+function busket() {
+	location.href="${pageContext.request.contextPath }/busket/busket_input.do?pb_num=${s.pb_num}";
 }
 
 </script>
@@ -61,5 +66,6 @@ img&nbsp;:&nbsp;
 </form>
 
 <input type="button" value="뒤로가기" onclick="back()">
+<input type="button" value="장바구니에 넣기" onclick="busket()">
 </body>
 </html>

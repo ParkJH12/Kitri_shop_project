@@ -13,7 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class JoinController {
 
 	@Resource(name="joinService")
-	
 	private Service service;
 	public void setService(Service service) {
 		this.service = service;
@@ -26,16 +25,15 @@ public class JoinController {
 	}
 	
 	@RequestMapping(value="/join/idCheck.do")
-	public ModelAndView join(@RequestParam(value="name")String name,@RequestParam(value="pass")String pass){
-		System.out.println("ID체크중 ");
-		Join j = service.getJoin(name); // request로 불러오는 id를 getJoin()에 넣어서 join j라는 새로운 객체에 넣는다
-		boolean flag = false; 
-		if( j == null){ // 만약 조회건수가 없거나 DB의 pass가 입력pass와 일치하지 않을경우
-			flag = true; // false >> 조회실패 >> 다시 롤백, true >> 조회성공 >> 뿌려준다
+	public ModelAndView join(@RequestParam(value="name")String name){
+		Join j = service.getJoin(name); // service라는 인터페이스 내 getJoin을 호출한다.
+		boolean flag = false;
+		if(j == null){
+			flag = true;
 		}
-		System.out.println("ID체크완료 ");
+		System.out.println(flag);
 		ModelAndView mav = new ModelAndView("join/check");
-		mav.addObject("flag",flag);
+		mav.addObject("flag", flag);
 		return mav;
 	}
 	
@@ -57,17 +55,12 @@ public class JoinController {
 		return mav;
 	}
 	
-
-	
 	@RequestMapping(value="/join/join.do")
 	public String joinResult(Join join){
 		service.addJoin(join);
 		System.out.println("회원가입완료 ");
 		return "join/loginForm";
 	}
-	
-	
-	
 	
 	@RequestMapping(value="/join/main.do")
 	public ModelAndView main(HttpServletRequest req){

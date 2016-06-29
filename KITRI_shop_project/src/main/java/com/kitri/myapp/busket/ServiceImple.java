@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Component;
 
+import com.kitri.myapp.member.Join;
 import com.kitri.myapp.sell.SellBoard;
 
 @Component("busketService")
@@ -40,6 +41,12 @@ public class ServiceImple implements Service {
 	public void CancelBusket(int bk_no) {
 		BusketMapper busketMapper = SqlSession.getMapper(BusketMapper.class);
 		busketMapper.delete(bk_no);
+	}
+
+	@Override
+	public Join getJoin(String name) {
+		BusketMapper busketMapper = SqlSession.getMapper(BusketMapper.class);
+		return busketMapper.select_name(name);
 	}
 
 }

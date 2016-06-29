@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kitri.myapp.member.Join;
 import com.kitri.myapp.order.Order;
 import com.kitri.myapp.sell.SellBoard;
 
@@ -28,17 +29,25 @@ public class BusketContoller {
 		SellBoard s = service.getSellBoardBynum(pb_num);
 		b.setWriter(s.getWriter());
 		System.out.println("장바구니 성공");
+		System.out.println(s);
 		service.InsertBusket(b);
-		return "redirect:/busket/busket_list.do";
+		System.out.println(b);
+		return "redirect:/busket/busketlist.do";
 	}	
 	
 	
 	@RequestMapping(value = "/busket/busketlist.do")
-	public ModelAndView busketlist(int m_num){
-		ModelAndView mav = new ModelAndView("/busket/busketlist");
+	public ModelAndView busketlist(HttpServletRequest req){
+		ModelAndView mav = new ModelAndView("busket/busket_list");
+		HttpSession session = req.getSession();
+		String name = (String) session.getAttribute("name"); // 구매자의 name
+		Join j = service.getJoin(name);
+		int m_num = j.getM_num();
+		System.out.println(m_num);
 		ArrayList<Busket> o = (ArrayList<Busket>)service.getBusketList(m_num);
 		mav.addObject("o", o);
 		return mav;
 	}
+	
 	
 }

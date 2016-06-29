@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%request.setCharacterEncoding("UTF-8");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +18,7 @@ function checkResult(){
 	if(httpRequest.readyState==4){
 		if(httpRequest.status==200){
 			var str = httpRequest.responseText;
-			alert("responseText"+httpRequest.responseText);
 			var o = eval("("+str+")");
-			alert(o.flag);
 			var myDiv= document.getElementById("checkMsg");
 			var html = "";
 			if(o.flag == 'true'){
