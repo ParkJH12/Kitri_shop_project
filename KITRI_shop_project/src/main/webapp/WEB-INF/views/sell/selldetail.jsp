@@ -26,6 +26,10 @@ function deletepro(){
 	location.href="${pageContext.request.contextPath }/sell/deletebd.do?pb_num=${s.pb_num}";
 }
 
+function busket_input(){
+	location.href="${pageContext.request.contextPath }/busket/busket_input.do?pb_num=${s.pb_num}";
+}
+
 </script>
 <title>Insert title here</title>
 </head>
@@ -57,6 +61,7 @@ img&nbsp;:&nbsp;
 </c:if>
 <c:if test="${s.m_num ne j.m_num}">
 <input type="button" name="buyit" value="구매하기" onclick="checkcount(${s.count})">
+<input type="button" name="input" value="찜하기" onclick="busket_input()">
 </c:if>
 </form>
 

@@ -32,6 +32,10 @@
 	function cashup(){
 		location.href="${pageContext.request.contextPath}/join/cashup.do";
 	}
+	function orderlist(){
+		location.href="${pageContext.request.contextPath}/order/orderlist.do";
+	}
+	
 </script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -53,6 +57,7 @@
 <br><br>
 <input type="button" name="reg" value="판매등록" onclick="sellreg()" required/>
 <input type="button" name="list" value="판매목록" onclick="sellist()" required/>
+<input type="button" name="order" value="주문목록" onclick="orderlist()" required/>
 <input type="button" name="bag" value="장바구니" onclick="sellbag()" required/>
 
 <br><br>

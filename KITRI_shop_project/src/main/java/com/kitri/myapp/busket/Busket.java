@@ -139,5 +139,13 @@ public class Busket {
 		this.b_date = b_date;
 	}
 	
+	@Override
+	public String toString() {
+		return "Busket [bk_num=" + bk_num + ", writer=" + writer + ", title=" + title + ", content=" + content
+				+ ", model=" + model + ", count=" + count + ", product_name=" + product_name + ", price=" + price
+				+ ", color=" + color + ", agency=" + agency + ", statement=" + statement + ", img_path=" + img_path
+				+ ", b_date=" + b_date + "]";
+	}
+	
 	
 }
