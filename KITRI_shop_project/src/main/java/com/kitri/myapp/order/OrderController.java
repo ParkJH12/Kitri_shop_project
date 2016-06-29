@@ -44,17 +44,20 @@ public class OrderController {
 		HttpSession session = req.getSession();
 		String buyer = (String) session.getAttribute("name"); // 구매자의 name
 		Join buyer_join = service.getJoin(buyer);
-		System.out.println(o);
-		o.setBuyer_name(buyer_join.getName());
-		o.setBuyer_phone_num(buyer_join.getPhone_num());
-		//-----------------구매자------------------//
-		Join seller_join = service.getJoin(seller_name);
-		o.setSeller_name(seller_join.getName());
-		o.setSeller_phone_num(seller_join.getPhone_num());
-		//------------------판매자-----------------//
-		System.out.println(o);
-		service.InsertOrder(o);
-		return "redirect:/order/orderlist.do";
+		if(buyer_join.getCash() < o.getPrice()){
+			return "redirect:/order/orderlist.do";
+		} else {
+			o.setBuyer_name(buyer_join.getName());
+			o.setBuyer_phone_num(buyer_join.getPhone_num());
+			//-----------------구매자------------------//
+			Join seller_join = service.getJoin(seller_name);
+			o.setSeller_name(seller_join.getName());
+			o.setSeller_phone_num(seller_join.getPhone_num());
+			//------------------판매자-----------------//
+			System.out.println(o);
+			service.InsertOrder(o);
+			return "redirect:/order/orderlist.do";
+		}
 	}
 	
 	@RequestMapping(value = "/order/reserve.do")

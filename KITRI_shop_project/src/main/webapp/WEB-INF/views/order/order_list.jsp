@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath}/css/table.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/httpRequest.js"></script>
 <script type="text/javascript">
 
@@ -20,7 +21,7 @@
 주문목록<br>
 
 
-<table border="1">
+<table class=table12_4>
 	<tr>
 		<th>판매자</th>
 		<th>제품명</th>
