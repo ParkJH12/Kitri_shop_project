@@ -1,5 +1,7 @@
 package com.kitri.myapp.busket;
 
+import java.util.ArrayList;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kitri.myapp.order.Order;
 import com.kitri.myapp.sell.SellBoard;
 
 @Controller
@@ -28,4 +31,15 @@ public class BusketContoller {
 		service.InsertBusket(b);
 		return "redirect:/sell/sellist.do";
 	}	
+	
+	@RequestMapping(value = "/busket/busket_list.do")
+	public ModelAndView orderlist(@RequestParam(value="m_num")int m_num){
+		ModelAndView mav = new ModelAndView("/busket/busket_list");
+		SellBoard s = service.getSellBoardBynum(m_num);
+		ArrayList<Busket> o = (ArrayList<Busket>)service.getBusketList(m_num);
+		mav.addObject("o", o);
+		mav.addObject("s", s);
+		System.out.println(o);
+		return mav;
+	}
 }
