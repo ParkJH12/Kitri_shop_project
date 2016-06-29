@@ -18,9 +18,7 @@ function checkResult(){
 	if(httpRequest.readyState==4){
 		if(httpRequest.status==200){
 			var str = httpRequest.responseText;
-			alert("responseText"+httpRequest.responseText);
 			var o = eval("("+str+")");
-			alert(o.flag);
 			var myDiv= document.getElementById("checkMsg");
 			var html = "";
 			if(o.flag == 'true'){
