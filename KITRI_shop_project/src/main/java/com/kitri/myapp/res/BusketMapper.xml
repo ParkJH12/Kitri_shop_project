@@ -32,6 +32,7 @@ B_DATE DATE DEFAULT SYSDATE
 		<result property="agency" column="agecny" />
 		<result property="statement" column="statement" />
 		<result property="b_date" column="b_date" />
+		<result property="m_num" column="m_num" />
 	</resultMap>
 		
 	<resultMap type="com.kitri.myapp.sell.SellBoard" id="SellResultMap">
@@ -49,6 +50,21 @@ B_DATE DATE DEFAULT SYSDATE
 		<result property="img_path" column="img_path" />
 		<result property="w_date" column="w_date" />
 	</resultMap>
+	
+	<resultMap type="com.kitri.myapp.member.Join" 
+	id="JoinResultMap">
+		<result property="m_num" column="m_num" />
+		<result property="name" column="name" />
+		<result property="pass" column="pass" />
+		<result property="phone_num" column="phone_num" />
+		<result property="address" column="address" />
+		<result property="email" column="email" />
+		<result property="cash" column="cash" />
+	</resultMap>
+	
+	<select id="select_name" resultMap="JoinResultMap" parameterType="String">
+		SELECT * FROM member where name=#{name}
+	</select>
 
 	<select id="select" resultMap="SellResultMap" parameterType="int">
 		SELECT * FROM sell_ph_board where pb_num=#{pb_num}
@@ -63,11 +79,13 @@ B_DATE DATE DEFAULT SYSDATE
 		INSERT INTO busket values(seq_busket.nextval, #{writer}, 
 		#{title}, #{content}, #{model}, 
 		#{count}, #{product_name}, #{price}, #{color},
-		#{agency}, #{statement}, sysdate)
+		#{agency}, #{statement}, sysdate, #{m_num})
 	</insert>
 	
 	<delete id="delete" parameterType="int">
 		delete busket where bk_num=#{bk_num}
 	</delete>
+	
+	
 
 </mapper>

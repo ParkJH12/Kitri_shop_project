@@ -2,10 +2,13 @@ package com.kitri.myapp.busket;
 
 import java.util.List;
 
+import com.kitri.myapp.member.Join;
 import com.kitri.myapp.sell.SellBoard;
 
 public interface BusketMapper {
-
+	
+	Join select_name(String name);
+	
 	void insert(Busket b);
 
 	void delete(int bk_no);

@@ -15,10 +15,19 @@ public class Busket {
 	private String agency;
 	private String statement;
 	private Date b_date;
+	private int m_num;
 	
+	public int getM_num() {
+		return m_num;
+	}
+	public void setM_num(int m_num) {
+		this.m_num = m_num;
+	}
 	public Busket() {  }
+
 	public Busket(int bk_num, String writer, String title, String content, String model, int count, String product_name,
-			int price, String color, String agency, String statement, String img_path, Date b_date) {
+			int price, String color, String agency, String statement, Date b_date, int m_num) {
+		super();
 		this.bk_num = bk_num;
 		this.writer = writer;
 		this.title = title;
@@ -31,8 +40,8 @@ public class Busket {
 		this.agency = agency;
 		this.statement = statement;
 		this.b_date = b_date;
+		this.m_num = m_num;
 	}
-
 	public int getBk_num() {
 		return bk_num;
 	}
