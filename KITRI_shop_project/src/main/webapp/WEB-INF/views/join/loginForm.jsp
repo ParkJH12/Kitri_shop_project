@@ -59,7 +59,7 @@ $(document).ready(function() {
 	<!--CONTENT-->
     <div class="content">
 	<!--USERNAME--><input name="name" type="text" class="input username" value="Username" onfocus="this.value=''" /><!--END USERNAME-->
-    <!--PASSWORD--><input name="pass" type="text" class="input password" value="Password" onfocus="this.value=''" /><!--END PASSWORD-->
+    <!--PASSWORD--><input name="pass" type="password" class="input password" value="Password" onfocus="this.value=''" /><!--END PASSWORD-->
     </div>
     <!--END CONTENT-->
     
