@@ -60,16 +60,13 @@ function back(){
 				for(i=0;i<o.length;i++){
 					html += "<tr>";
 					html += "<td>"+o[i].pb_num+"</td>";
-					html += "<td><a href='${pageContext.request.contextPath}sell/sellist.do?pb_num="+o[i].pb_num+"'>"+o[i].title+"</a></td>";
-					html += "<td>"+o[i].img_path"</td>";
-					html += "<td>"+o[i].product_name"</td>";
-					html += "<td>"+o[i].price "</td>";
-					html += "<td>"+o[i].agency "</td>";
+					html += "<td><a href='${pageContext.request.contextPath}/sell/sellist.do?pb_num="+o[i].pb_num+"'>"+o[i].title+"</a></td>";
+					html += "<td>"+o[i].img_path+"</td>";
 					html += "<td>"+o[i].writer+"</td>";
 					html += "<td>"+o[i].w_date+"</td>";
-					
-				
-					
+					html += "<td>"+o[i].product_name+"</td>";
+					html += "<td>"+o[i].price+"</td>";
+					html += "<td>"+o[i].agency+"</td>";
 					html += "</tr>";
 				}
 			html +="</table>";
@@ -113,7 +110,7 @@ function back(){
 
 </table>
 
-
+<div id="previewDiv" style="postition:absolute;top:500px;left:300px;"></div>
 <form action = "${pageContext.request.contextPath}/sell/sellist.do" name="f2" method="post">
 <input type="radio" name="type" value="1" checked>작성자
 <input type="radio" name="type" value="2">제목
