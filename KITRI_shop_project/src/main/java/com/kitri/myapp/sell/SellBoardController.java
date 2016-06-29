@@ -111,5 +111,4 @@ public class SellBoardController {
 		return "redirect:/sell/sellist.do";
 	}	
 	
-	
-}
+ }

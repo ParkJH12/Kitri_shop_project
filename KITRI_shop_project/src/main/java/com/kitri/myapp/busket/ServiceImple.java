@@ -10,37 +10,36 @@ import org.springframework.stereotype.Component;
 import com.kitri.myapp.sell.SellBoard;
 
 @Component("busketService")
-public class ServiceImple implements BusketMapper {
-
+public class ServiceImple implements Service {
 	@Resource(name="sqlSession")
-	private SqlSession Sqlsession;
-	
-	public void setSqlsession(SqlSession sqlsession) {
-		this.Sqlsession = sqlsession;
+	private SqlSession SqlSession;
+
+	public void setSqlSession(SqlSession sqlSession) {
+		SqlSession = sqlSession;
 	}
 
 	@Override
-	public void insert(Busket b) {
-		BusketMapper busketMapper = Sqlsession.getMapper(BusketMapper.class);
+	public SellBoard getSellBoardBynum(int num) {
+		BusketMapper busketMapper = SqlSession.getMapper(BusketMapper.class);
+		return busketMapper.select(num);
+	}
+
+	@Override
+	public List<Busket> getBusketList(int m_num) {
+		BusketMapper busketMapper = SqlSession.getMapper(BusketMapper.class);
+		return busketMapper.selectAll(m_num);
+	}
+
+	@Override
+	public void InsertBusket(Busket b) {
+		BusketMapper busketMapper = SqlSession.getMapper(BusketMapper.class);
 		busketMapper.insert(b);
 	}
 
 	@Override
-	public void delete(Busket b) {
-		BusketMapper busketMapper = Sqlsession.getMapper(BusketMapper.class);
-		busketMapper.delete(b);
-	}
-
-	@Override
-	public List<Busket> selectAll() {
-		BusketMapper busketMapper = Sqlsession.getMapper(BusketMapper.class);
-		return busketMapper.selectAll();
-	}
-
-	@Override
-	public SellBoard select(int num) {
-		BusketMapper busketMapper = Sqlsession.getMapper(BusketMapper.class);
-		return busketMapper.select(num);
+	public void CancelBusket(int bk_no) {
+		BusketMapper busketMapper = SqlSession.getMapper(BusketMapper.class);
+		busketMapper.delete(bk_no);
 	}
 
 }
