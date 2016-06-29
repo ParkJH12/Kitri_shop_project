@@ -22,8 +22,21 @@
 
 
  ================================================================   
-4. 장바구니로 가면 해당 데이터가 장바구니영역으로 이동(카운팅안됨)
-    - 구매 시 3번같이 행동
-    - 취소 시 해당 데이터는 삭제
-    
-5. 기타 오류수정
+한글깨짐ㅅ ㅣ ::
+
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+==============
