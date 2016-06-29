@@ -46,6 +46,6 @@
 
 </table>
 
-<input type="button" value="뒤로가기" onclick="back()">
+<input type="button" value="뒤로가기" onclick="back()" class="bt">
 </body>
 </html>

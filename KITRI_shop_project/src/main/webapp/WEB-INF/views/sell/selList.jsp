@@ -120,11 +120,11 @@ function back(){
 <input type="radio" name="type" value="1" checked>작성자
 <input type="radio" name="type" value="2">제목
 <input type="text" name="keyword">
-<input type="button" value="검색" onclick="search()">
+<input type="button" value="검색" onclick="search()" class="bt">
 
 </form>
 <div id="searchDiv"></div>
-<input type="button" value="뒤로가기" onclick="back()">
+<input type="button" value="뒤로가기" onclick="back()" class="bt">
 
 </body>
 </html>

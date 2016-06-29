@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="${pageContext.request.contextPath}/css/table.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 function checkcount(pcount) {
 	if(pcount==0){
@@ -57,15 +58,15 @@ img&nbsp;:&nbsp;
 
 
 <c:if test="${s.m_num eq j.m_num}">
-<input type="button" name="mod" value="상품수정" onclick="sellmod()"/>
-<input type="button" name="delete" value="상품삭제" onclick="deletepro()"/>
+<input type="button" name="mod" value="상품수정" onclick="sellmod()" class="bt"/>
+<input type="button" name="delete" value="상품삭제" onclick="deletepro()" class="bt"/>
 </c:if>
 <c:if test="${s.m_num ne j.m_num}">
-<input type="button" name="buyit" value="구매하기" onclick="checkcount(${s.count})">
+<input type="button" name="buyit" value="구매하기" onclick="checkcount(${s.count})" class="bt">
 </c:if>
 </form>
 
-<input type="button" value="뒤로가기" onclick="back()">
-<input type="button" value="장바구니에 넣기" onclick="busket()">
+<input type="button" value="뒤로가기" onclick="back()" class="bt">
+<input type="button" value="장바구니에 넣기" onclick="busket()" class="bt">
 </body>
 </html>

@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="${pageContext.request.contextPath}/css/table.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 
 function back(){
@@ -65,10 +66,10 @@ private Date date; */
 
 
 <c:if test="${s.m_num ne j.m_num}">
-<input type="submit" value="주문하기 ">
+<input type="submit" value="주문하기 " class="bt">
 </c:if>
 </form>
 
-<input type="button" value="뒤로가기" onclick="back()">
+<input type="button" value="뒤로가기" onclick="back()" class="bt">
 </body>
 </html>

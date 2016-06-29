@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="${pageContext.request.contextPath}/css/table.css" rel="stylesheet" type="text/css" />
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
 	function back() {
@@ -43,12 +44,12 @@ img&nbsp;:&nbsp;
 상품 내용<input type="text" name="content" value="${s.content }" size="80" style="height:100px;">
 <input type="hidden" name="pb_num" value="${s.pb_num}">
 <br><br>
-<input type="submit" value="상품수정"/>
+<input type="submit" value="상품수정" class="bt"/>
 
 </form>
 
 
-<input type="button" value="뒤로가기" onclick="back()">
+<input type="button" value="뒤로가기" onclick="back()" class="bt">
 
 </body>
 </html>

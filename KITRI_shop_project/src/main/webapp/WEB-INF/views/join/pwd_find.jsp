@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="${pageContext.request.contextPath}/css/table.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/httpRequest.js"></script>
 <script type="text/javascript">
 function idemailchk(){
@@ -43,7 +44,7 @@ ID &nbsp;:&nbsp;<input type="text" name="name" id = "id">
 Email &nbsp;:&nbsp;<input type="text" name="email" id = "email"><br><br>
 
 
-<input type= "button" value="찾기" onclick="idemailchk()"/>
-<input type= "button" value="취소" onclick="location.href='${pageContext.request.contextPath}/'"><br>
+<input type= "button" value="찾기" onclick="idemailchk()" class="bt"/>
+<input type= "button" value="취소" onclick="location.href='${pageContext.request.contextPath}/'" class="bt"><br>
 </body>
 </html>

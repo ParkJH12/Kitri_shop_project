@@ -6,8 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link href="${pageContext.request.contextPath}/css/table.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/httpRequest.js"></script>
 <script type="text/javascript">
+
 function back() {
 	location.href="${pageContext.request.contextPath }/join/main.do";
 }
@@ -19,8 +21,8 @@ function back() {
 현재 캐시 : <input type = "text" name="cor_cash" value="${J.cash }" readonly/><br>
 충전할 캐시 : <input type="text" name="cash" size="10"/> 원<br>
 <input type = "hidden" name="m_num" value="${J.m_num }" readonly/><br>
-<input type="submit" value="Charge" required/>
-<input type="button" class="register" value="Back" onclick="back()">
+<input type="submit" class="bt" value="Charge" required/>
+<input type="button" class="bt" value="Back" onclick="back()">
 </form>
 </body>
 </html>

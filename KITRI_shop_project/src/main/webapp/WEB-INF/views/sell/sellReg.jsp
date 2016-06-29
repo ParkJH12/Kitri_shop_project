@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+<link href="${pageContext.request.contextPath}/css/table.css" rel="stylesheet" type="text/css" />
 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
 
 <script>
@@ -75,10 +75,10 @@ img&nbsp;:&nbsp;
 작성자<input type="text" name="writer" value="${sessionScope.name }" readonly/>
 <input type="hidden" name="m_num" value="${j.m_num}" >
 <br><br>
-<input type= "submit" value="등록">
-<input type= "reset"  value="취소">
+<input type= "submit" value="등록" class="bt">
+<input type= "reset"  value="취소" class="bt">
 </form>
-<input type= "button"  value="뒤로가기" onclick="back()"><br>
+<input type= "button"  value="뒤로가기" onclick="back()" class="bt"><br>
 
 
 </body>
