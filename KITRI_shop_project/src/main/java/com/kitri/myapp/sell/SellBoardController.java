@@ -102,7 +102,6 @@ public class SellBoardController {
 		return mav;
 	}
 	
-	
 	@RequestMapping(value= "/sell/deletebd.do")
 	public String deletebd(HttpServletRequest req, int pb_num){
 		HttpSession session = req.getSession();
@@ -110,5 +109,19 @@ public class SellBoardController {
 		service.delSellBoard(pb_num);
 		return "redirect:/sell/sellist.do";
 	}	
+	@RequestMapping(value="/sell/searchByWriter.do") 
+	public ModelAndView searchByid(@RequestParam(value="writer")String writer){//주소값이 입력되었을때 실행될 함수
+		ModelAndView mav = new ModelAndView("sell/searchResult");   //이동할 페이지
+		ArrayList<SellBoard> list = (ArrayList<SellBoard>) service.getSellBoardByWriter(writer);
+		mav.addObject("list", list);
+		return mav;
+	}
+	@RequestMapping(value="/sell/searchByTitle.do") 
+	public ModelAndView searchTitle(@RequestParam(value="title")String title){//주소값이 입력되었을때 실행될 함수
+		ModelAndView mav = new ModelAndView("sell/searchResult");   //이동할 페이지
+		ArrayList<SellBoard> list = (ArrayList<SellBoard>) service.getSellBoardBytitle(title);
+		mav.addObject("list", list);
+		return mav;
+	}
 	
  }

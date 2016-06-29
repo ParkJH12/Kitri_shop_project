@@ -20,36 +20,10 @@ function readURL(input){
 	}
 
 
-
 function back(){
 	location.href="${pageContext.request.contextPath}/join/main.do";
 }
 
-
-
-	function over(num){
-		var param = "num="+num;
-		sendRequest("${pageContext.request.contextPath}/board/preview.do", param, previewResult, "POST");
-		
-	}
-	function previewResult() {
-		if (httpRequest.readyState == 4) {
-			if (httpRequest.status == 200) {
-				var str = httpRequest.responsText;
-				var o = eval("(" + str + ")");
-				var myDiv = document.getElementById("previewDiv");
-				var html = o.content;
-				myDiv.innerHTML = html;
-
-			}
-
-		}
-	}
-	function out(){
-		var myDiv = document.getElementById("previewDiv");
-		myDiv.innerHTML ="";
-		
-	}
 	
 	function search(){
 		var ch = document.f2.type;  //같은 타입이 2개이상이면 무조건 배열, 즉 ch는 배열타입이 된다.
@@ -64,13 +38,14 @@ function back(){
 		var url = "";
 		if(x==1){
 			param = "writer="+document.f2.keyword.value;
-			url = "searchById.do";
+			url = "searchByWriter.do";
 
 		}else if(x==2){
 			param = "title"+document.f2.keyword.value;
 			url = "searchByTitle.do";
 		}
-		sendRequest("${pageContext.request.contextPath}/board/"+url, param, searchResult, "POST")
+		alert(url);
+		sendRequest("${pageContext.request.contextPath}/sell/"+url, param, searchResult, "POST")
 		
 	}
 	
@@ -84,10 +59,17 @@ function back(){
 				var html = "<table boarer='1'><tr><th>글번호</th><th>작성자</th><th>작성일</th><th>제목</th><tr>";
 				for(i=0;i<o.length;i++){
 					html += "<tr>";
-					html += "<td>"+o[i].num+"</td>";
+					html += "<td>"+o[i].pb_num+"</td>";
+					html += "<td><a href='${pageContext.request.contextPath}sell/sellist.do?pb_num="+o[i].pb_num+"'>"+o[i].title+"</a></td>";
+					html += "<td>"+o[i].img_path"</td>";
+					html += "<td>"+o[i].product_name"</td>";
+					html += "<td>"+o[i].price "</td>";
+					html += "<td>"+o[i].agency "</td>";
 					html += "<td>"+o[i].writer+"</td>";
 					html += "<td>"+o[i].w_date+"</td>";
-					html += "<td><a href='${pageContext.request.contextPath}board/read.do?num="+o[i].num+"'>"+o[i].title+"</a></td>";
+					
+				
+					
 					html += "</tr>";
 				}
 			html +="</table>";
@@ -99,10 +81,10 @@ function back(){
 	
 </script>
 </head>
-<body><center>
+<body>
 <h3>판매목록</h3>
 <a href="${pageContext.request.contextPath }/join/sellreg.do">
-판매하러가기ㄱㄱ</a></center><br><br>
+판매하러가기ㄱㄱ</a><br><br>
 
 <table class=table12_4 style="text-align:center; margin: auto;">
 	<tr>
@@ -130,16 +112,17 @@ function back(){
 	</c:forEach>
 
 </table>
-<center>
-<div id="previewDiv" style="postition:absolute;top:500px;left:300px;"></div>
-<form form action = "${pageContext.request.contextPath}/sell/sellist.do" name="sell_list" method="post">
+
+
+<form action = "${pageContext.request.contextPath}/sell/sellist.do" name="f2" method="post">
 <input type="radio" name="type" value="1" checked>작성자
 <input type="radio" name="type" value="2">제목
 <input type="text" name="keyword">
 <input type="button" value="검색" onclick="search()">
+
 </form>
 <div id="searchDiv"></div>
 <input type="button" value="뒤로가기" onclick="back()">
-</center>
+
 </body>
 </html>

@@ -18,9 +18,9 @@ public interface Service {
 	
 	void delSellBoard(int num);
 	
-    List getSellBoardByWriter(String writer);
+    List<SellBoard> getSellBoardByWriter(String writer);
 	
-	List getSellBoardBytitle(String title);
+	List<SellBoard> getSellBoardBytitle(String title);
 	
 	Join getJoin(String name);
 	
