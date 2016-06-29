@@ -7,38 +7,36 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/httpRequest.js"></script>
 <script type="text/javascript">
-function idchk(){
-	var idElement = document.getElementById('id');
-	var param = "name="+idElement.value;
-	sendRequest("${pageContext.request.contextPath}/join/idCheck.do", param, checkResult, "POST");
-	
-}
 
-function back() {
-	location.href="${pageContext.request.contextPath }/";
-}
+	function idchk() {
+		var idElement = document.getElementById('id');
+		var param = "name=" + idElement.value;
+		sendRequest("${pageContext.request.contextPath}/join/idCheck.do",
+				param, checkResult, "POST");
+	}
 
+	function back() {
+		location.href = "${pageContext.request.contextPath }/";
+	}
 
-function checkResult(){
-	if(httpRequest.readyState==4){
-		if(httpRequest.status==200){
-							
-			 var str = httpRequest.responseText;
-			var o = eval("("+str+")");
-			var myDiv= document.getElementById("checkMsg");
-			var html = "";
-			alert(o.flag);
-			if(o.flag == 'true'){
-				html = "사용가능한 아이디";				
-			}else if(o.flag == 'false'){
-				html = "사용불가능한 아이디";
+	function checkResult() {
+		if (httpRequest.readyState == 4) {
+			if (httpRequest.status == 200) {
+				var str = httpRequest.responseText;
+				var o = eval("(" + str + ")");
+				var myDiv = document.getElementById("checkMsg");
+				var html = "";
+				alert(o.flag);
+				if (o.flag == 'true') {
+					html = "사용가능한 아이디";
+				} else if (o.flag == 'false') {
+					html = "사용불가능한 아이디";
+				}
+				alert(html);
+				myDiv.innerHTML = html;
 			}
-			alert(html);
-			myDiv.innerHTML = html; 
 		}
 	}
-}
-
 </script>
 
 <meta charset="UTF-8">
