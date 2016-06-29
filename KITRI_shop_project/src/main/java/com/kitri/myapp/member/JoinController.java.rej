@@ -1,0 +1,9 @@
+diff a/KITRI_shop_project/src/main/java/com/kitri/myapp/member/JoinController.java b/KITRI_shop_project/src/main/java/com/kitri/myapp/member/JoinController.java	(rejected hunks)
+@@ -26,6 +26,7 @@
+ 	}
+ 	
+ 	@RequestMapping(value="/join/idCheck.do")
++	public ModelAndView join(@RequestParam(value="name")String name,@RequestParam(value="pass")String pass){
+ 		System.out.println("ID체크중 ");
+ 		Join j = service.getJoin(name); // request로 불러오는 id를 getJoin()에 넣어서 join j라는 새로운 객체에 넣는다
+ 		boolean flag = false; 
