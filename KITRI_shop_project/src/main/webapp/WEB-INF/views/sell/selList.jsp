@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%request.setCharacterEncoding("UTF-8");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,7 @@
 <link href="${pageContext.request.contextPath}/css/table.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/httpRequest.js"></script>
 <script type="text/javascript">
+
 
 function readURL(input){
 	    var reader = new FileReader();
@@ -83,7 +85,7 @@ function back(){
 <a href="${pageContext.request.contextPath }/join/sellreg.do">
 판매하러가기ㄱㄱ</a><br><br>
 
-<table class=table12_4 style="text-align:center; margin: auto;">
+<table class=table12_4 >
 	<tr>
 		<th>번호</th>
 		<th>제목</th>

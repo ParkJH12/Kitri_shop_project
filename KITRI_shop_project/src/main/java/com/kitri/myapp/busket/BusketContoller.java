@@ -31,6 +31,7 @@ public class BusketContoller {
 		System.out.println("장바구니 성공");
 		System.out.println(s);
 		service.InsertBusket(b);
+		System.out.println(b);
 		return "redirect:/busket/busketlist.do";
 	}	
 	
