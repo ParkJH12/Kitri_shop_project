@@ -6,6 +6,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.kitri.myapp.sell.SellBoard;
 
@@ -19,10 +21,11 @@ public class BusketContoller {
 	}
 
 	@RequestMapping(value= "/busket/busket_input.do")
-	public String input_busket(Busket b, int pb_num){
+	public String input_busket(Busket b, @RequestParam(value="pb_num")int pb_num){
 		SellBoard s = service.getSellBoardBynum(pb_num);
-		System.out.println(b);
+		b.setWriter(s.getWriter());
+		System.out.println("장바구니 성공");
 		service.InsertBusket(b);
-		return "redirect:/sell/selldetail.do";
+		return "redirect:/sell/sellist.do";
 	}	
 }

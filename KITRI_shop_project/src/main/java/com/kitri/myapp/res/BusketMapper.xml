@@ -31,7 +31,6 @@ B_DATE DATE DEFAULT SYSDATE
 		<result property="color" column="color" />
 		<result property="agency" column="agecny" />
 		<result property="statement" column="statement" />
-		<result property="img_path" column="img_path" />
 		<result property="b_date" column="b_date" />
 	</resultMap>
 		
@@ -64,7 +63,7 @@ B_DATE DATE DEFAULT SYSDATE
 		INSERT INTO busket values(seq_busket.nextval, #{writer}, 
 		#{title}, #{content}, #{model}, 
 		#{count}, #{product_name}, #{price}, #{color},
-		#{agency}, #{statement}, #{img_path}, sysdate)
+		#{agency}, #{statement}, sysdate)
 	</insert>
 	
 	<delete id="delete" parameterType="int">

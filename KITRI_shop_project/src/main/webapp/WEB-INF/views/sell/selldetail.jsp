@@ -27,7 +27,8 @@ function deletepro(){
 }
 
 function busket_input(){
-	location.href="${pageContext.request.contextPath }/busket/busket_input.do?pb_num=${s.pb_num}";
+	document.sellreg.action="${pageContext.request.contextPath }/busket/busket_input.do?pb_num=${s.pb_num}";
+	document.sellreg.submit();
 }
 
 </script>
