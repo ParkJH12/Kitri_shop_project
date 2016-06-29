@@ -36,7 +36,7 @@
 	<c:forEach var="o" items="${o}">
 	<tr>
 			<td>${o.seller_name}</td>
-			<td><a href="${pageContext.request.contextPath}/order/complete.do?=${o.pb_num}">${o.product_name}</a></td>
+			<td><a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${o.pb_num}">${o.product_name}</a></td>
 			<td>${o.price}</td>
 			<td>${o.count}</td>
 			<td>${o.buyer_name }
