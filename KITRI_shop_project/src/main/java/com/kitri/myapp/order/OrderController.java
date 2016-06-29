@@ -23,18 +23,13 @@ public class OrderController {
 		this.service = service;
 	}
 	
-	
-	
 	@RequestMapping(value = "/order/orderlist.do")
-	public ModelAndView orderlist(HttpServletRequest req,@RequestParam(value="pb_num")int pb_num){
+	public ModelAndView orderlist(HttpServletRequest req){
 		ModelAndView mav = new ModelAndView("order/order_list");
 		HttpSession session = req.getSession();
 		String buyer_name = (String) session.getAttribute("name"); // 구매자의 name
-		SellBoard s = service.getSellBoardBynum(pb_num);
 		ArrayList<Order> o = (ArrayList<Order>)service.getOrderList(buyer_name);
 		mav.addObject("o", o);
-		mav.addObject("s", s);
-		System.out.println(o);
 		return mav;
 	}
 	
@@ -75,7 +70,7 @@ public class OrderController {
 		return mav;
 	} // order_add로 정보를 넘기기 위한 객체 선언
 	
-	@RequestMapping(value="/sell/complete.do") 
+	@RequestMapping(value="/order/complete.do") 
 	public ModelAndView complete(@RequestParam(value="pb_num")int pb_num, HttpServletRequest req){
 		HttpSession session = req.getSession();
 		String id = (String) session.getAttribute("name");

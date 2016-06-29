@@ -18,7 +18,7 @@
 			}
 			reader.readAsDataURL(input.files[0]);
 		}
-	}se
+	}
 </script>
 <title>Insert title here</title>
 </head>

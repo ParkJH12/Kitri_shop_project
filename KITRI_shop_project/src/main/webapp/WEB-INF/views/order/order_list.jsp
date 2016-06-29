@@ -44,7 +44,6 @@
 
 </table>
 
-<input type="hidden" name="${pb_num }"/>
 <input type="button" value="뒤로가기" onclick="back()">
 </body>
 </html>
