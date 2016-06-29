@@ -21,7 +21,7 @@
 		location.href="${pageContext.request.contextPath}/sell/sellist.do";
 	}
 	function sellbag(){
-		location.href="${pageContext.request.contextPath}/join/sellbag.do";
+		location.href="${pageContext.request.contextPath}/busket/busket_list.do";
 	}
 	function logout(){
 		location.href="${pageContext.request.contextPath}/join/Logout.do";

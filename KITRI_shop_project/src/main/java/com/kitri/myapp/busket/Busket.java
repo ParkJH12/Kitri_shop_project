@@ -14,7 +14,6 @@ public class Busket {
 	private String color;
 	private String agency;
 	private String statement;
-	private String img_path;
 	private Date b_date;
 	
 	public Busket() {  }
@@ -31,7 +30,6 @@ public class Busket {
 		this.color = color;
 		this.agency = agency;
 		this.statement = statement;
-		this.img_path = img_path;
 		this.b_date = b_date;
 	}
 
@@ -123,13 +121,6 @@ public class Busket {
 		this.statement = statement;
 	}
 
-	public String getImg_path() {
-		return img_path;
-	}
-
-	public void setImg_path(String img_path) {
-		this.img_path = img_path;
-	}
 
 	public Date getB_date() {
 		return b_date;
@@ -143,8 +134,7 @@ public class Busket {
 	public String toString() {
 		return "Busket [bk_num=" + bk_num + ", writer=" + writer + ", title=" + title + ", content=" + content
 				+ ", model=" + model + ", count=" + count + ", product_name=" + product_name + ", price=" + price
-				+ ", color=" + color + ", agency=" + agency + ", statement=" + statement + ", img_path=" + img_path
-				+ ", b_date=" + b_date + "]";
+				+ ", color=" + color + ", agency=" + agency + ", statement=" + statement + ", b_date=" + b_date + "]";
 	}
 	
 	

@@ -29,17 +29,16 @@ public class BusketContoller {
 		b.setWriter(s.getWriter());
 		System.out.println("장바구니 성공");
 		service.InsertBusket(b);
-		return "redirect:/sell/sellist.do";
+		return "redirect:/busket/busket_list.do";
 	}	
 	
-	@RequestMapping(value = "/busket/busket_list.do")
-	public ModelAndView orderlist(@RequestParam(value="m_num")int m_num){
-		ModelAndView mav = new ModelAndView("/busket/busket_list");
-		SellBoard s = service.getSellBoardBynum(m_num);
+	
+	@RequestMapping(value = "/busket/busketlist.do")
+	public ModelAndView busketlist(int m_num){
+		ModelAndView mav = new ModelAndView("/busket/busketlist");
 		ArrayList<Busket> o = (ArrayList<Busket>)service.getBusketList(m_num);
 		mav.addObject("o", o);
-		mav.addObject("s", s);
-		System.out.println(o);
 		return mav;
 	}
+	
 }
