@@ -11,6 +11,9 @@
 function back(){
 	location.href="${pageContext.request.contextPath}/join/main.do";
 }
+function del(bk_num){
+	location.href="${pageContext.request.contextPath}/busket/delbusket.do?bk_num=" + bk_num;
+}
 </script>
 
 </head>
@@ -24,6 +27,8 @@ function back(){
 		<th>통신사</th> 
 		<th>작성자</th>
 		<th>작성일</th>
+		<th>장바구니삭제</th>
+		<th>장바구니주문</th>
 	</tr>
 	
 	<c:forEach var="o" items="${o}">
@@ -35,6 +40,8 @@ function back(){
 			<td>${o.agency }</td>
 			<td>${o.writer}</td>
 			<td>${o.b_date}</td>
+			<td><input type="button" value="장바구니삭제" onclick="del(${o.bk_num})"></td>
+			<td><input type="button" value="장바구니주문" onclick="add(${o.bk_num})"></td>
 	</tr>
 	</c:forEach>
 

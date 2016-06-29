@@ -13,7 +13,9 @@
 	function back() {
 			location.href="${pageContext.request.contextPath}/join/main.do"; 
 	}
-
+	function del(order_no){
+		location.href="${pageContext.request.contextPath}/order/dellist.do?order_no=" + order_no;
+	}
 </script>
 </head>
 <body>
@@ -24,23 +26,26 @@
 
 <table class=table14_1>
 	<tr>
+		<th>판매번호</th>
 		<th>판매자</th>
 		<th>제품명</th>
 		<th>가격</th>
 		<th>수량</th>
 		<th>구매자</th>
 		<th>날짜</th>
-		
+		<th>상품취소</th>		
 	</tr>
 	
 	<c:forEach var="o" items="${o}">
 	<tr>
+			<td>${o.order_no}</td>
 			<td>${o.seller_name}</td>
 			<td><a href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num=${o.pb_num}">${o.product_name}</a></td>
 			<td>${o.price}</td>
 			<td>${o.count}</td>
 			<td>${o.buyer_name }
 			<td>${o.w_date }</td>
+			<td><input type="button" value="상품취소" onclick="del(${o.order_no})"></td>
 	</tr>
 </c:forEach>
 
