@@ -26,11 +26,11 @@ public class JoinController {
 	}
 	
 	@RequestMapping(value="/join/idCheck.do")
-	public ModelAndView join(@RequestParam(value="name")String name){
+	public ModelAndView join(@RequestParam(value="name")String name,@RequestParam(value="pass")String pass){
 		System.out.println("ID체크중 ");
 		Join j = service.getJoin(name); // request로 불러오는 id를 getJoin()에 넣어서 join j라는 새로운 객체에 넣는다
 		boolean flag = false; 
-		if( j == null){ // 만약 조회건수가 없을경우
+		if( j == null){ // 만약 조회건수가 없거나 DB의 pass가 입력pass와 일치하지 않을경우
 			flag = true; // false >> 조회실패 >> 다시 롤백, true >> 조회성공 >> 뿌려준다
 		}
 		System.out.println("ID체크완료 ");
@@ -80,11 +80,6 @@ public class JoinController {
 		return mav;
 	}
 	
-	
-	
-	
-	
-	
 	@RequestMapping(value="/join/joinForm.do")
 	public String joinForm(){
 		System.out.println("회원가입이동중 ");
@@ -97,20 +92,17 @@ public class JoinController {
 	}
 	
 	@RequestMapping(value= "/join/login.do")
-	public String login(Join j, HttpServletRequest req){		HttpSession session = null;
+	public String login(Join j, HttpServletRequest req){
+		HttpSession session = null;
 		String result = "join/loginForm";
 		System.out.println(j+"j의 값");
 		boolean flag = service.login(j);
 		if(flag){
 			session = req.getSession();
 			session.setAttribute("name", j.getName());
-			result = "join/main";
+			result = "redirect:/join/main.do";
 		}
-		session = req.getSession();
-		String name = (String)session.getAttribute("name");		
-		j=service.getJoin(name);
-		ModelAndView mav = new ModelAndView("join/main");
-		return "redirect:/join/main.do";
+		return result;
 	}
 	
 	@RequestMapping(value= "/join/editForm.do")
