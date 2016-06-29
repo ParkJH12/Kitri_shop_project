@@ -15,7 +15,7 @@ function back(){
 
 </head>
 <body>
-<table class=table12_4>
+<table class=table14_1>
 	<tr>
 		<th>번호</th>
 		<th>제목</th>

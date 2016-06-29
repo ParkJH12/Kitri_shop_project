@@ -81,14 +81,16 @@ function back(){
 		}
 	
 	
+	function gobuy() {
+		location.href="${pageContext.request.contextPath }/join/sellreg.do";
+	}
 </script>
 </head>
 <body>
 <h3>판매목록</h3>
-<a href="${pageContext.request.contextPath }/join/sellreg.do">
-판매하러가기ㄱㄱ</a><br><br>
+<input type="button" value="판매하러ㄱㄱ" onclick="gobuy()" class="bt"><br><br>
 
-<table class=table12_4 >
+<table class=table14_1>
 	<tr>
 		<th>번호</th>
 		<th>제목</th>

@@ -22,7 +22,7 @@
 주문목록<br>
 
 
-<table class=table12_4>
+<table class=table14_1>
 	<tr>
 		<th>판매자</th>
 		<th>제품명</th>
