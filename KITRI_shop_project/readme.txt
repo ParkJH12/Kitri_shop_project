@@ -40,3 +40,12 @@
 
 
 ==============
+<DB>
+
+truncate table (테이블명)
+ex) trucate table memeber >> member삭제
+
+alter table (테이블명)
+add,drop,alter column 컬럼명 조건문~~~
+
+img_path

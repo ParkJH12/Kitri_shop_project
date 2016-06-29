@@ -70,7 +70,7 @@ B_DATE DATE DEFAULT SYSDATE
 		SELECT * FROM sell_ph_board where pb_num=#{pb_num}
 	</select>
 	
-	<select id="selectAll" resultMap="SellResultMap" parameterType="int">
+	<select id="selectAll" resultMap="BusketResultMap" parameterType="int">
 		SELECT * FROM busket where m_num=#{m_num}
 	</select>
 	

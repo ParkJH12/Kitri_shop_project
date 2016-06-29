@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="${pageContext.request.contextPath}/css/table.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 function checkcount(pcount) {
 	if(pcount==0){
@@ -29,7 +28,9 @@ function deletepro(){
 }
 
 function busket() {
-	location.href="${pageContext.request.contextPath }/busket/busket_input.do?pb_num=${s.pb_num}";
+	var form = document.sellreg;
+	form.action = "${pageContext.request.contextPath }/busket/busket_input.do?pb_num=${s.pb_num}"
+	form.submit();
 }
 
 </script>
@@ -58,15 +59,15 @@ img&nbsp;:&nbsp;
 
 
 <c:if test="${s.m_num eq j.m_num}">
-<input type="button" name="mod" value="상품수정" onclick="sellmod()" class="bt"/>
-<input type="button" name="delete" value="상품삭제" onclick="deletepro()" class="bt"/>
+<input type="button" name="mod" value="상품수정" onclick="sellmod()"/>
+<input type="button" name="delete" value="상품삭제" onclick="deletepro()"/>
 </c:if>
 <c:if test="${s.m_num ne j.m_num}">
-<input type="button" name="buyit" value="구매하기" onclick="checkcount(${s.count})" class="bt">
+<input type="button" name="buyit" value="구매하기" onclick="checkcount(${s.count})">
 </c:if>
 </form>
 
-<input type="button" value="뒤로가기" onclick="back()" class="bt">
-<input type="button" value="장바구니에 넣기" onclick="busket()" class="bt">
+<input type="button" value="뒤로가기" onclick="back()">
+<input type="button" value="장바구니에 넣기" onclick="busket()">
 </body>
 </html>
