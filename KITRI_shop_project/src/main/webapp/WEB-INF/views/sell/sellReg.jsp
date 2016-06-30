@@ -76,9 +76,9 @@ img&nbsp;:&nbsp;
 <input type="hidden" name="m_num" value="${j.m_num}" >
 <br><br>
 <input type= "submit" value="등록" class="bt">
-<input type= "reset"  value="취소" class="bt">
-</form>
 <input type= "button"  value="뒤로가기" onclick="back()" class="bt"><br>
+</form>
+
 
 
 </body>

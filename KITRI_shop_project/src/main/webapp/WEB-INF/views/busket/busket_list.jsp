@@ -14,6 +14,10 @@ function back(){
 function del(bk_num){
 	location.href="${pageContext.request.contextPath}/busket/delbusket.do?bk_num=" + bk_num;
 }
+function gobuy(pb_num) {
+	location.href="${pageContext.request.contextPath}/sell/selldetail.do?pb_num="+ pb_num;
+	
+}
 </script>
 
 </head>
@@ -41,7 +45,7 @@ function del(bk_num){
 			<td>${o.writer}</td>
 			<td>${o.b_date}</td>
 			<td><input type="button" value="장바구니삭제" onclick="del(${o.bk_num})"></td>
-			<td><input type="button" value="장바구니주문" onclick="add(${o.bk_num})"></td>
+			<td><input type="button" value="장바구니주문" onclick="gobuy(${o.pb_num})"></td>
 	</tr>
 	</c:forEach>
 
