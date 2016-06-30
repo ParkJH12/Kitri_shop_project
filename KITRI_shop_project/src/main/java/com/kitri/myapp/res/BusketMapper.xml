@@ -33,6 +33,7 @@ B_DATE DATE DEFAULT SYSDATE
 		<result property="statement" column="statement" />
 		<result property="b_date" column="b_date" />
 		<result property="m_num" column="m_num" />
+		<result property="pb_num" column="pb_num" />
 	</resultMap>
 		
 	<resultMap type="com.kitri.myapp.sell.SellBoard" id="SellResultMap">
@@ -79,7 +80,7 @@ B_DATE DATE DEFAULT SYSDATE
 		INSERT INTO busket values(seq_busket.nextval, #{writer}, 
 		#{title}, #{content}, #{model}, 
 		#{count}, #{product_name}, #{price}, #{color},
-		#{agency}, #{statement}, sysdate, #{m_num})
+		#{agency}, #{statement}, sysdate, #{m_num}, #{pb_num})
 	</insert>
 	
 	<delete id="delete" parameterType="int">

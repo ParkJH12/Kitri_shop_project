@@ -16,7 +16,14 @@ public class Busket {
 	private String statement;
 	private Date b_date;
 	private int m_num;
+	private int pb_num;
 	
+	public int getPb_num() {
+		return pb_num;
+	}
+	public void setPb_num(int pb_num) {
+		this.pb_num = pb_num;
+	}
 	public int getM_num() {
 		return m_num;
 	}
@@ -25,8 +32,9 @@ public class Busket {
 	}
 	public Busket() {  }
 
+	
 	public Busket(int bk_num, String writer, String title, String content, String model, int count, String product_name,
-			int price, String color, String agency, String statement, Date b_date, int m_num) {
+			int price, String color, String agency, String statement, Date b_date, int m_num, int pb_num) {
 		super();
 		this.bk_num = bk_num;
 		this.writer = writer;
@@ -41,7 +49,9 @@ public class Busket {
 		this.statement = statement;
 		this.b_date = b_date;
 		this.m_num = m_num;
+		this.pb_num = pb_num;
 	}
+	
 	public int getBk_num() {
 		return bk_num;
 	}
@@ -143,8 +153,13 @@ public class Busket {
 	public String toString() {
 		return "Busket [bk_num=" + bk_num + ", writer=" + writer + ", title=" + title + ", content=" + content
 				+ ", model=" + model + ", count=" + count + ", product_name=" + product_name + ", price=" + price
-				+ ", color=" + color + ", agency=" + agency + ", statement=" + statement + ", b_date=" + b_date + "]";
+				+ ", color=" + color + ", agency=" + agency + ", statement=" + statement + ", b_date=" + b_date
+				+ ", m_num=" + m_num + ", pb_num=" + pb_num + "]";
 	}
+	
+
+	
+
 	
 	
 }
